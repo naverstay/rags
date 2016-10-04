@@ -1,0 +1,24 @@
+mixin dev_head(page_title)
+    head
+        title=page_title
+        | 
+        | <!-- saved from url=(0014)about:internet -->
+        meta(charset='utf-8')
+        meta(name='viewport', content="width=device-width, initial-scale=1.0")
+        meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
+        meta(name="apple-mobile-web-app-capable", content="yes")
+        meta(name="format-detection", content="telephone=no")
+
+        link(rel='stylesheet', href='css/main_global.css', media='all')
+
+        link(href='//fonts.googleapis.com/css?family=Rubik:300,400,500,700', rel='stylesheet', type='text/css')
+
+        script(src='js/main.js')
+
+mixin loop_while(counter)
+    -i=0;
+    while i < counter
+        -i++;
+        block
+
+        
