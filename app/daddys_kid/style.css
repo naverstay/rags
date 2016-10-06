@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'daddys_kid';
   src:
-    url('fonts/daddys_kid.ttf?wraho9') format('truetype'),
-    url('fonts/daddys_kid.woff?wraho9') format('woff'),
-    url('fonts/daddys_kid.svg?wraho9#daddys_kid') format('svg');
+    url('fonts/daddys_kid.ttf?jkb2if') format('truetype'),
+    url('fonts/daddys_kid.woff?jkb2if') format('woff'),
+    url('fonts/daddys_kid.svg?jkb2if#daddys_kid') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -151,9 +151,6 @@
 }
 .i-baby-onesie-outline-with-smiling-sun:before {
   content: "\e92a";
-}
-.i-baby-onesie-outline-with-smiling-sun2:before {
-  content: "\e92b";
 }
 .i-baby-onesie-outline:before {
   content: "\e92c";
@@ -337,5 +334,23 @@
 }
 .i-two-pieces-of-a-puzzle:before {
   content: "\e968";
+}
+.i-chevron-down:before {
+  content: "\e96c";
+}
+.i-chevron-up:before {
+  content: "\e96b";
+}
+.i-chevron-right:before {
+  content: "\e969";
+}
+.i-chevron-left:before {
+  content: "\e96a";
+}
+.i-location:before {
+  content: "\e92b";
+}
+.i-cross:before {
+  content: "\e96d";
 }
 

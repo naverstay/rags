@@ -3,9 +3,9 @@
 @font-face {
   font-family: 'daddys_kid';
   src:
-    url('#{$icomoon-font-path}/daddys_kid.ttf?wraho9') format('truetype'),
-    url('#{$icomoon-font-path}/daddys_kid.woff?wraho9') format('woff'),
-    url('#{$icomoon-font-path}/daddys_kid.svg?wraho9#daddys_kid') format('svg');
+    url('#{$icomoon-font-path}/daddys_kid.ttf?jkb2if') format('truetype'),
+    url('#{$icomoon-font-path}/daddys_kid.woff?jkb2if') format('woff'),
+    url('#{$icomoon-font-path}/daddys_kid.svg?jkb2if#daddys_kid') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -238,11 +238,6 @@
 .i-baby-onesie-outline-with-smiling-sun {
   &:before {
     content: $i-baby-onesie-outline-with-smiling-sun;
-  }
-}
-.i-baby-onesie-outline-with-smiling-sun2 {
-  &:before {
-    content: $i-baby-onesie-outline-with-smiling-sun2;
   }
 }
 .i-baby-onesie-outline {
@@ -548,6 +543,36 @@
 .i-two-pieces-of-a-puzzle {
   &:before {
     content: $i-two-pieces-of-a-puzzle;
+  }
+}
+.i-chevron-down {
+  &:before {
+    content: $i-chevron-down;
+  }
+}
+.i-chevron-up {
+  &:before {
+    content: $i-chevron-up;
+  }
+}
+.i-chevron-right {
+  &:before {
+    content: $i-chevron-right;
+  }
+}
+.i-chevron-left {
+  &:before {
+    content: $i-chevron-left;
+  }
+}
+.i-location {
+  &:before {
+    content: $i-location;
+  }
+}
+.i-cross {
+  &:before {
+    content: $i-cross;
   }
 }
 

@@ -1,0 +1,21 @@
+.title {
+  color: $gl_main_black;
+  letter-spacing: 1px;
+}
+
+.subcaption {
+  color: $gl_main_black;
+  letter-spacing: 1px;
+}
+
+@for $i from 0 through 4 {
+  .fw_#{($i + 3) * 100} {
+    font-weight: 300 + 100 * $i;
+  }
+}
+
+@for $i from 10 through 36 {
+  .fz_#{$i} {
+    font-size: 0px + $i;
+  }
+}

@@ -1,0 +1,12 @@
+.f_input {
+  display: block;
+  width: 100%;
+  
+  &.input_v1 {
+    background: none;
+    border: none;
+    font: 14px $Rubik;
+    color: $gl_main_black;
+  }
+  
+}

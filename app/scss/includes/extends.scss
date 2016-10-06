@@ -92,6 +92,10 @@
     @include flex_block(column nowrap, flex-start, stretch);
   }
 
+  %global_flex_block_column_nowrap_flex-end_stretch {
+    @include flex_block(column nowrap, flex-end, stretch);
+  }
+
   %global_flex_block_column_nowrap_space_between_stretch {
     @include flex_block(column nowrap, space-between, stretch);
   }

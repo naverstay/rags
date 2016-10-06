@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  font: 16px/1.2 $Roboto;
+  font: 14px/1.2 $Rubik;
   color: $default_t_color;
 }
 
@@ -27,17 +27,53 @@ body {
 .wrapper {
   position: relative;
   min-height: 100%;
-  padding: 100px 0 0;
+
+  @include respond-to-min($resp_s) {
+    padding-left: 60px;
+  }
+
+  @include respond-to-min($resp_xl) {
+    padding-left: 300px;
+  }
+  
 }
 
 .base {
-  padding-bottom: 150px;
+  min-height: 1500px;
+  background: $gl_green;
+  background: linear-gradient(#000, #f00);
+
+  &:before {
+
+  }
+
+  @include respond-to-min($resp_s) {
+    &:before {
+      height: 100px;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: $gl_white;
+    }
+  }
+
+  //padding-bottom: 150px;
 }
 
 .section_inner {
   width: 100%;
   max-width: $content-max-w;
   margin: 0 auto;
+}
+
+.gl_link {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 // **********  text

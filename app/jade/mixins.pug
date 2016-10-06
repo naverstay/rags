@@ -1,3 +1,9 @@
+- var head_menu = ['Новинки','Акции','Оплата','Доставка','О компании']
+- var aside_menu = ['Детская одежда','Детская обувь','Игрушки','Коляски','Детские товары','Мамам','Автокресла']
+- var aside_menu_icon = ['baby-onesie-with-front-pocket-outline','baby-shoes','bear-toy','baby-transport-side-view','baby-diaper-outline','baby-onesie-outline','baby-chair']
+    
+- var sub_menu = ['Все категории','Платья ','Комплекты одежды','Верхняя одежда','Нижнее белье','Одежда для сна','Распродажа']
+
 mixin dev_head(page_title)
     head
         title=page_title
@@ -13,6 +19,9 @@ mixin dev_head(page_title)
 
         link(href='//fonts.googleapis.com/css?family=Rubik:300,400,500,700', rel='stylesheet', type='text/css')
 
+        script(src='js/lib/jquery-1.12.1.min.js')
+        script(src='js/lib/slick.js')
+        script(src='js/lib/select2.js')
         script(src='js/main.js')
 
 mixin loop_while(counter)
@@ -21,4 +30,113 @@ mixin loop_while(counter)
         -i++;
         block
 
+mixin header(active)
+    div.header
+        a.mob_menu_btn.openMobMenu(href='#')
+        a.mob_search_btn(href='#')
+            span.i-baby-rattle.aside_m_icon
+        .section_inner.clearfix
+            .callback_block
+                .callback_inner
+                    .callback_time пн-пт: 9:00-22:00
+                    .callback_phone.select_box_v1
+                        select.select2
+                            option (812) 505-10-41
+                            option (812) 505-10-42
+                            option (812) 505-10-43
+
+mixin footer()
+    .footer
+
+mixin aside_right()
+    .aside_right
+        ul.user_menu
+            li.mob_hidden
+                a.user_m_link(href='#')
+                    span.i-cross.user_m_icon
+            li
+                a.user_m_link(href='#')
+                    span.i-cross.user_m_icon
+                    span.user_m_counter 23
+            li
+                a.user_m_link(href='#')
+                    span.i-cross.user_m_icon
+                    span.user_m_counter 6
+        
+mixin aside_left()
+    .aside_left
+        .aside_menu_holder
+            ul.aside_menu.search_menu
+                li.bdr_mod
+                    form.search_block.search_aside.aside_m_link(action='#')
+                        .aside_m_text: span
+                            input.f_input.input_v1(placeholder='Найти товар')
+                        button.search_btn.aside_m_icon.i-baby-rattle
+
+            ul.aside_menu.nav
+                for item, i in aside_menu
+                    li(class= i == 0 ? "bdr_mod" : "")
+                        a.aside_m_link(href='#')
+                            span.aside_m_text: span=item
+                            span.submenu_icon
+                            span.aside_m_icon(class='i-' + aside_menu_icon[i])
+                        +aside_submenu(i)
+                    
+            ul.aside_menu.contacts
+                li.bdr_mod
+                    a.aside_m_link(href='#')
+                        span.aside_m_text: span Контакты
+                        span.submenu_icon
+                        span.aside_m_icon(class='i-location')
+                    +aside_submenu(7)
+                
+        ul.main_menu
+            for item, i in head_menu
+                li
+                    - if (i == active)
+                        span.menu_link.menu_active: span=item
+                    - else
+                        a.menu_link(href='#'): span=item
+                                
+        ul.auth_menu
+            li
+                a.menu_link(href='#'): span Войти
+                
+    .logo_block.header_logo: a.logo(href='#')
+        img(src='images/logo.svg')
+
+mixin aside_submenu(ind)
+    .submenu_holder
+        case ind
+            when 7
+                .submenu_inner
+                    .contacts_block
+                        .subcaption.fz_18.fw_700.text_upper Контакты
+                        .phone.fz_16.fw_500 (812) 505-10-41
+                        p.fz_13.fw_500
+                            a.gl_link(href='#') Заказать звонок
+                        
+                        p email@gmail.com
+                        
+                        dl.contacts_list
+                            dt Режим работы
+                            dd Будни с 9:00 до 22:00 <br> 
+                                | Выходные с 10:00 до 18:00 <br> 
+                                | Доставка с 12:00 до 20:00
+                            
+                            dt адрес
+                            dd г. Санкт-Петербург, <br> 
+                                | ул. Правды, 1, ТЦ «Галерея»
+        
+                            p.fz_13.fw_500
+                                a.gl_link(href='#') Посмотреть на карте
+    
+            default
+                //-.submenu_caption Подменю #{ind} 
+                ul.submenu_list
+                    for item, i in sub_menu
+                        li
+                            a.submenu_link(href='#')
+                                span=item
+                    
         
