@@ -3,8 +3,10 @@
 - var aside_menu_icon = ['baby-onesie-with-front-pocket-outline','baby-shoes','bear-toy','baby-transport-side-view','baby-diaper-outline','baby-onesie-outline','baby-chair']
     
 - var sub_menu = ['Все категории','Платья ','Комплекты одежды','Верхняя одежда','Нижнее белье','Одежда для сна','Распродажа']
+    
+- var slide_text = ['В нашем магазине действует акция -30%  <br>  на новую коллекцию. Только до конца апреля. <br> Ждем ваших заказов', 'В нашем магазине действует акция -30%  <br>  на новую коллекцию. Только до конца апреля. <br> Ждем ваших заказов 2', 'В нашем магазине действует акция -30%  <br>  на новую коллекцию. Только до конца апреля. <br> Ждем ваших заказов 3', 'В нашем магазине действует акция -30%  <br>  на новую коллекцию. Только до конца апреля. <br> Ждем ваших заказов 4' ]
 
-mixin dev_head(page_title)
+mixin dev_head(page_title, index)
     head
         title=page_title
         | 
@@ -14,15 +16,23 @@ mixin dev_head(page_title)
         meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
         meta(name="apple-mobile-web-app-capable", content="yes")
         meta(name="format-detection", content="telephone=no")
-
+        | 
+        | <!--build:css css/styles.min.css-->
         link(rel='stylesheet', href='css/main_global.css', media='all')
-
+        | 
+        | <!--endbuild-->
         link(href='//fonts.googleapis.com/css?family=Rubik:300,400,500,700', rel='stylesheet', type='text/css')
 
+        | 
+        | <!--build:js js/main.min.js -->
         script(src='js/lib/jquery-1.12.1.min.js')
         script(src='js/lib/slick.js')
         script(src='js/lib/select2.js')
         script(src='js/main.js')
+        - if (index)
+            script(src='js/index.js')
+        | 
+        | <!--endbuild-->
 
 mixin loop_while(counter)
     -i=0;
@@ -35,7 +45,7 @@ mixin header(active)
         a.mob_menu_btn.openMobMenu(href='#')
         a.mob_search_btn(href='#')
             span.i-baby-rattle.aside_m_icon
-        .section_inner.clearfix
+        .section_inner
             .callback_block
                 .callback_inner
                     .callback_time пн-пт: 9:00-22:00
@@ -47,26 +57,83 @@ mixin header(active)
 
 mixin footer()
     .footer
+        .section_inner
+            ul.main_menu.mob_hidden
+                for item, i in head_menu
+                    li
+                        - if (i == active)
+                            span.menu_link.menu_active: span=item
+                        - else
+                            a.menu_link(href='#'): span=item
+                    
+            ul.footer_info
+                li
+                    .footer_info_unit
+                        dl.contacts_list
+                            dt Контактная информация
+                            dd (812) 505-10-41  <br> 
+                                | email@gmail.com
+                                
+                        .footer_info_control
+                            a.gl_link(href='#') Заказать звонок
+                            
+                li
+                    .footer_info_unit
+                        dl.contacts_list
+                            dt Режим работы
+                            dd Будни с 9:00 до 22:00 <br> 
+                                | Выходные с 10:00 до 18:00 <br> 
+                                | Доставка с 12:00 до 20:00
+                            
+                            //-p.fz_13.fw_500
+                                a.gl_link(href='#') Посмотреть на карте
+                                
+                li
+                    .footer_info_unit
+                        dl.contacts_list
+                            dt адрес
+                            dd г. Санкт-Петербург, <br> 
+                                | ул. Правды, 1, ТЦ «Галерея»
+                                
+                        .footer_info_control
+                            a.gl_link(href='#') Посмотреть на карте
+                            
+                li
+                    .footer_info_unit
+                        dl.contacts_list
+                            dt Мы в соцсетях
+                            dd
+                                ul.about_list
+                                    li
+                                        a.adout_link(href='#')
+                                        
+                                
+                    
+            .copyright_block
+                .copyright © 2016 Daddy's kid, Все права защищены
+                .payments
+                    img(src='images/pay_icons.png')
+                    
 
 mixin aside_right()
     .aside_right
         ul.user_menu
             li.mob_hidden
                 a.user_m_link(href='#')
-                    span.i-cross.user_m_icon
+                    span.user_m_icon.i-baby-abacus-toy
             li
                 a.user_m_link(href='#')
-                    span.i-cross.user_m_icon
+                    span.user_m_icon.i-toy-ball
                     span.user_m_counter 23
             li
                 a.user_m_link(href='#')
-                    span.i-cross.user_m_icon
+                    span.user_m_icon.i-truck-side-view-outline
                     span.user_m_counter 6
         
 mixin aside_left()
     .aside_left
         .aside_menu_holder
-            ul.aside_menu.search_menu
+            //-ul.aside_menu.search_menu
                 li.bdr_mod
                     form.search_block.search_aside.aside_m_link(action='#')
                         .aside_m_text: span
@@ -74,6 +141,11 @@ mixin aside_left()
                         button.search_btn.aside_m_icon.i-baby-rattle
 
             ul.aside_menu.nav
+                li.bdr_mod
+                    a.search_block.search_aside.aside_m_link(href='#')
+                        span.aside_m_text
+                            span Найти товар
+                        span.aside_m_icon.i-baby-rattle
                 for item, i in aside_menu
                     li(class= i == 0 ? "bdr_mod" : "")
                         a.aside_m_link(href='#')
@@ -139,4 +211,18 @@ mixin aside_submenu(ind)
                             a.submenu_link(href='#')
                                 span=item
                     
+mixin main_slider()
+    .main_slider.mainSlider
+        +loop_while(4)
+            .slide
+                img(src='images/slide_1.jpg')
+                .slide_description
+                    p В нашем магазине действует акция -30% 
+                        span.mob_hidden <br> 
+                        | на новую коллекцию. Только до конца апреля.
+                        span.mob_hidden <br>
+                        |  Ждем ваших заказов
+            
+        .slide_prev.mob_hidden
+        .slide_next.mob_hidden
         

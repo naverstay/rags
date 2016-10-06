@@ -1,17 +1,59 @@
 include mixins.pug
 doctype html
 html(lang='ru')
-    +dev_head("'Daddy's kid'")
+    +dev_head("'Daddy's kid'", true)
 
     body
         .wrapper
-            .rect_1024
             .base
                 +header(1)
                 
-
-
+                +main_slider()
                 div.main_content
+                    .section_inner
+                        ul.share_list
+                            li
+                                .share_item
+                                    .share_img
+                                        img.mob_hidden(src='images/sales_2.png')
+                                        img.dt_hidden(src='images/sales_2_mob.png')
+                                        .share_text 
+                                            h3.share_caption Бесплатная доставка
+                                            p для заказов от 3 000 Р
+                            li
+                                .share_item
+                                    .share_img
+                                        img.mob_hidden(src='images/sales_1.jpg')
+                                        img.dt_hidden(src='images/sales_1_mob.jpg')
+                                        .share_text 
+                                            h3.share_caption весенняя распродажа
+                                            p пальто и куртки
+                                            
+                        ul.product_list
+                            li
+                                .product_item
+                                    a.product_img(href='#')
+                                        img(src='images/prod_1.jpg')
+                                    h3.product_caption Детская одежда
+                                    p Платья, Верхняя одежда, Пижамы, Аксессуары
+                            li
+                                .product_item
+                                    a.product_img(href='#')
+                                        img(src='images/prod_1.jpg')
+                                    h3.product_caption Детская обувь
+                                    p Кеды, сапоги, сандали, ботинки
+                            li
+                                .product_item
+                                    a.product_img(href='#')
+                                        img(src='images/prod_1.jpg')
+                                    h3.product_caption Игрушки
+                                    p Мягкие игрушки, куклы, пупсы, конструкторы, мякиши
+                            li
+                                .product_item
+                                    a.product_img(href='#')
+                                        img(src='images/prod_1.jpg')
+                                    h3.product_caption мамам
+                                    p Личная гигиена, одежда, белье, купальники, книги
 
 
             +footer()

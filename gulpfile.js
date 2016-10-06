@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var pug = require('gulp-pug');
+var htmlmin = require('gulp-htmlmin');
 var plumber = require('gulp-plumber');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
@@ -61,6 +62,7 @@ gulp.task('useref', function () {
         .pipe(useref())
         .pipe(gulpIf('*.js', uglify()))
         .pipe(gulpIf('*.css', cssnano()))
+        //.pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('dist'));
 });
 

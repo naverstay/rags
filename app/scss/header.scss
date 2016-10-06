@@ -10,12 +10,17 @@
   background: $gl_white;
   z-index: 1;
 
+  .section_inner {
+    @extend %clearfix;
+  }
+
   @include respond-to-min($resp_s) {
     padding-right: 270px;
     padding-left: 178px;
     position: relative;
     line-height: 100px;
     background: none;
+    min-height: 139px;
 
     .section_inner {
       padding-left: 30px;
@@ -27,6 +32,7 @@
   }
 
   @include respond-to-min($resp_xl) {
+    min-height: 99px;
     padding-left: 0;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .18);
   }
@@ -160,13 +166,24 @@
       line-height: 150px;
       z-index: 15;
 
+      &:before {
+        z-index: 1;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 8px;
+        left: 292px;
+        box-shadow: 5px 0 8px rgba(0, 0, 0, 0.1);
+        pointer-events: none;
+      }
+      
       .logo {
         margin-top: 10px;
         max-width: 142px;
       }
     }
   }
-
 }
 
 .logo {
@@ -248,56 +265,71 @@
   position: relative;
   font-size: 14px;
   line-height: 50px;
-  background: $gl_gray_fill;
 
-  &:before {
-    z-index: 1;
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 8px;
-    right: 0;
-    box-shadow: 5px 0 8px rgba(0, 0, 0, .1);
-    pointer-events: none;
+  .footer & {
+    @extend %clearfix;
+    margin-left: -15px;
+    margin-bottom: 30px;
+  }
+  
+  .aside_left & {
+    background: $gl_gray_fill;
+
+    &:before {
+      z-index: 1;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 8px;
+      right: 0;
+      box-shadow: 5px 0 8px rgba(0, 0, 0, .1);
+      pointer-events: none;
+    }
   }
 
   @include respond-to-min($resp_s) {
     font-size: 16px;
     font-weight: 300;
-    position: absolute;
-    top: 88px;
-    left: 60px;
-    right: 0;
-    padding-left: 15px;
-    background: $gl_white;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .18);
-
-    &:before {
-      display: none;
-    }
 
     > li {
       float: left;
+      max-width: 300px;
+    }
+
+    .aside_left & {
+      position: absolute;
+      top: 88px;
+      left: 60px;
+      right: 0;
+      padding-left: 15px;
+      background: $gl_white;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, .18);
+
+      &:before {
+        display: none;
+      }
     }
   }
 
   @include respond-to-min($resp_xl) {
-    position: absolute;
-    top: 0;
-    padding-left: 477px;
-    line-height: 0;
-    height: 0;
 
-    &:before {
-      display: none;
-    }
+    .aside_left & {
+      position: absolute;
+      top: 0;
+      padding-left: 477px;
+      line-height: 0;
+      height: 0;
 
-    > li {
-      line-height: 100px;
+      &:before {
+        display: none;
+      }
+
+      > li {
+        line-height: 100px;
+      }
     }
   }
-    
 }
 
 .menu_link {
@@ -406,6 +438,7 @@ a.menu_link {
   position: fixed;
   top: 60px;
   left: 0;
+  bottom: 0;
   padding-right: 8px;
   z-index: 15;
   overflow-y: auto;
@@ -421,10 +454,12 @@ a.menu_link {
   @include respond-to-min($resp_s) {
     top: 0;
     right: 0;
+    bottom: auto;
     position: absolute;
     overflow: visible;
     padding-right: 0;
     margin-left: 0;
+    //width: 620px;
     max-height: 100%;
 
     //-webkit-transform: translate(0, 0);
@@ -449,7 +484,42 @@ a.menu_link {
 
 .aside_menu_holder {
   @extend %global_flex_block_column_nowrap_space_between_stretch;
-  height: 100%;
+  //height: 100%;
+  position: relative;
+
+  &:before {
+    //z-index: 1;
+    //content: '';
+    //position: absolute;
+    //top: 0;
+    //bottom: 0;
+    //width: 8px;
+    //left: 292px;
+    //box-shadow: 5px 0 8px rgba(0, 0, 0, .1);
+    //pointer-events: none;
+  }
+
+  @include respond-to-min($resp_s) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow-y: auto;
+
+    //background: $gl_white;
+
+    &:hover {
+      //width: 620px;
+    }
+  }
+
+  @include respond-to-min($resp_xl) {
+    top: 150px;
+  }
+}
+
+.aside_menu {
   position: relative;
 
   &:before {
@@ -465,20 +535,9 @@ a.menu_link {
   }
 
   @include respond-to-min($resp_s) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
-    background: $gl_white;
+    margin-right: 8px;
   }
-
-  @include respond-to-min($resp_xl) {
-    padding-top: 150px;
-  }
-}
-
-.aside_menu {
+  
   //@extend %global_flex_block_column_nowrap_flex-start_stretch;
   //padding-bottom: 60px;
 
@@ -521,11 +580,17 @@ a.menu_link {
 
   &.nav {
     @include flex(1 0 auto);
+    background: $gl_white;
+
+    @include respond-to-min($resp_s) {
+      padding-top: 1px;
+    }
   }
 
   > li {
     @include transition_all(width .3s);
     width: 100%;
+    max-width: 300px;
 
     @include respond-to-max($resp_s) {
       border-bottom: 1px solid #cecece;
@@ -543,6 +608,7 @@ a.menu_link {
           //-ms-transform: translate(0, 0);
           //transform: translate(0, 0);
           opacity: 1;
+          //left: 300px;
           pointer-events: all;
         }
       }
@@ -674,10 +740,9 @@ a.menu_link {
 }
 
 .submenu_holder {
+  @include transition_all(opacity .3s);
   display: none;
   background: $gl_white;
-
-  //@include transition_all(transform .3s, opacity .3s);
 
   @include respond-to-min($resp_s) {
     display: block;
@@ -685,13 +750,16 @@ a.menu_link {
     //-ms-transform: translate(100%, 0);
     //transform: translate(100%, 0);
     opacity: 0;
-    position: absolute;
+    position: fixed;
+    overflow-y: auto;
     top: 0;
     bottom: 0;
-    left: 100%;
+    left: 300px;
+    //left: 0;
     width: 300px;
     background: $gl_gray_light;
     pointer-events: none;
+    box-shadow: 5px 0 8px rgba(0, 0, 0, .1);
   }
 }
 
@@ -750,26 +818,6 @@ a.menu_link {
 
   .gl_link {
     color: $gl_main_black;
-  }
-}
-
-.contacts_list {
-  line-height: 1.8;
-
-  dd {
-    margin-bottom: 25px;
-  }
-
-  dt {
-    text-transform: uppercase;
-    font-size: 10px;
-    color: $gl_gray_additional;
-    letter-spacing: 1px;
-  }
-
-  dd,
-  dt {
-    display: block;
   }
 }
 

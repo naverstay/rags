@@ -15,6 +15,7 @@ $(function ($) {
     });
 
     initSelect2();
+  
 });
 
 function initSelect2() {
