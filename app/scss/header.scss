@@ -734,7 +734,7 @@ a.menu_link {
   background: $gl_gray_fill;
 
   .submenu_open &,
-  .aside_menu li:hover > & {
+  .aside_menu li.hovered > & {
     background: $gl_white;
   }
 
@@ -742,7 +742,7 @@ a.menu_link {
     background: $gl_white;
 
     .submenu_open &,
-    .aside_menu li:hover > & {
+    .aside_menu li.hovered > & {
       background: $gl_gray_light;
     }
   }
@@ -763,15 +763,13 @@ a.menu_link {
     content: $i-chevron-right;
   }
 
-  .aside_menu > li:hover & {
-
+  .aside_menu > li.hovered & {
     @include respond-to-max($resp_s) {
       &:before {
         content: $i-chevron-down;
       }
     }
   }
-  
 }
 
 .aside_m_text {
@@ -829,7 +827,7 @@ a.menu_link {
   color: $gl_black_000;
   background: inherit;
 
-  .aside_m_link:hover & {
+  .aside_menu > li.hovered > .aside_m_link > & {
     color: $gl_green;
   }
 }
@@ -851,6 +849,10 @@ a.menu_link {
 
         &:hover {
           background: $gl_white;
+          
+          .aside_m_icon {
+            color: $gl_green;
+          }
         }
       }
     }
