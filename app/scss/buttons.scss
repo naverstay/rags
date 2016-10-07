@@ -1,18 +1,29 @@
 //************  buttons
 
 .btn_v1 {
-  height: 50px;
+  height: 40px;
 
-  &.callback_btn {
+  &.order_btn {
+    float: left;
+    width: 100%;
+    max-width: 200px;
     cursor: pointer;
-    border-radius: 25px;
-    padding: 16px 24px;
-    font-weight: 500;
-    
-    &:before {
-      font-size: 18px;
-    }
-    
+    border-radius: 2px;
+    font: 500 13px/16px $Rubik;
+    padding: 12px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+}
+
+.blue_btn {
+  @include transition_all(background .3s);
+  background: $gl_violete;
+  color: $gl_white;
+
+  &:hover {
+    background: $gl_violete_hover;
   }
 
 }

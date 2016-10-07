@@ -4,7 +4,6 @@
     
 - var sub_menu = ['Все категории','Платья ','Комплекты одежды','Верхняя одежда','Нижнее белье','Одежда для сна','Распродажа']
     
-- var slide_text = ['В нашем магазине действует акция -30%  <br>  на новую коллекцию. Только до конца апреля. <br> Ждем ваших заказов', 'В нашем магазине действует акция -30%  <br>  на новую коллекцию. Только до конца апреля. <br> Ждем ваших заказов 2', 'В нашем магазине действует акция -30%  <br>  на новую коллекцию. Только до конца апреля. <br> Ждем ваших заказов 3', 'В нашем магазине действует акция -30%  <br>  на новую коллекцию. Только до конца апреля. <br> Ждем ваших заказов 4' ]
 
 mixin dev_head(page_title, index)
     head
@@ -26,6 +25,7 @@ mixin dev_head(page_title, index)
         | 
         | <!--build:js js/main.min.js -->
         script(src='js/lib/jquery-1.12.1.min.js')
+        script(src='js/lib/jquery-ui-1.11.4.js')
         script(src='js/lib/slick.js')
         script(src='js/lib/select2.js')
         script(src='js/main.js')
@@ -49,7 +49,8 @@ mixin header(active)
             .callback_block
                 .callback_inner
                     .callback_time пн-пт: 9:00-22:00
-                    .callback_phone.select_box_v1
+                    a.callback_btn.callbackBtn(href='#') (812) 505-10-41
+                    //-.callback_phone.select_box_v1
                         select.select2
                             option (812) 505-10-41
                             option (812) 505-10-42
@@ -105,8 +106,20 @@ mixin footer()
                             dd
                                 ul.about_list
                                     li
-                                        a.adout_link(href='#')
-                                        
+                                        a.about_link(href='#')
+                                            span.i-v
+                                    li
+                                        a.about_link(href='#')
+                                            span.i-f
+                                    li
+                                        a.about_link(href='#')
+                                            span.i-t
+                                    //-li
+                                        a.about_link(href='#')
+                                            span.i-o
+                                    //-li
+                                        a.about_link(href='#')
+                                            span.i-g
                                 
                     
             .copyright_block
@@ -139,28 +152,29 @@ mixin aside_left()
                         .aside_m_text: span
                             input.f_input.input_v1(placeholder='Найти товар')
                         button.search_btn.aside_m_icon.i-baby-rattle
-
-            ul.aside_menu.nav
-                li.bdr_mod
-                    a.search_block.search_aside.aside_m_link(href='#')
-                        span.aside_m_text
-                            span Найти товар
-                        span.aside_m_icon.i-baby-rattle
-                for item, i in aside_menu
-                    li(class= i == 0 ? "bdr_mod" : "")
+                
+            .aside_menu_scroller
+                ul.aside_menu.nav
+                    li.bdr_mod.mob_hidden
+                        a.search_block.search_aside.aside_m_link(href='#')
+                            span.aside_m_text
+                                span Найти товар
+                            span.aside_m_icon.i-baby-rattle
+                    for item, i in aside_menu
+                        li(class= i == 0 ? "bdr_mod" : "")
+                            a.aside_m_link(href='#')
+                                span.aside_m_text: span=item
+                                span.submenu_icon
+                                span.aside_m_icon(class='i-' + aside_menu_icon[i])
+                            +aside_submenu(i, item)
+                        
+                ul.aside_menu.contacts
+                    li.bdr_mod
                         a.aside_m_link(href='#')
-                            span.aside_m_text: span=item
+                            span.aside_m_text: span Контакты
                             span.submenu_icon
-                            span.aside_m_icon(class='i-' + aside_menu_icon[i])
-                        +aside_submenu(i)
-                    
-            ul.aside_menu.contacts
-                li.bdr_mod
-                    a.aside_m_link(href='#')
-                        span.aside_m_text: span Контакты
-                        span.submenu_icon
-                        span.aside_m_icon(class='i-location')
-                    +aside_submenu(7)
+                            span.aside_m_icon(class='i-location')
+                        +aside_submenu(7, 'Контакты')
                 
         ul.main_menu
             for item, i in head_menu
@@ -177,13 +191,13 @@ mixin aside_left()
     .logo_block.header_logo: a.logo(href='#')
         img(src='images/logo.svg')
 
-mixin aside_submenu(ind)
+mixin aside_submenu(ind, title)
     .submenu_holder
         case ind
             when 7
                 .submenu_inner
-                    .contacts_block
-                        .subcaption.fz_18.fw_700.text_upper Контакты
+                    .submenu_block
+                        .subcaption.fz_18.fw_700.text_upper.mob_hidden=title
                         .phone.fz_16.fw_500 (812) 505-10-41
                         p.fz_13.fw_500
                             a.gl_link(href='#') Заказать звонок
@@ -202,11 +216,34 @@ mixin aside_submenu(ind)
         
                             p.fz_13.fw_500
                                 a.gl_link(href='#') Посмотреть на карте
-    
+        
             default
-                //-.submenu_caption Подменю #{ind} 
-                ul.submenu_list
-                    for item, i in sub_menu
+                .submenu_w
+                    .submenu_inner.mob_hidden
+                        .subcaption.fz_18.fw_700.text_upper=title
+                        p Мы отобрали лучшую детскую одежду для ваших детей
+                    ul.submenu_list
+                        for item, i in sub_menu
+                            li(class= i == 0 ? "dt_hidden" : "")
+                                a.aside_m_link.submenu_link(href='#')
+                                    span.aside_m_text: span=item
+                                    span.aside_m_icon(class='i-' + aside_menu_icon[i])
+                        li.mob_hidden
+                            a.aside_m_link.submenu_link(href='#')
+                                span.aside_m_text.show_more Показать все категории (3)
+                    .submenu_tag_block.mob_hidden
+                        p По брендам:
+                        ul.submenu_tags
+                            li: a.gl_link(href='#') Zara
+                            li: a.gl_link(href='#') H&M
+                            li: a.gl_link(href='#') Okaidi
+                            li: a.gl_link(href='#') Puma
+                            li: a.gl_link(href='#') Nike
+                            li: a.gl_link(href='#') Mothercare
+                            li: a.gl_link(href='#') Addidas
+                            li: a.gl_link(href='#') Reebok
+                        
+                    //-for item, i in sub_menu
                         li
                             a.submenu_link(href='#')
                                 span=item
@@ -225,4 +262,96 @@ mixin main_slider()
             
         .slide_prev.mob_hidden
         .slide_next.mob_hidden
+                            
+mixin hit_slider()
+    .hitSlider.hit_slider_holder
+        .hit_slider
+            +loop_while(6)
+                .slide
+                    a.product_img(href='#')
+                        img(src='images/hit_1.jpg')
+                        .product_hit Хит продаж
+                        .product_share - 30%
+                    h3.product_caption Трикотажное платьес рисунком
+                    .product_price
+                        span.old_price 8449
+                            span.rur 7
+                        span.new_price 4069
+                            span.rur 7
+                .slide
+                    a.product_img(href='#')
+                        img(src='images/hit_1.jpg')
+                        .product_hit Хит продаж
+                        .product_share - 30%
+                    h3.product_caption Трикотажное платьес рисунком
+                    .product_price
+                        span.new_price 4069
+                            span.rur 7
+                            
+        .slide_prev
+        .slide_next
+                                    
+mixin pop_slider()
+    .popSlider.hit_slider_holder
+        .hit_slider.slide_middle
+            +loop_while(3)
+                .slide
+                    a.product_img(href='#')
+                        img(src='images/brand_1.png')
+                .slide
+                    a.product_img(href='#')
+                        img(src='images/brand_2.png')
+                .slide
+                    a.product_img(href='#')
+                        img(src='images/brand_3.png')
+                .slide
+                    a.product_img(href='#')
+                        img(src='images/brand_4.png')
+                .slide
+                    a.product_img(href='#')
+                        img(src='images/brand_5.png')
+                .slide
+                    a.product_img(href='#')
+                        img(src='images/brand_6.png')
+                        
+                
+                            
+        .slide_prev
+        .slide_next
         
+mixin popups()
+    .popup_close_btn.popupClose
+    #callback_popup.popup.popup_v2
+        .popup_inner
+            ul#callback_switcher.tab_holder.tab_v1
+                li: a.tab_link(href='#callback_tab_1'): span Перезвоните мне
+                li: a.tab_link(href='#callback_tab_2'): span Задать вопрос
+                
+            .tabBlock(data-tab-context='#callback_switcher')
+                #callback_tab_1
+                    .tab_content
+                        form(action='#')
+                            .form_cell
+                                input.f_input.input_v2(placeholder='Имя')
+                                
+                            .form_cell
+                                input.f_input.input_v2(placeholder='Телефон')
+                                
+                            .form_cell
+                                button.btn_v1.blue_btn.order_btn Отправить заявку
+                                
+                #callback_tab_2
+                    .tab_content
+                        form(action='#')
+                            .form_cell
+                                input.f_input.input_v2(placeholder='Имя')
+                                
+                            .form_cell
+                                input.f_input.input_v2(placeholder='Телефон')
+                                
+                            .form_cell
+                                textarea.f_input.input_v2(placeholder='Вопрос')
+                                
+                            .form_cell
+                                button.btn_v1.blue_btn.order_btn Отправить вопрос
+                                

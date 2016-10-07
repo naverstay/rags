@@ -27,7 +27,7 @@
     }
 
     &:hover {
-      z-index: 20;
+      //z-index: 20;
     }
   }
 
@@ -57,12 +57,14 @@
 }
 
 .mob_menu_btn {
+  @extend %icon_pseudo;
   position: absolute;
   height: 60px;
   width: 50px;
   top: 0;
   left: 0;
   z-index: 20;
+  color: $gl_main_black;
 
   &:after,
   &:before {
@@ -72,6 +74,7 @@
     margin-left: -10px;
     width: 20px;
     top: 50%;
+    text-align: center;
   }
 
   &:before {
@@ -81,12 +84,42 @@
   }
 
   &:after {
+    @include transition_all(transform .3s ease);
     height: 14px;
     margin-top: -7px;
     border: solid $gl_gray_2;
     border-width: 2px 0;
   }
 
+  .menu_opened & {
+
+    &:before {
+      display: none;
+    }
+
+    &:after {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+  }
+
+  .icon_close & {
+
+    &:before {
+      display: none;
+    }
+
+    &:after {
+      content: $i-cross;
+      border: none;
+      font-size: 18px;
+      margin-top: -9px;
+    }
+  }  
+  
   @include respond-to-min($resp_s) {
     display: none;
   }
@@ -108,9 +141,29 @@
   line-height: normal;
 }
 
-.callback_btn,
-.callback_time {
+.callback_btn {
+  @extend %icon_pseudo;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 700;
+  color: $gl_main_black;
+  padding: 0 25px 0 0;
+  letter-spacing: 1.5px;
+  text-decoration: none;
 
+  &:before {
+    position: absolute;
+    font-size: 10px;
+    height: 12px;
+    top: 50%;
+    margin-top: -5px;
+    right: 9px;
+    font-weight: 700;
+    content: $i-chevron-down;
+  }
 }
 
 .callback_phone {
@@ -439,8 +492,10 @@ a.menu_link {
   top: 60px;
   left: 0;
   bottom: 0;
-  padding-right: 8px;
+  //padding-right: 8px;
   z-index: 15;
+  //width: 328px;
+  width: 100%;
   overflow-y: auto;
   max-height: calc(100% - 60px);
   margin-left: -100%;
@@ -454,10 +509,11 @@ a.menu_link {
   @include respond-to-min($resp_s) {
     top: 0;
     right: 0;
+    //width: auto;
     bottom: auto;
     position: absolute;
     overflow: visible;
-    padding-right: 0;
+    //padding-right: 0;
     margin-left: 0;
     //width: 620px;
     max-height: 100%;
@@ -482,8 +538,21 @@ a.menu_link {
   }
 }
 
-.aside_menu_holder {
+.aside_menu_scroller {
   @extend %global_flex_block_column_nowrap_space_between_stretch;
+  height: 100%;
+
+  @include respond-to-min($resp_s) {
+    overflow-y: auto;
+    margin-right: -25px;
+
+    &:hover {
+      padding-right: 310px;
+    }
+  }
+}
+
+.aside_menu_holder {
   //height: 100%;
   position: relative;
 
@@ -505,7 +574,11 @@ a.menu_link {
     left: 0;
     bottom: 0;
     z-index: 1;
-    overflow-y: auto;
+    max-width: 615px;
+    overflow-x: hidden;
+
+    //overflow-y: auto;
+    //padding-right: 310px;
 
     //background: $gl_white;
 
@@ -583,14 +656,14 @@ a.menu_link {
     background: $gl_white;
 
     @include respond-to-min($resp_s) {
-      padding-top: 1px;
+      //padding-top: 1px;
     }
   }
 
   > li {
     @include transition_all(width .3s);
     width: 100%;
-    max-width: 300px;
+    //max-width: 320px;
 
     @include respond-to-max($resp_s) {
       border-bottom: 1px solid #cecece;
@@ -616,6 +689,10 @@ a.menu_link {
 
     &.bdr_mod {
       border-top: 1px solid #eaeaea;
+    }
+
+    @include respond-to-min($resp_s) {
+      max-width: 300px;
     }
   }
 
@@ -657,7 +734,7 @@ a.menu_link {
   background: $gl_gray_fill;
 
   .submenu_open &,
-  &:hover {
+  .aside_menu li:hover > & {
     background: $gl_white;
   }
 
@@ -665,11 +742,10 @@ a.menu_link {
     background: $gl_white;
 
     .submenu_open &,
-    &:hover {
+    .aside_menu li:hover > & {
       background: $gl_gray_light;
     }
   }
-
 }
 
 .submenu_icon {
@@ -686,6 +762,16 @@ a.menu_link {
   &:before {
     content: $i-chevron-right;
   }
+
+  .aside_menu > li:hover & {
+
+    @include respond-to-max($resp_s) {
+      &:before {
+        content: $i-chevron-down;
+      }
+    }
+  }
+  
 }
 
 .aside_m_text {
@@ -704,6 +790,14 @@ a.menu_link {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
+  }
+
+  &.show_more {
+    font-size: 13px;
+    font-weight: 400;
+    color: $default_t_color;
+    letter-spacing: 0;
+    text-transform: none;
   }
 
   @include respond-to-min($resp_s) {
@@ -739,6 +833,28 @@ a.menu_link {
   }
 }
 
+.submenu_w {
+  @extend %global_flex_block_column_nowrap_space_between_stretch;
+  height: 100%;
+  overflow-x: hidden;
+
+  > .submenu_list {
+    @include flex(1 0 auto);
+
+    .aside_m_link {
+      background: $gl_white;
+
+      @include respond-to-min($resp_s) {
+        background: $gl_gray_light;
+
+        &:hover {
+          background: $gl_white;
+        }
+      }
+    }
+  }
+}
+
 .submenu_holder {
   @include transition_all(opacity .3s);
   display: none;
@@ -759,12 +875,60 @@ a.menu_link {
     width: 300px;
     background: $gl_gray_light;
     pointer-events: none;
+
     box-shadow: 5px 0 8px rgba(0, 0, 0, .1);
   }
+
 }
 
 .submenu_inner {
-  padding: 45px 40px;
+  padding: 10px 20px 10px 60px;
+
+  > .subcaption {
+    color: $gl_main_black;
+    margin-bottom: 16px;
+  }
+
+  > p {
+    line-height: 20px;
+  }
+
+  @include respond-to-min($resp_s) {
+    padding: 45px 40px 10px;
+  }
+}
+
+.submenu_tag_block {
+  padding: 0 40px 25px;
+  line-height: 22px;
+}
+
+.submenu_tags {
+  @extend %clearfix;
+
+  .gl_link {
+    text-decoration: none;
+    color: $gl_main_black;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  > li {
+    float: left;
+    padding-right: 3px;
+
+    &:after {
+      content: ',';
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
 }
 
 .submenu_list {
@@ -781,27 +945,38 @@ a.menu_link {
   display: block;
 
   span {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-    padding: 0 10px 0 65px;
+    //display: inline-block;
+    //vertical-align: middle;
+    //line-height: normal;
+    //padding: 0 10px 0 65px;
   }
 
   &:hover {
     color: $gl_violete_link_hover;
   }
+  .aside_m_icon {
+    left: 15px;
 
-  @include respond-to-min($resp_s) {
-    line-height: 40px;
-
-    span {
-      padding: 0 60px;
+    @include respond-to-max($resp_s) {
+      display: none;
     }
+
+    //line-height: 40px;
+    //
+    //span {
+    //  padding: 0 60px;
+    //}
   }
 
+  @include respond-to-max($resp_s) {
+    .aside_m_text {
+      text-transform: none;
+    }
+  }
+  
 }
 
-.contacts_block {
+.submenu_block {
   color: $gl_main_black;
 
   .subcaption {

@@ -18,6 +18,7 @@
      
     <!--build:js js/main.min.js -->
     <script src="js/lib/jquery-1.12.1.min.js"></script>
+    <script src="js/lib/jquery-ui-1.11.4.js"></script>
     <script src="js/lib/slick.js"></script>
     <script src="js/lib/select2.js"></script>
     <script src="js/main.js"></script>
@@ -32,14 +33,7 @@
           <div class="section_inner">
             <div class="callback_block">
               <div class="callback_inner">
-                <div class="callback_time">пн-пт: 9:00-22:00</div>
-                <div class="callback_phone select_box_v1">
-                  <select class="select2">
-                    <option>(812) 505-10-41</option>
-                    <option>(812) 505-10-42</option>
-                    <option>(812) 505-10-43</option>
-                  </select>
-                </div>
+                <div class="callback_time">пн-пт: 9:00-22:00</div><a class="callback_btn callbackBtn" href="#">(812) 505-10-41</a>
               </div>
             </div>
           </div>
@@ -73,22 +67,16 @@
             <ul class="share_list">
               <li>
                 <div class="share_item">
-                  <div class="share_img"><img class="mob_hidden" src="images/sales_2.png"><img class="dt_hidden" src="images/sales_2_mob.png">
-                    <div class="share_text"> 
+                  <div class="share_img"><img class="mob_hidden" src="images/sales_2.png"><img class="dt_hidden" src="images/sales_2_mob.png"><a class="share_text" href="#">
                       <h3 class="share_caption">Бесплатная доставка</h3>
-                      <p>для заказов от 3 000 Р</p>
-                    </div>
-                  </div>
+                      <p>для заказов от 3 000 Р</p></a></div>
                 </div>
               </li>
               <li>
                 <div class="share_item">
-                  <div class="share_img"><img class="mob_hidden" src="images/sales_1.jpg"><img class="dt_hidden" src="images/sales_1_mob.jpg">
-                    <div class="share_text"> 
+                  <div class="share_img"><img class="mob_hidden" src="images/sales_1.jpg"><img class="dt_hidden" src="images/sales_1_mob.jpg"><a class="share_text" href="#">
                       <h3 class="share_caption">весенняя распродажа</h3>
-                      <p>пальто и куртки</p>
-                    </div>
-                  </div>
+                      <p>пальто и куртки</p></a></div>
                 </div>
               </li>
             </ul>
@@ -96,28 +84,155 @@
               <li>
                 <div class="product_item"><a class="product_img" href="#"><img src="images/prod_1.jpg"></a>
                   <h3 class="product_caption">Детская одежда</h3>
-                  <p>Платья, Верхняя одежда, Пижамы, Аксессуары</p>
+                  <p class="tablet_hidden">Платья, Верхняя одежда, Пижамы, Аксессуары</p>
                 </div>
               </li>
               <li>
                 <div class="product_item"><a class="product_img" href="#"><img src="images/prod_1.jpg"></a>
                   <h3 class="product_caption">Детская обувь</h3>
-                  <p>Кеды, сапоги, сандали, ботинки</p>
+                  <p class="tablet_hidden">Кеды, сапоги, сандали, ботинки</p>
                 </div>
               </li>
               <li>
                 <div class="product_item"><a class="product_img" href="#"><img src="images/prod_1.jpg"></a>
                   <h3 class="product_caption">Игрушки</h3>
-                  <p>Мягкие игрушки, куклы, пупсы, конструкторы, мякиши</p>
+                  <p class="tablet_hidden">Мягкие игрушки, куклы, пупсы, конструкторы, мякиши</p>
                 </div>
               </li>
               <li>
                 <div class="product_item"><a class="product_img" href="#"><img src="images/prod_1.jpg"></a>
                   <h3 class="product_caption">мамам</h3>
-                  <p>Личная гигиена, одежда, белье, купальники, книги</p>
+                  <p class="tablet_hidden">Личная гигиена, одежда, белье, купальники, книги</p>
                 </div>
               </li>
             </ul>
+          </div>
+          <div class="prod_container">
+            <div class="section_inner">
+              <div class="prod_info slider_controls">
+                <div class="hit_caption subcaption"><span>Хиты продаж</span><span class="hit_counter">12</span></div>
+                <p>В нашем интернет-магазине представлены только тщательно отобранные модели, исключительные диваны хиты продаж в Москве и по России. Каждая модель дивана из нашего интернет каталога – это воплощение отличного дизайна, легенда мебельной отрасли.</p>
+              </div>
+              <div class="hitSlider hit_slider_holder">
+                <div class="hit_slider">
+                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
+                      <div class="product_hit">Хит продаж</div>
+                      <div class="product_share">- 30%</div></a>
+                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
+                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span></div>
+                  </div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
+                      <div class="product_hit">Хит продаж</div>
+                      <div class="product_share">- 30%</div></a>
+                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
+                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span></div>
+                  </div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
+                      <div class="product_hit">Хит продаж</div>
+                      <div class="product_share">- 30%</div></a>
+                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
+                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span></div>
+                  </div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
+                      <div class="product_hit">Хит продаж</div>
+                      <div class="product_share">- 30%</div></a>
+                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
+                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span></div>
+                  </div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
+                      <div class="product_hit">Хит продаж</div>
+                      <div class="product_share">- 30%</div></a>
+                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
+                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span></div>
+                  </div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
+                      <div class="product_hit">Хит продаж</div>
+                      <div class="product_share">- 30%</div></a>
+                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
+                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span></div>
+                  </div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
+                      <div class="product_hit">Хит продаж</div>
+                      <div class="product_share">- 30%</div></a>
+                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
+                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span></div>
+                  </div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
+                      <div class="product_hit">Хит продаж</div>
+                      <div class="product_share">- 30%</div></a>
+                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
+                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span></div>
+                  </div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
+                      <div class="product_hit">Хит продаж</div>
+                      <div class="product_share">- 30%</div></a>
+                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
+                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span></div>
+                  </div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
+                      <div class="product_hit">Хит продаж</div>
+                      <div class="product_share">- 30%</div></a>
+                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
+                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span></div>
+                  </div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
+                      <div class="product_hit">Хит продаж</div>
+                      <div class="product_share">- 30%</div></a>
+                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
+                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span></div>
+                  </div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
+                      <div class="product_hit">Хит продаж</div>
+                      <div class="product_share">- 30%</div></a>
+                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
+                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span></div>
+                  </div>
+                </div>
+                <div class="slide_prev"></div>
+                <div class="slide_next"></div>
+              </div>
+            </div>
+          </div>
+          <div class="prod_container">
+            <div class="section_inner">
+              <div class="prod_info slider_controls">
+                <div class="hit_caption subcaption control_mod"><span>Популярные бренды</span><span class="mob_hidden show_all"> <a class="gl_link" href="#">Смотреть все </a></span></div>
+                <p>В нашем интернет-магазине представлены только самые популярные бренды</p>
+              </div>
+              <div class="popSlider hit_slider_holder">
+                <div class="hit_slider slide_middle">
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_1.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_2.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_3.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_4.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_5.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_6.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_1.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_2.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_3.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_4.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_5.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_6.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_1.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_2.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_3.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_4.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_5.png"/></a></div>
+                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_6.png"/></a></div>
+                </div>
+                <div class="slide_prev"></div>
+                <div class="slide_next"></div>
+              </div>
+            </div>
+          </div>
+          <div class="prod_container">
+            <div class="section_inner">
+              <div class="prod_info about_mod">
+                <div class="hit_caption subcaption">Идеально для детей</div>
+                <p>Группа компаний «Детский мир» является крупнейшим розничным оператором торговли  детскими товарами в России и Казахстане. История компании началась в 1957 году с открытия «Центрального Детского мира на Лубянке». Сегодня Группа компаний объединяет сеть магазинов «Детский мир» и розничную сеть ELC (Early Learning Centre - Центр раннего  <br>  развития).</p>
+                <p>Сеть магазинов «Детский мир» занимает лидирующие позиции в России на рынке детских товаров. На 10 марта 2016 года в состав Группы компаний входят 382 магазина «Детский мир» в 148 городах России и Казахстана, 44 магазина ELC.  Торговая площадь магазинов сети «Детский мир» составляет 492 тыс. кв. м., ELC – 6 тыс. кв. м.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -173,7 +288,9 @@
                   <dt>Мы в соцсетях</dt>
                   <dd>
                     <ul class="about_list">
-                      <li><a class="adout_link" href="#"></a></li>
+                      <li><a class="about_link" href="#"><span class="i-v"></span></a></li>
+                      <li><a class="about_link" href="#"><span class="i-f"></span></a></li>
+                      <li><a class="about_link" href="#"><span class="i-t"></span></a></li>
                     </ul>
                   </dd>
                 </dl>
@@ -189,125 +306,267 @@
     </div>
     <div class="aside_left">
       <div class="aside_menu_holder">
-        <ul class="aside_menu nav">
-          <li class="bdr_mod"><a class="search_block search_aside aside_m_link" href="#"><span class="aside_m_text"><span>Найти товар</span></span><span class="aside_m_icon i-baby-rattle"></span></a></li>
-          <li class="bdr_mod"><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Детская одежда</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-baby-onesie-with-front-pocket-outline"></span></a>
-            <div class="submenu_holder">
-              <ul class="submenu_list">
-                <li><a class="submenu_link" href="#"><span>Все категории</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Платья </span></a></li>
-                <li><a class="submenu_link" href="#"><span>Комплекты одежды</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Верхняя одежда</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Нижнее белье</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Одежда для сна</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Распродажа</span></a></li>
-              </ul>
-            </div>
-          </li>
-          <li><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Детская обувь</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-baby-shoes"></span></a>
-            <div class="submenu_holder">
-              <ul class="submenu_list">
-                <li><a class="submenu_link" href="#"><span>Все категории</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Платья </span></a></li>
-                <li><a class="submenu_link" href="#"><span>Комплекты одежды</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Верхняя одежда</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Нижнее белье</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Одежда для сна</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Распродажа</span></a></li>
-              </ul>
-            </div>
-          </li>
-          <li><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Игрушки</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-bear-toy"></span></a>
-            <div class="submenu_holder">
-              <ul class="submenu_list">
-                <li><a class="submenu_link" href="#"><span>Все категории</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Платья </span></a></li>
-                <li><a class="submenu_link" href="#"><span>Комплекты одежды</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Верхняя одежда</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Нижнее белье</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Одежда для сна</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Распродажа</span></a></li>
-              </ul>
-            </div>
-          </li>
-          <li><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Коляски</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-baby-transport-side-view"></span></a>
-            <div class="submenu_holder">
-              <ul class="submenu_list">
-                <li><a class="submenu_link" href="#"><span>Все категории</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Платья </span></a></li>
-                <li><a class="submenu_link" href="#"><span>Комплекты одежды</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Верхняя одежда</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Нижнее белье</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Одежда для сна</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Распродажа</span></a></li>
-              </ul>
-            </div>
-          </li>
-          <li><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Детские товары</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-baby-diaper-outline"></span></a>
-            <div class="submenu_holder">
-              <ul class="submenu_list">
-                <li><a class="submenu_link" href="#"><span>Все категории</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Платья </span></a></li>
-                <li><a class="submenu_link" href="#"><span>Комплекты одежды</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Верхняя одежда</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Нижнее белье</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Одежда для сна</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Распродажа</span></a></li>
-              </ul>
-            </div>
-          </li>
-          <li><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Мамам</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-baby-onesie-outline"></span></a>
-            <div class="submenu_holder">
-              <ul class="submenu_list">
-                <li><a class="submenu_link" href="#"><span>Все категории</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Платья </span></a></li>
-                <li><a class="submenu_link" href="#"><span>Комплекты одежды</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Верхняя одежда</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Нижнее белье</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Одежда для сна</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Распродажа</span></a></li>
-              </ul>
-            </div>
-          </li>
-          <li><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Автокресла</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-baby-chair"></span></a>
-            <div class="submenu_holder">
-              <ul class="submenu_list">
-                <li><a class="submenu_link" href="#"><span>Все категории</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Платья </span></a></li>
-                <li><a class="submenu_link" href="#"><span>Комплекты одежды</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Верхняя одежда</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Нижнее белье</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Одежда для сна</span></a></li>
-                <li><a class="submenu_link" href="#"><span>Распродажа</span></a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-        <ul class="aside_menu contacts">
-          <li class="bdr_mod"><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Контакты</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-location"></span></a>
-            <div class="submenu_holder">
-              <div class="submenu_inner">
-                <div class="contacts_block">
-                  <div class="subcaption fz_18 fw_700 text_upper">Контакты</div>
-                  <div class="phone fz_16 fw_500">(812) 505-10-41</div>
-                  <p class="fz_13 fw_500"><a class="gl_link" href="#">Заказать звонок</a></p>
-                  <p>email@gmail.com</p>
-                  <dl class="contacts_list">
-                    <dt>Режим работы</dt>
-                    <dd>Будни с 9:00 до 22:00 <br> 
-                      Выходные с 10:00 до 18:00 <br> 
-                      Доставка с 12:00 до 20:00
-                    </dd>
-                    <dt>адрес</dt>
-                    <dd>
-                      г. Санкт-Петербург, <br> ул. Правды, 1, ТЦ «Галерея»</dd>
-                    <p class="fz_13 fw_500"><a class="gl_link" href="#">Посмотреть на карте</a></p>
-                  </dl>
+        <div class="aside_menu_scroller">
+          <ul class="aside_menu nav">
+            <li class="bdr_mod mob_hidden"><a class="search_block search_aside aside_m_link" href="#"><span class="aside_m_text"><span>Найти товар</span></span><span class="aside_m_icon i-baby-rattle"></span></a></li>
+            <li class="bdr_mod"><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Детская одежда</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-baby-onesie-with-front-pocket-outline"></span></a>
+              <div class="submenu_holder">
+                <div class="submenu_w">
+                  <div class="submenu_inner mob_hidden">
+                    <div class="subcaption fz_18 fw_700 text_upper">Детская одежда</div>
+                    <p>Мы отобрали лучшую детскую одежду для ваших детей</p>
+                  </div>
+                  <ul class="submenu_list">
+                    <li class="dt_hidden"><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Все категории</span></span><span class="aside_m_icon i-baby-onesie-with-front-pocket-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Платья </span></span><span class="aside_m_icon i-baby-shoes"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Комплекты одежды</span></span><span class="aside_m_icon i-bear-toy"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Верхняя одежда</span></span><span class="aside_m_icon i-baby-transport-side-view"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Нижнее белье</span></span><span class="aside_m_icon i-baby-diaper-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Одежда для сна</span></span><span class="aside_m_icon i-baby-onesie-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Распродажа</span></span><span class="aside_m_icon i-baby-chair"></span></a></li>
+                    <li class="mob_hidden"><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text show_more">Показать все категории (3)</span></a></li>
+                  </ul>
+                  <div class="submenu_tag_block mob_hidden">
+                    <p>По брендам:</p>
+                    <ul class="submenu_tags">
+                      <li><a class="gl_link" href="#">Zara</a></li>
+                      <li><a class="gl_link" href="#">H&M</a></li>
+                      <li><a class="gl_link" href="#">Okaidi</a></li>
+                      <li><a class="gl_link" href="#">Puma</a></li>
+                      <li><a class="gl_link" href="#">Nike</a></li>
+                      <li><a class="gl_link" href="#">Mothercare</a></li>
+                      <li><a class="gl_link" href="#">Addidas</a></li>
+                      <li><a class="gl_link" href="#">Reebok</a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
-        </ul>
+            </li>
+            <li><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Детская обувь</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-baby-shoes"></span></a>
+              <div class="submenu_holder">
+                <div class="submenu_w">
+                  <div class="submenu_inner mob_hidden">
+                    <div class="subcaption fz_18 fw_700 text_upper">Детская обувь</div>
+                    <p>Мы отобрали лучшую детскую одежду для ваших детей</p>
+                  </div>
+                  <ul class="submenu_list">
+                    <li class="dt_hidden"><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Все категории</span></span><span class="aside_m_icon i-baby-onesie-with-front-pocket-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Платья </span></span><span class="aside_m_icon i-baby-shoes"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Комплекты одежды</span></span><span class="aside_m_icon i-bear-toy"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Верхняя одежда</span></span><span class="aside_m_icon i-baby-transport-side-view"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Нижнее белье</span></span><span class="aside_m_icon i-baby-diaper-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Одежда для сна</span></span><span class="aside_m_icon i-baby-onesie-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Распродажа</span></span><span class="aside_m_icon i-baby-chair"></span></a></li>
+                    <li class="mob_hidden"><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text show_more">Показать все категории (3)</span></a></li>
+                  </ul>
+                  <div class="submenu_tag_block mob_hidden">
+                    <p>По брендам:</p>
+                    <ul class="submenu_tags">
+                      <li><a class="gl_link" href="#">Zara</a></li>
+                      <li><a class="gl_link" href="#">H&M</a></li>
+                      <li><a class="gl_link" href="#">Okaidi</a></li>
+                      <li><a class="gl_link" href="#">Puma</a></li>
+                      <li><a class="gl_link" href="#">Nike</a></li>
+                      <li><a class="gl_link" href="#">Mothercare</a></li>
+                      <li><a class="gl_link" href="#">Addidas</a></li>
+                      <li><a class="gl_link" href="#">Reebok</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Игрушки</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-bear-toy"></span></a>
+              <div class="submenu_holder">
+                <div class="submenu_w">
+                  <div class="submenu_inner mob_hidden">
+                    <div class="subcaption fz_18 fw_700 text_upper">Игрушки</div>
+                    <p>Мы отобрали лучшую детскую одежду для ваших детей</p>
+                  </div>
+                  <ul class="submenu_list">
+                    <li class="dt_hidden"><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Все категории</span></span><span class="aside_m_icon i-baby-onesie-with-front-pocket-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Платья </span></span><span class="aside_m_icon i-baby-shoes"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Комплекты одежды</span></span><span class="aside_m_icon i-bear-toy"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Верхняя одежда</span></span><span class="aside_m_icon i-baby-transport-side-view"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Нижнее белье</span></span><span class="aside_m_icon i-baby-diaper-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Одежда для сна</span></span><span class="aside_m_icon i-baby-onesie-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Распродажа</span></span><span class="aside_m_icon i-baby-chair"></span></a></li>
+                    <li class="mob_hidden"><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text show_more">Показать все категории (3)</span></a></li>
+                  </ul>
+                  <div class="submenu_tag_block mob_hidden">
+                    <p>По брендам:</p>
+                    <ul class="submenu_tags">
+                      <li><a class="gl_link" href="#">Zara</a></li>
+                      <li><a class="gl_link" href="#">H&M</a></li>
+                      <li><a class="gl_link" href="#">Okaidi</a></li>
+                      <li><a class="gl_link" href="#">Puma</a></li>
+                      <li><a class="gl_link" href="#">Nike</a></li>
+                      <li><a class="gl_link" href="#">Mothercare</a></li>
+                      <li><a class="gl_link" href="#">Addidas</a></li>
+                      <li><a class="gl_link" href="#">Reebok</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Коляски</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-baby-transport-side-view"></span></a>
+              <div class="submenu_holder">
+                <div class="submenu_w">
+                  <div class="submenu_inner mob_hidden">
+                    <div class="subcaption fz_18 fw_700 text_upper">Коляски</div>
+                    <p>Мы отобрали лучшую детскую одежду для ваших детей</p>
+                  </div>
+                  <ul class="submenu_list">
+                    <li class="dt_hidden"><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Все категории</span></span><span class="aside_m_icon i-baby-onesie-with-front-pocket-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Платья </span></span><span class="aside_m_icon i-baby-shoes"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Комплекты одежды</span></span><span class="aside_m_icon i-bear-toy"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Верхняя одежда</span></span><span class="aside_m_icon i-baby-transport-side-view"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Нижнее белье</span></span><span class="aside_m_icon i-baby-diaper-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Одежда для сна</span></span><span class="aside_m_icon i-baby-onesie-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Распродажа</span></span><span class="aside_m_icon i-baby-chair"></span></a></li>
+                    <li class="mob_hidden"><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text show_more">Показать все категории (3)</span></a></li>
+                  </ul>
+                  <div class="submenu_tag_block mob_hidden">
+                    <p>По брендам:</p>
+                    <ul class="submenu_tags">
+                      <li><a class="gl_link" href="#">Zara</a></li>
+                      <li><a class="gl_link" href="#">H&M</a></li>
+                      <li><a class="gl_link" href="#">Okaidi</a></li>
+                      <li><a class="gl_link" href="#">Puma</a></li>
+                      <li><a class="gl_link" href="#">Nike</a></li>
+                      <li><a class="gl_link" href="#">Mothercare</a></li>
+                      <li><a class="gl_link" href="#">Addidas</a></li>
+                      <li><a class="gl_link" href="#">Reebok</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Детские товары</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-baby-diaper-outline"></span></a>
+              <div class="submenu_holder">
+                <div class="submenu_w">
+                  <div class="submenu_inner mob_hidden">
+                    <div class="subcaption fz_18 fw_700 text_upper">Детские товары</div>
+                    <p>Мы отобрали лучшую детскую одежду для ваших детей</p>
+                  </div>
+                  <ul class="submenu_list">
+                    <li class="dt_hidden"><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Все категории</span></span><span class="aside_m_icon i-baby-onesie-with-front-pocket-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Платья </span></span><span class="aside_m_icon i-baby-shoes"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Комплекты одежды</span></span><span class="aside_m_icon i-bear-toy"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Верхняя одежда</span></span><span class="aside_m_icon i-baby-transport-side-view"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Нижнее белье</span></span><span class="aside_m_icon i-baby-diaper-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Одежда для сна</span></span><span class="aside_m_icon i-baby-onesie-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Распродажа</span></span><span class="aside_m_icon i-baby-chair"></span></a></li>
+                    <li class="mob_hidden"><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text show_more">Показать все категории (3)</span></a></li>
+                  </ul>
+                  <div class="submenu_tag_block mob_hidden">
+                    <p>По брендам:</p>
+                    <ul class="submenu_tags">
+                      <li><a class="gl_link" href="#">Zara</a></li>
+                      <li><a class="gl_link" href="#">H&M</a></li>
+                      <li><a class="gl_link" href="#">Okaidi</a></li>
+                      <li><a class="gl_link" href="#">Puma</a></li>
+                      <li><a class="gl_link" href="#">Nike</a></li>
+                      <li><a class="gl_link" href="#">Mothercare</a></li>
+                      <li><a class="gl_link" href="#">Addidas</a></li>
+                      <li><a class="gl_link" href="#">Reebok</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Мамам</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-baby-onesie-outline"></span></a>
+              <div class="submenu_holder">
+                <div class="submenu_w">
+                  <div class="submenu_inner mob_hidden">
+                    <div class="subcaption fz_18 fw_700 text_upper">Мамам</div>
+                    <p>Мы отобрали лучшую детскую одежду для ваших детей</p>
+                  </div>
+                  <ul class="submenu_list">
+                    <li class="dt_hidden"><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Все категории</span></span><span class="aside_m_icon i-baby-onesie-with-front-pocket-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Платья </span></span><span class="aside_m_icon i-baby-shoes"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Комплекты одежды</span></span><span class="aside_m_icon i-bear-toy"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Верхняя одежда</span></span><span class="aside_m_icon i-baby-transport-side-view"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Нижнее белье</span></span><span class="aside_m_icon i-baby-diaper-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Одежда для сна</span></span><span class="aside_m_icon i-baby-onesie-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Распродажа</span></span><span class="aside_m_icon i-baby-chair"></span></a></li>
+                    <li class="mob_hidden"><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text show_more">Показать все категории (3)</span></a></li>
+                  </ul>
+                  <div class="submenu_tag_block mob_hidden">
+                    <p>По брендам:</p>
+                    <ul class="submenu_tags">
+                      <li><a class="gl_link" href="#">Zara</a></li>
+                      <li><a class="gl_link" href="#">H&M</a></li>
+                      <li><a class="gl_link" href="#">Okaidi</a></li>
+                      <li><a class="gl_link" href="#">Puma</a></li>
+                      <li><a class="gl_link" href="#">Nike</a></li>
+                      <li><a class="gl_link" href="#">Mothercare</a></li>
+                      <li><a class="gl_link" href="#">Addidas</a></li>
+                      <li><a class="gl_link" href="#">Reebok</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Автокресла</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-baby-chair"></span></a>
+              <div class="submenu_holder">
+                <div class="submenu_w">
+                  <div class="submenu_inner mob_hidden">
+                    <div class="subcaption fz_18 fw_700 text_upper">Автокресла</div>
+                    <p>Мы отобрали лучшую детскую одежду для ваших детей</p>
+                  </div>
+                  <ul class="submenu_list">
+                    <li class="dt_hidden"><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Все категории</span></span><span class="aside_m_icon i-baby-onesie-with-front-pocket-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Платья </span></span><span class="aside_m_icon i-baby-shoes"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Комплекты одежды</span></span><span class="aside_m_icon i-bear-toy"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Верхняя одежда</span></span><span class="aside_m_icon i-baby-transport-side-view"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Нижнее белье</span></span><span class="aside_m_icon i-baby-diaper-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Одежда для сна</span></span><span class="aside_m_icon i-baby-onesie-outline"></span></a></li>
+                    <li><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text"><span>Распродажа</span></span><span class="aside_m_icon i-baby-chair"></span></a></li>
+                    <li class="mob_hidden"><a class="aside_m_link submenu_link" href="#"><span class="aside_m_text show_more">Показать все категории (3)</span></a></li>
+                  </ul>
+                  <div class="submenu_tag_block mob_hidden">
+                    <p>По брендам:</p>
+                    <ul class="submenu_tags">
+                      <li><a class="gl_link" href="#">Zara</a></li>
+                      <li><a class="gl_link" href="#">H&M</a></li>
+                      <li><a class="gl_link" href="#">Okaidi</a></li>
+                      <li><a class="gl_link" href="#">Puma</a></li>
+                      <li><a class="gl_link" href="#">Nike</a></li>
+                      <li><a class="gl_link" href="#">Mothercare</a></li>
+                      <li><a class="gl_link" href="#">Addidas</a></li>
+                      <li><a class="gl_link" href="#">Reebok</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="aside_menu contacts">
+            <li class="bdr_mod"><a class="aside_m_link" href="#"><span class="aside_m_text"><span>Контакты</span></span><span class="submenu_icon"></span><span class="aside_m_icon i-location"></span></a>
+              <div class="submenu_holder">
+                <div class="submenu_inner">
+                  <div class="submenu_block">
+                    <div class="subcaption fz_18 fw_700 text_upper mob_hidden">Контакты</div>
+                    <div class="phone fz_16 fw_500">(812) 505-10-41</div>
+                    <p class="fz_13 fw_500"><a class="gl_link" href="#">Заказать звонок</a></p>
+                    <p>email@gmail.com</p>
+                    <dl class="contacts_list">
+                      <dt>Режим работы</dt>
+                      <dd>Будни с 9:00 до 22:00 <br> 
+                        Выходные с 10:00 до 18:00 <br> 
+                        Доставка с 12:00 до 20:00
+                      </dd>
+                      <dt>адрес</dt>
+                      <dd>
+                        г. Санкт-Петербург, <br> ул. Правды, 1, ТЦ «Галерея»</dd>
+                      <p class="fz_13 fw_500"><a class="gl_link" href="#">Посмотреть на карте</a></p>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
       <ul class="main_menu">
         <li><a class="menu_link" href="#"><span>Новинки</span></a>
@@ -332,6 +591,50 @@
         <li><a class="user_m_link" href="#"><span class="user_m_icon i-toy-ball"></span><span class="user_m_counter">23</span></a></li>
         <li><a class="user_m_link" href="#"><span class="user_m_icon i-truck-side-view-outline"></span><span class="user_m_counter">6</span></a></li>
       </ul>
+    </div>
+    <div class="popup_close_btn popupClose"></div>
+    <div class="popup popup_v2" id="callback_popup">
+      <div class="popup_inner">
+        <ul class="tab_holder tab_v1" id="callback_switcher">
+          <li><a class="tab_link" href="#callback_tab_1"><span>Перезвоните мне</span></a></li>
+          <li><a class="tab_link" href="#callback_tab_2"><span>Задать вопрос</span></a></li>
+        </ul>
+        <div class="tabBlock" data-tab-context="#callback_switcher">
+          <div id="callback_tab_1">
+            <div class="tab_content">
+              <form action="#">
+                <div class="form_cell">
+                  <input class="f_input input_v2" placeholder="Имя"/>
+                </div>
+                <div class="form_cell">
+                  <input class="f_input input_v2" placeholder="Телефон"/>
+                </div>
+                <div class="form_cell">
+                  <button class="btn_v1 blue_btn order_btn">Отправить заявку</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div id="callback_tab_2">
+            <div class="tab_content">
+              <form action="#">
+                <div class="form_cell">
+                  <input class="f_input input_v2" placeholder="Имя"/>
+                </div>
+                <div class="form_cell">
+                  <input class="f_input input_v2" placeholder="Телефон"/>
+                </div>
+                <div class="form_cell">
+                  <textarea class="f_input input_v2" placeholder="Вопрос"></textarea>
+                </div>
+                <div class="form_cell">
+                  <button class="btn_v1 blue_btn order_btn">Отправить вопрос</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

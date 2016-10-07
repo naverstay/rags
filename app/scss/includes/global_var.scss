@@ -31,9 +31,12 @@ $gl_violete_hover: #5a6eff;
 $gl_violete_link_hover: #5569ff;
 $gl_yellow: #fffe97;
 $gl_red: #ff4c6a;
+
+$gl_red_dark: #d83c56;
+
 $gl_green: #bfff73;
 $default_t_color: #7f7f7f;
-$default_t_color: $gl_main_black;
+//$default_t_color: $gl_main_black;
 $placeholder_color: $gl_gray_additional;
 
 $gl_soc: #ccc;
@@ -56,7 +59,6 @@ $font_1: "Trebuchet MS", Helvetica, sans-serif;
 $font_2: 'DSGooseRegular', Arial, Helvetica, sans-serif;
 $font_3: Arial, Helvetica, sans-serif;
 $Tahoma: Tahoma, sans-serif;
-$PTRoubleSans: PTRoubleSans, sans-serif;
 
 $cross_font_ArialBlack: 'Arial Black', 'Helvetica CY', 'Nimbus Sans L', sans-serif;
 $cross_font_Arial: Arial, 'Helvetica CY', 'Nimbus Sans L', sans-serif;
@@ -968,6 +970,29 @@ $cross_font_Verdana: Verdana, 'Geneva CY', 'DejaVu Sans', sans-serif;
   }
 
   @return unquote($value);
+}
+
+@function color-diff($color-a, $color-b) {
+  $hue: hue($color-a) - hue($color-b);
+  $saturation: saturation($color-a) - saturation($color-b);
+  $lightness: lightness($color-a) - lightness($color-b);
+
+  $function-hue: 'adjust-hue';
+  $function-saturation: if($saturation > 0, 'desaturate', 'saturate');
+  $function-lightness: if($lightness > 0, 'darken', 'lighten');
+
+  @return (
+          #{$function-hue}: -($hue),
+          #{$function-saturation}: abs($saturation),
+          #{$function-lightness}: abs($lightness),
+  );
+}
+
+@function apply-color-diff($color, $diff) {
+  @each $key, $value in $diff {
+    $color: call($key, $color, $value);
+  }
+  @return $color;
 }
 
 @mixin columns($columncount : 2, $columngap : 20px) {

@@ -3,12 +3,23 @@ html, body {
 }
 
 html {
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 
 body {
   font: 14px/1.2 $Rubik;
   color: $default_t_color;
+
+  &.modal_opened {
+
+    .logo_block,
+    .aside_left,
+    .aside_right,
+    .wrapper {
+      filter: blur(5px);
+    }
+  }  
 }
 
 .hide {
@@ -40,7 +51,6 @@ body {
 }
 
 .base {
-  min-height: 1500px;
   padding-top: 60px;
 
   @include respond-to-min($resp_s) {
@@ -75,16 +85,16 @@ body {
 }
 
 .main_content {
-  padding-top: 10px;
+  padding: 10px 0 0;
 
   @include respond-to-min($resp_s) {
-    padding-top: 40px;
+    padding: 40px 0;
   }
 }
 
 .product_list {
   @extend %global_flex_block_row_wrap_space_between_stretch;
-  margin: 0 -15px;
+  margin: 0 -15px 43px;
 
   > li {
     width: 50%;
@@ -93,6 +103,7 @@ body {
   }
 
   @include respond-to-min($resp_s) {
+    margin-bottom: 20px;
 
     > li {
       width: 25%;
@@ -117,6 +128,7 @@ body {
 
 .product_img {
   display: block;
+  position: relative;
 
   img {
     display: block;
@@ -124,31 +136,106 @@ body {
   }
 }
 
+.product_hit {
+  position: absolute;
+  left: 0;
+  top: 18px;
+  padding: 8px 10px;
+  background: $gl_yellow;
+  font-weight: 500;
+  color: $gl_main_black;
+  font-size: 12px;
+}
+
+.product_share {
+  position: absolute;
+  right: -3px;
+  top: 18px;
+  padding: 8px;
+  background: $gl_red;
+  font-weight: 500;
+  color: $gl_white;
+  font-size: 12px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 10px solid $gl_red_dark;
+    border-right: 10px solid transparent;
+  }
+
+}
+
+.product_price {
+  @extend %clearfix;
+  text-align: center;
+  padding-top: 5px;
+
+  .old_price {
+    width: 50%;
+    float: left;
+    position: relative;
+    padding-top: 5px;
+    color: $gl_gray_light_2;
+    text-decoration: line-through;
+
+    @include respond-to-min($resp_s) {
+      padding-top: 10px;
+    }
+
+    + .new_price {
+      float: right;
+      width: 50%;
+    }
+
+  }
+
+  .new_price {
+    color: $gl_brown;
+    font-size: 18px;
+
+    @include respond-to-min($resp_s) {
+      font-size: 24px;
+    }
+  }
+
+}
+
 .product_caption {
   font-weight: 500;
   font-size: 12px;
-  margin-top: 18px;
+  margin-top: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: $gl_main_black;
+
+  @include respond-to-min($resp_s) {
+    margin-top: 18px;
+  }
 }
 
 .share_list {
   @extend %global_flex_block_row_wrap_space_between_stretch;
-  margin: 0 -15px;
+  margin: 0 -15px 25px;
 
   > li {
     margin-bottom: 10px;
+    width: 100%;
   }
 
   @include respond-to-min($resp_s) {
-
+    margin-bottom: 0;
+    
     > li {
       width: 50%;
       padding: 0 15px;
       margin-bottom: 40px;
     }
   }
-
 }
 
 .share_item {
@@ -174,6 +261,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  color: $gl_main_black;
 
   .share_caption {
     text-transform: uppercase;
@@ -193,6 +281,169 @@ body {
   }
 
 }
+
+.prod_container {
+  position: relative;
+  border-top: 1px solid $gl_gray_lines;
+  padding: 45px 0 55px;
+
+  @include respond-to-min($resp_s) {
+    padding: 45px 0 25px;
+  }
+}
+
+.prod_info {
+  margin-bottom: 20px;
+
+  .subcaption {
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    line-height: 30px;
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  > p {
+    line-height: 21px;
+    max-width: 660px;
+    letter-spacing: .2px;
+
+    + p {
+      margin-top: 30px;
+    }
+  }
+
+  &.about_mod {
+
+    .subcaption {
+      margin-bottom: 16px;
+    }
+
+    > p {
+      line-height: 23px;
+    }
+  }
+
+  @include respond-to-min($resp_s) {
+
+    .subcaption {
+      font-size: 30px;
+      line-height: 40px;
+      margin-bottom: 16px;
+    }
+  }
+
+  @include respond-to-min($resp_l) {
+    //padding-right: 200px;
+  }
+}
+
+.hit_caption {
+  @extend %clearfix;
+  font-size: 30px;
+  font-weight: 700;
+  color: $gl_main_black;
+  position: relative;
+
+  span {
+
+    &.show_all {
+      position: absolute;
+      right: 0;
+      top: 12px;
+      line-height: 1;
+      letter-spacing: 0;
+
+      .gl_link {
+        display: block;
+        font-size: 13px;
+        padding: 2px 0;
+        text-transform: none;
+        color: $gl_main_black;
+        text-decoration: none;
+        border-bottom: 1px solid $gl_yellow;
+      }
+    }
+  }
+
+  @include respond-to-min($resp_s) {
+    .slider_controls & {
+      margin-right: 185px;
+    }
+
+    &.control_mod {
+      padding-right: 100px;
+    }
+  }
+}
+
+.hit_counter {
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: -.5em;
+  background: $gl_yellow;
+  text-align: center;
+  font-size: 10px;
+  line-height: 20px;
+  margin-left: 7px;
+  letter-spacing: 0;
+  color: $gl_main_black;
+}
+
+.tab_holder {
+  @extend %clearfix;
+
+  &.tab_v1 {
+    margin-left: -25px;
+
+    .tab_link {
+      @include transition_all(color .3s);
+      display: block;
+      color: $gl_violete;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 1px;
+
+      span {
+        @include transition_all(border-color .3s);
+        border-bottom: 1px dashed $gl_violete;
+      }
+
+      &:hover {
+        color: $gl_violete_link_hover;
+
+        span {
+          border-bottom-color: $gl_violete_link_hover;
+        }
+      }
+    }
+
+    > li {
+      float: left;
+      padding-left: 25px;
+      margin-bottom: 20px;
+
+      &.ui-state-active {
+        .tab_link {
+          cursor: default;
+          color: $gl_main_black;
+
+          span {
+            border-bottom-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
 
 .gl_link {
   text-decoration: underline;

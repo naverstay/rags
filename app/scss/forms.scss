@@ -8,5 +8,22 @@
     font: 14px $Rubik;
     color: $gl_main_black;
   }
-  
+
+  &.input_v2 {
+    background: none;
+    border: none;
+    height: 40px;
+    padding: 12px 22px;
+    border-radius: 2px;
+    background: $gl_inp_gray;
+    font: 500 12px/16px $Rubik;
+    color: $gl_gray_2;
+    text-transform: uppercase;
+    letter-spacing: .75px;
+    
+    @at-root textarea#{&} {
+      height: 60px;
+    }
+  }  
 }
+
