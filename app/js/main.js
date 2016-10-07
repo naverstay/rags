@@ -49,12 +49,33 @@ $(function ($) {
     });
 
     initTabs();
+
+    initAsideSubmenu();
     
     initSelect2();
 
     all_dialog_close();
   
 });
+
+function initAsideSubmenu() {
+
+    $('body').delegate('.menuItem', 'mouseenter ', function (e) {
+        $(this).addClass('hovered just_hovered');
+    }).delegate('.menuItem', 'mouseleave', function (e) {
+        $(this).removeClass('hovered just_hovered');
+    }).delegate('.menuItem', 'click', function (e) {
+    
+        var el = $(this);
+
+        if (el.hasClass('just_hovered')) {
+            el.removeClass('just_hovered');
+        } else {
+            el.toggleClass('hovered');
+        }
+    });
+
+}
 
 function initTabs() {
 

@@ -422,7 +422,7 @@ a.menu_link {
 
   @include respond-to-min($resp_s) {
     position: fixed;
-    //z-index: 21;
+    z-index: 22;
     padding-right: 12px;
     line-height: 100px;
   }
@@ -493,7 +493,7 @@ a.menu_link {
   left: 0;
   bottom: 0;
   //padding-right: 8px;
-  z-index: 15;
+  z-index: 20;
   //width: 328px;
   width: 100%;
   overflow-y: auto;
@@ -545,16 +545,14 @@ a.menu_link {
   @include respond-to-min($resp_s) {
     overflow-y: auto;
     margin-right: -25px;
-
-    &:hover {
-      padding-right: 310px;
-    }
+    padding-right: 310px;
   }
 }
 
 .aside_menu_holder {
   //height: 100%;
   position: relative;
+  pointer-events: none;
 
   &:before {
     //z-index: 1;
@@ -588,12 +586,13 @@ a.menu_link {
   }
 
   @include respond-to-min($resp_xl) {
-    top: 150px;
+    padding-top: 150px;
   }
 }
 
 .aside_menu {
   position: relative;
+  pointer-events: all;
 
   &:before {
     z-index: 1;
@@ -669,7 +668,7 @@ a.menu_link {
       border-bottom: 1px solid #cecece;
     }
 
-    &:hover {
+    &.hovered {
 
       .submenu_holder {
         display: block;
@@ -683,6 +682,7 @@ a.menu_link {
           opacity: 1;
           //left: 300px;
           pointer-events: all;
+          visibility: visible;
         }
       }
     }
@@ -805,6 +805,7 @@ a.menu_link {
     padding: 0 25px 0 20px;
     letter-spacing: 1.2px;
 
+    .submenu_link &,
     .aside_menu_holder:hover & {
       margin-left: 0;
     }
@@ -836,6 +837,7 @@ a.menu_link {
 .submenu_w {
   @extend %global_flex_block_column_nowrap_space_between_stretch;
   height: 100%;
+  min-width: 300px;
   overflow-x: hidden;
 
   > .submenu_list {
@@ -856,7 +858,7 @@ a.menu_link {
 }
 
 .submenu_holder {
-  @include transition_all(opacity .3s);
+  //@include transition_all(width .3s);
   display: none;
   background: $gl_white;
 
@@ -865,8 +867,11 @@ a.menu_link {
     //-webkit-transform: translate(100%, 0);
     //-ms-transform: translate(100%, 0);
     //transform: translate(100%, 0);
+    //width: 0;
     opacity: 0;
+    visibility: hidden;
     position: fixed;
+    overflow-x: hidden;
     overflow-y: auto;
     top: 0;
     bottom: 0;
@@ -875,13 +880,17 @@ a.menu_link {
     width: 300px;
     background: $gl_gray_light;
     pointer-events: none;
-
     box-shadow: 5px 0 8px rgba(0, 0, 0, .1);
-  }
 
+    .hovered & {
+      //width: 300px;
+      //z-index: 10;
+    }
+  }
 }
 
 .submenu_inner {
+  min-width: 300px;
   padding: 10px 20px 10px 60px;
 
   > .subcaption {

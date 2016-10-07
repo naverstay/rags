@@ -155,13 +155,13 @@ mixin aside_left()
                 
             .aside_menu_scroller
                 ul.aside_menu.nav
-                    li.bdr_mod.mob_hidden
+                    li.menuItem.bdr_mod.mob_hidden
                         a.search_block.search_aside.aside_m_link(href='#')
                             span.aside_m_text
                                 span Найти товар
                             span.aside_m_icon.i-baby-rattle
                     for item, i in aside_menu
-                        li(class= i == 0 ? "bdr_mod" : "")
+                        li.menuItem(class= i == 0 ? "bdr_mod" : "")
                             a.aside_m_link(href='#')
                                 span.aside_m_text: span=item
                                 span.submenu_icon
@@ -169,7 +169,7 @@ mixin aside_left()
                             +aside_submenu(i, item)
                         
                 ul.aside_menu.contacts
-                    li.bdr_mod
+                    li.bdr_mod.menuItem
                         a.aside_m_link(href='#')
                             span.aside_m_text: span Контакты
                             span.submenu_icon
