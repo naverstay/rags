@@ -5,14 +5,24 @@
 
   &.order_btn {
     float: left;
-    width: 100%;
-    max-width: 200px;
+    //width: 100%;
+    //max-width: 200px;
     cursor: pointer;
     border-radius: 2px;
     font: 500 13px/16px $Rubik;
-    padding: 12px;
+    padding: 12px 44px;
     text-align: center;
     margin-top: 10px;
+
+    &.mod_2 {
+      padding: 12px 24px;
+      margin-bottom: 35px;
+    }
+    
+    &.mod_3 {
+      padding: 12px 36px;
+      margin-bottom: 35px;
+    }
   }
 
   &.load_more_btn {

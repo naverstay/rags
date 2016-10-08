@@ -463,6 +463,57 @@ body {
       }
     }
   }
+
+  &.tab_v2 {
+    margin-left: -40px;
+    margin-bottom: 16px;
+
+    .tab_link {
+      @include transition_all(color .3s);
+      display: block;
+      color: #191919;
+      text-decoration: none;
+      font-size: 13px;
+      padding-top: 13px;
+      line-height: 1;
+      font-weight: 500;
+
+      span {
+        @include transition_all(border-color .3s);
+        border-bottom: 1px solid #6e6e6e;
+      }
+
+      &:hover {
+        color: $gl_violette_link_hover;
+
+        span {
+          border-bottom-color: $gl_violette_link_hover;
+        }
+      }
+    }
+
+    > li {
+      float: left;
+      padding-left: 40px;
+      margin-bottom: 20px;
+
+      &.ui-state-active {
+        .tab_link {
+          cursor: default;
+          font-size: 30px;
+          font-weight: 700;
+          padding-top: 0;
+          color: $gl_main_black;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+
+          span {
+            border-bottom-color: transparent;
+          }
+        }
+      }
+    }
+  }
 }
 
 

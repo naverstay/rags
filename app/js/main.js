@@ -1,4 +1,10 @@
-var body, html, doc, wnd, closeMenuTimer, callback_popup;
+var body, html, doc, wnd,
+    closeMenuTimer,
+    callback_popup,
+    auth_popup,
+    fail_popup,
+    success_popup,
+    recovery_popup;
 
 $(function ($) {
 
@@ -21,6 +27,28 @@ $(function ($) {
     body.delegate('.callback_phone', 'mouseleave', function () {
         $(this).find('select.select2').data().select2.trigger("close");
     });
+
+    initCallbackPopup();
+
+    initAuthPopup();
+
+    initRecoveryPopup();
+
+    initFailPopup();
+
+    initSuccessPopup();
+    
+    initTabs();
+
+    initAsideSubmenu();
+    
+    initSelect2();
+
+    all_dialog_close();
+  
+});
+
+function initCallbackPopup() {
 
     callback_popup = $('#callback_popup').dialog({
         autoOpen: false,
@@ -48,15 +76,128 @@ $(function ($) {
         return false;
     });
 
-    initTabs();
+}
 
-    initAsideSubmenu();
-    
-    initSelect2();
+function initAuthPopup() {
 
-    all_dialog_close();
-  
-});
+    auth_popup = $('#auth_popup').dialog({
+        autoOpen: false,
+        modal: true,
+        closeOnEscape: true,
+        closeText: '',
+        dialogClass: 'no_close_mod dialog_g_size_1',
+        //appendTo: '.wrapper',
+        width: 462,
+        draggable: true,
+        collision: "fit",
+        position: {my: "top center", at: "top center", of: window},
+        open: function (event, ui) {
+            body.addClass('modal_opened');
+        },
+        close: function (event, ui) {
+            body.removeClass('modal_opened');
+        }
+    });
+
+    $('.authBtn').on ('click', function () {
+
+        auth_popup.dialog('open');
+
+        return false;
+    });
+
+}
+
+function initFailPopup() {
+
+    fail_popup = $('#fail_popup').dialog({
+        autoOpen: false,
+        modal: true,
+        closeOnEscape: true,
+        closeText: '',
+        dialogClass: 'no_close_mod dialog_g_size_1',
+        //appendTo: '.wrapper',
+        width: 462,
+        draggable: true,
+        collision: "fit",
+        position: {my: "top center", at: "top center", of: window},
+        open: function (event, ui) {
+            body.addClass('modal_opened');
+        },
+        close: function (event, ui) {
+            body.removeClass('modal_opened');
+        }
+    });
+
+    $('.openFailPopup').on ('click', function () {
+
+        fail_popup.dialog('open');
+
+        return false;
+    });
+
+}
+
+function initSuccessPopup() {
+
+    success_popup = $('#success_popup').dialog({
+        autoOpen: false,
+        modal: true,
+        closeOnEscape: true,
+        closeText: '',
+        dialogClass: 'no_close_mod dialog_g_size_1',
+        //appendTo: '.wrapper',
+        width: 462,
+        draggable: true,
+        collision: "fit",
+        position: {my: "top center", at: "top center", of: window},
+        open: function (event, ui) {
+            body.addClass('modal_opened');
+        },
+        close: function (event, ui) {
+            body.removeClass('modal_opened');
+        }
+    });
+
+    $('.openSuccessPopup').on ('click', function () {
+
+        success_popup.dialog('open');
+
+        return false;
+    });
+
+}
+
+function initRecoveryPopup() {
+
+    recovery_popup = $('#recovery_popup').dialog({
+        autoOpen: false,
+        modal: true,
+        closeOnEscape: true,
+        closeText: '',
+        dialogClass: 'no_close_mod dialog_g_size_1',
+        //appendTo: '.wrapper',
+        width: 462,
+        draggable: true,
+        collision: "fit",
+        position: {my: "top center", at: "top center", of: window},
+        open: function (event, ui) {
+            body.addClass('modal_opened');
+        },
+        close: function (event, ui) {
+            body.removeClass('modal_opened');
+        }
+    });
+
+    $('.passRecoveryBtn').on ('click', function () {
+        auth_popup.dialog('close');
+
+        recovery_popup.dialog('open');
+
+        return false;
+    });
+
+}
 
 function initAsideSubmenu() {
 
