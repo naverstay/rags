@@ -171,7 +171,7 @@ mixin aside_left()
             .aside_menu_scroller
                 ul.aside_menu.nav
                     li.menuItem.bdr_mod.mob_hidden
-                        a.search_block.search_aside.aside_m_link(href='#')
+                        a.search_block.search_aside.aside_m_link.quickSearchBtn(href='#')
                             span.aside_m_text
                                 span Найти товар
                             span.aside_m_icon.i-baby-rattle
@@ -346,6 +346,30 @@ mixin breadcrumbs(list)
             
 mixin popups()
     .popup_close_btn.popupClose
+        
+    #quick_search_popup.popup.popup_v4
+        .q_search_block
+            form(action='#')
+                input.f_input.input_v3(placeholder='Найти товар')
+                button.search_btn.aside_m_icon.i-baby-rattle
+                .adv_search_box
+                    a.gl_link(href='adv_search.html') Перейти к расширенному поиску
+        
+        .q_search_results_holder: ul.q_search_results
+            +loop_while(7)
+                li
+                    .product_item
+                        a.product_img(href='#')
+                            img(src='images/search_rslt_1.jpg')
+                            .product_hit Хит продаж
+                            .product_share - 30%
+                        h3.product_caption Трикотажное платье  <br> с рисунком
+                        .product_price
+                            span.old_price 8449
+                                span.rur 7
+                            span.new_price 4069
+                                span.rur 7
+                    
     #callback_popup.popup.popup_v2
         .popup_inner
             ul#callback_switcher.tab_holder.tab_v1
@@ -409,54 +433,41 @@ mixin popups()
 
     #auth_popup.popup.popup_v3
         .popup_inner
-            ul#auth_switcher.tab_holder.tab_v2
-                li: a.tab_link(href='#auth_tab_1'): span Вход
+            ul.tab_holder.tab_v2
+                li.ui-state-active: span.tab_link(href='#'): span Вход
                 li: a.tab_link(href='#auth_tab_2'): span Зарегистрироваться
                 
-            .tabBlock(data-tab-context='#auth_switcher')
-                #auth_tab_1
-                    .tab_content
-                        form(action='#')
-                            .form_cell
-                                input.f_input.input_v2(placeholder='Email')
-                                
-                            .form_cell
-                                input.f_input.input_v2(placeholder='пароль')
-                                
-                            .form_cell
-                                a.gl_link.cool_text.fz_13.fw_500.passRecoveryBtn(href='#') Забыли пароль?
-                                
-                            .form_cell
-                                button.btn_v1.blue_btn.order_btn Войти
-                                
-                            .alter_auth
-                                p Войти через:
-                                ul.about_list
-                                    li
-                                        a.about_link(href='#')
-                                            span.i-v
-                                    li
-                                        a.about_link(href='#')
-                                            span.i-f
-                                    li
-                                        a.about_link(href='#')
-                                            span.i-t
-                                    li
-                                        a.about_link(href='#')
-                                            span.i-o
-                                    li
-                                        a.about_link(href='#')
-                                            span.i-g
-                                
-                #auth_tab_2
-                    .tab_content
-                        form(action='#')
-                            .form_cell
-                                input.f_input.input_v2(placeholder='Email')
-
-                            .form_cell
-                                input.f_input.input_v2(placeholder='пароль')
-
-                            .form_cell
-                                button.btn_v1.blue_btn.order_btn Зарегистрироваться
+            .tab_content
+                form(action='#')
+                    .form_cell
+                        input.f_input.input_v2(placeholder='Email')
+                        
+                    .form_cell
+                        input.f_input.input_v2(placeholder='пароль')
+                        
+                    .form_cell
+                        a.gl_link.cool_text.fz_13.fw_500.passRecoveryBtn(href='#') Забыли пароль?
+                        
+                    .form_cell
+                        button.btn_v1.blue_btn.order_btn Войти
+                        
+                    .alter_auth
+                        p Войти через:
+                        ul.about_list
+                            li
+                                a.about_link(href='#')
+                                    span.i-v
+                            li
+                                a.about_link(href='#')
+                                    span.i-f
+                            li
+                                a.about_link(href='#')
+                                    span.i-t
+                            li
+                                a.about_link(href='#')
+                                    span.i-o
+                            li
+                                a.about_link(href='#')
+                                    span.i-g
+                        
                                 

@@ -21,6 +21,13 @@
     }
   }
 
+  &.popup_v4 {
+    padding-top: 100px;
+    height: 100% !important;
+    overflow: visible;
+    //@extend %global_flex_block_column_nowrap_space_between_stretch;
+  }
+
   &.popup_success {
     &:before {
       content: '';
@@ -93,11 +100,12 @@
   height: 30px;
   top: 26px;
   right: 26px;
-  z-index: 25;
+  z-index: 1002;
   font-size: 26px;
   text-align: center;
 
   &:before {
+    @include transition_all(color .3s);
     content: $i-cross;
     color: $gl_main_black;
     line-height: 30px;
@@ -109,6 +117,18 @@
     }
   }
 
+  .overlay_v2 & {
+    &:before {
+      color: $gl_white;
+    }
+
+    &:hover {
+      &:before {
+        color: $gl_cool_black;
+      }
+    }
+  }
+  
   .modal_opened & {
     display: block;
   }
@@ -135,4 +155,140 @@
   line-height: 1.4;
   margin-top: 38px;
   min-height: 45px;
+}
+
+.q_search_block {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: $gl_white;
+  height: 50px;
+  padding-left: 60px;
+  padding-right: 250px;
+  border-radius: 2px;
+
+  .aside_m_icon {
+    border-radius: 2px 0 0 2px;
+
+    &:hover {
+      &:before {
+        color: $gl_green;
+      }
+    }
+  }
+}
+
+.q_search_results_holder {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  margin-right: -50px;
+  padding-right: 36px;
+
+  @include respond-to-min($resp_l) {
+    //padding-right: 50px;
+  }
+
+}
+
+.q_search_results {
+  @extend %clearfix;
+  margin-left: -30px;
+
+  .product_item {
+    background: $gl_white;
+  }
+
+  .product_share {
+    right: -10px;
+  }
+
+  .product_share,
+  .product_hit {
+    top: 12px;
+  }
+
+  .product_caption {
+    font-size: 10px;
+    line-height: 18px;
+    margin-top: 15px;
+  }
+
+  .old_price {
+    text-align: right;
+    padding-right: 5px;
+  }
+
+  .new_price {
+    text-align: left;
+    padding-left: 5px;
+  }
+
+  .product_price {
+    padding-bottom: 20px;
+  }
+
+  > li {
+    padding-left: 30px;
+    margin-bottom: 30px;
+    float: left;
+    width: 100%;
+
+    @include respond-to-min($resp_s_1) {
+      width: 50%;
+    }
+
+    @include respond-to-min($resp_s) {
+      width: 33%;
+    }
+
+    @include respond-to-min($resp_l) {
+      width: 25%;
+    }
+
+    @include respond-to-min($resp_xl) {
+      width: 20%;
+    }
+
+    @include respond-to-min($resp_xxl) {
+      width: 16%;
+    }
+  }
+
+  @include respond-to-min($resp_s) {
+    margin-right: -1%;
+  }
+
+  @include respond-to-min($resp_l) {
+    margin-right: 0;
+  }
+
+  @include respond-to-min($resp_xxl) {
+    margin-right: -4%;
+  }
+
+}
+
+.adv_search_box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 240px;
+  line-height: 50px;
+
+  .gl_link {
+    @include transition_all(color .3s);
+    text-decoration: none;
+    color: $gl_violette;
+    font-size: 13px;
+    line-height: normal;
+    display: inline-block;
+    vertical-align: middle;
+
+    &:hover {
+      color: $gl_violette_link_hover;
+    }
+  }
 }

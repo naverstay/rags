@@ -46,7 +46,9 @@ body {
   }
 
   @include respond-to-min($resp_xxl) {
-    padding-left: 300px;
+    .wide_menu & {
+      padding-left: 300px;
+    }
   }
 }
 

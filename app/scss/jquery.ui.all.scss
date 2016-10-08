@@ -22,6 +22,16 @@
   .no_animation & {
     display: none !important;
   }
+  
+  &.dialog_fixed {
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    padding: 80px 30px 30px;
+  }
+  
 }
 
 .dialog_global {
@@ -51,7 +61,12 @@
   left: 0;
   top: 0;
   //	background: #fff;
-  background: transparentize(#000, .25);
+  background: transparentize(#000, .75);
+  
+  .overlay_v2 & {
+    background: transparentize(#000, .85);
+  }
+  
 }
 
 .ui-helper-clearfix {
@@ -85,15 +100,6 @@
       left: 0;
       right: 0;
     }
-
-    &:before {
-      background: url(../i/new_admin/close_blue.svg) no-repeat 0px 0px;
-    }
-    &:hover {
-      &:before {
-        background: url(../i/new_admin/close.svg) no-repeat 0px 0px;
-      }
-    }
   }
 
   .no_close_mod & {
@@ -122,6 +128,10 @@
     text-align: center;
   }
 
+  .no_title & {
+    display: none;
+  }
+  
 }
 
 .dialog_butt_wrap {

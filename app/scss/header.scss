@@ -37,7 +37,9 @@
   }
 
   @include respond-to-min($resp_xxl) {
-    padding-left: 0;
+    .wide_menu & {
+      padding-left: 0;
+    }
   }
 }
 
@@ -121,8 +123,8 @@
       font-size: 18px;
       margin-top: -9px;
     }
-  }  
-  
+  }
+
   @include respond-to-min($resp_s) {
     display: none;
   }
@@ -216,27 +218,30 @@
     }
 
     @include respond-to-min($resp_xxl) {
-      position: fixed;
-      left: 0;
-      width: 300px;
-      line-height: 150px;
-      z-index: 15;
 
-      &:before {
-        z-index: 1;
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 8px;
-        left: 292px;
-        box-shadow: 5px 0 8px rgba(0, 0, 0, 0.1);
-        pointer-events: none;
-      }
-      
-      .logo {
-        margin-top: 10px;
-        max-width: 142px;
+      .wide_menu & {
+        position: fixed;
+        left: 0;
+        width: 300px;
+        line-height: 150px;
+        z-index: 15;
+
+        &:before {
+          z-index: 1;
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 8px;
+          left: 292px;
+          box-shadow: 5px 0 8px rgba(0, 0, 0, 0.1);
+          pointer-events: none;
+        }
+
+        .logo {
+          margin-top: 10px;
+          max-width: 142px;
+        }
       }
     }
   }
@@ -252,7 +257,6 @@
     max-width: 100%;
   }
 }
-
 
 // *********  menu
 
@@ -316,7 +320,6 @@
 
 }
 
-
 .main_menu {
   position: relative;
   font-size: 14px;
@@ -327,7 +330,7 @@
     margin-left: -15px;
     margin-bottom: 30px;
   }
-  
+
   .aside_left & {
     background: $gl_gray_fill;
 
@@ -389,7 +392,7 @@
 
   @include respond-to-min($resp_xxl) {
 
-    .aside_left & {
+    .wide_menu .aside_left & {
       padding-left: 477px;
     }
   }
@@ -416,7 +419,7 @@
   @include respond-to-min($resp_xxl) {
     padding: 0 15px 0 14px;
   }
-  
+
 }
 
 a.menu_link {
@@ -605,9 +608,11 @@ a.menu_link {
       min-width: 300px;
     }
   }
-  
+
   @include respond-to-min($resp_xxl) {
-    padding-top: 150px;
+    .wide_menu & {
+      padding-top: 150px;
+    }
   }
 }
 
@@ -630,7 +635,7 @@ a.menu_link {
   @include respond-to-min($resp_s) {
     margin-right: 8px;
   }
-  
+
   //@extend %global_flex_block_column_nowrap_flex-start_stretch;
   //padding-bottom: 60px;
 
@@ -831,7 +836,9 @@ a.menu_link {
   }
 
   @include respond-to-min($resp_xxl) {
-    margin-left: 0;
+    .wide_menu & {
+      margin-left: 0;
+    }
   }
 }
 
@@ -870,7 +877,7 @@ a.menu_link {
 
         &:hover {
           background: $gl_white;
-          
+
           .aside_m_icon {
             color: $gl_green;
           }
@@ -1005,7 +1012,7 @@ a.menu_link {
       text-transform: none;
     }
   }
-  
+
 }
 
 .submenu_block {

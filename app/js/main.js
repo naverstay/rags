@@ -4,6 +4,7 @@ var body, html, doc, wnd,
     auth_popup,
     fail_popup,
     success_popup,
+    quick_search_popup,
     recovery_popup;
 
 $(function ($) {
@@ -37,6 +38,8 @@ $(function ($) {
     initFailPopup();
 
     initSuccessPopup();
+
+    initQuickSearchPopup();
     
     initTabs();
 
@@ -47,6 +50,36 @@ $(function ($) {
     all_dialog_close();
   
 });
+
+function initQuickSearchPopup() {
+
+    quick_search_popup = $('#quick_search_popup').dialog({
+        autoOpen: false,
+        modal: true,
+        closeOnEscape: true,
+        closeText: '',
+        dialogClass: 'no_close_mod no_title dialog_fixed',
+        //appendTo: '.wrapper',
+        width: '100%',
+        draggable: true,
+        collision: "fit",
+        position: {my: "top center", at: "top center", of: window},
+        open: function (event, ui) {
+            body.addClass('modal_opened overlay_v2');
+        },
+        close: function (event, ui) {
+            body.removeClass('modal_opened overlay_v2');
+        }
+    });
+
+    $('.quickSearchBtn').on ('click', function () {
+
+        quick_search_popup.dialog('open');
+
+        return false;
+    });
+
+}
 
 function initCallbackPopup() {
 
@@ -62,10 +95,10 @@ function initCallbackPopup() {
         collision: "fit",
         position: {my: "top center", at: "top center", of: window},
         open: function (event, ui) {
-            body.addClass('modal_opened');
+            body.addClass('modal_opened overlay_v2');
         },
         close: function (event, ui) {
-            body.removeClass('modal_opened');
+            body.removeClass('modal_opened overlay_v2');
         }
     });
 
@@ -92,10 +125,10 @@ function initAuthPopup() {
         collision: "fit",
         position: {my: "top center", at: "top center", of: window},
         open: function (event, ui) {
-            body.addClass('modal_opened');
+            body.addClass('modal_opened overlay_v2');
         },
         close: function (event, ui) {
-            body.removeClass('modal_opened');
+            body.removeClass('modal_opened overlay_v2');
         }
     });
 
@@ -122,10 +155,10 @@ function initFailPopup() {
         collision: "fit",
         position: {my: "top center", at: "top center", of: window},
         open: function (event, ui) {
-            body.addClass('modal_opened');
+            body.addClass('modal_opened overlay_v2');
         },
         close: function (event, ui) {
-            body.removeClass('modal_opened');
+            body.removeClass('modal_opened overlay_v2');
         }
     });
 
@@ -152,10 +185,10 @@ function initSuccessPopup() {
         collision: "fit",
         position: {my: "top center", at: "top center", of: window},
         open: function (event, ui) {
-            body.addClass('modal_opened');
+            body.addClass('modal_opened overlay_v2');
         },
         close: function (event, ui) {
-            body.removeClass('modal_opened');
+            body.removeClass('modal_opened overlay_v2');
         }
     });
 
@@ -182,10 +215,10 @@ function initRecoveryPopup() {
         collision: "fit",
         position: {my: "top center", at: "top center", of: window},
         open: function (event, ui) {
-            body.addClass('modal_opened');
+            body.addClass('modal_opened overlay_v2');
         },
         close: function (event, ui) {
-            body.removeClass('modal_opened');
+            body.removeClass('modal_opened overlay_v2');
         }
     });
 
