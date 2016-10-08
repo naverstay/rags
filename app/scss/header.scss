@@ -33,8 +33,11 @@
 
   @include respond-to-min($resp_xl) {
     min-height: 99px;
-    padding-left: 0;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .18);
+  }
+
+  @include respond-to-min($resp_xxl) {
+    padding-left: 0;
   }
 }
 
@@ -212,7 +215,7 @@
       }
     }
 
-    @include respond-to-min($resp_xl) {
+    @include respond-to-min($resp_xxl) {
       position: fixed;
       left: 0;
       width: 300px;
@@ -307,7 +310,7 @@
     right: 157px;
   }
 
-  @include respond-to-min($resp_xl) {
+  @include respond-to-min($resp_xxl) {
     right: 165px;
   }
 
@@ -370,7 +373,7 @@
     .aside_left & {
       position: absolute;
       top: 0;
-      padding-left: 477px;
+      padding-left: 413px;
       line-height: 0;
       height: 0;
 
@@ -381,6 +384,13 @@
       > li {
         line-height: 100px;
       }
+    }
+  }
+
+  @include respond-to-min($resp_xxl) {
+
+    .aside_left & {
+      padding-left: 477px;
     }
   }
 }
@@ -400,6 +410,10 @@
   }
 
   @include respond-to-min($resp_s) {
+    padding: 0 12px;
+  }
+
+  @include respond-to-min($resp_xxl) {
     padding: 0 15px 0 14px;
   }
   
@@ -409,7 +423,7 @@ a.menu_link {
   @include transition_all(color .3s);
 
   &:hover {
-    color: $gl_violete_link_hover;
+    color: $gl_violette_link_hover;
   }
 }
 
@@ -431,7 +445,7 @@ a.menu_link {
     padding-right: 18px;
   }
 
-  @include respond-to-min($resp_xl) {
+  @include respond-to-min($resp_xxl) {
     padding-right: 25px;
   }
 
@@ -473,7 +487,7 @@ a.menu_link {
   text-align: center;
 
   .user_m_link:hover & {
-    background: $gl_violete_link_hover;
+    background: $gl_violette_link_hover;
     color: $gl_white;
   }
 }
@@ -499,6 +513,7 @@ a.menu_link {
   overflow-y: auto;
   max-height: calc(100% - 60px);
   margin-left: -100%;
+  background: $gl_white;
 
   //width: 60px;
 
@@ -532,7 +547,7 @@ a.menu_link {
     }
   }
 
-  @include respond-to-min($resp_xl) {
+  @include respond-to-min($resp_xxl) {
     z-index: 14;
     //width: 300px;
   }
@@ -585,7 +600,13 @@ a.menu_link {
     }
   }
 
-  @include respond-to-min($resp_xl) {
+  &:hover {
+    .aside_menu {
+      min-width: 300px;
+    }
+  }
+  
+  @include respond-to-min($resp_xxl) {
     padding-top: 150px;
   }
 }
@@ -809,7 +830,7 @@ a.menu_link {
     }
   }
 
-  @include respond-to-min($resp_xl) {
+  @include respond-to-min($resp_xxl) {
     margin-left: 0;
   }
 }
@@ -963,7 +984,7 @@ a.menu_link {
   }
 
   &:hover {
-    color: $gl_violete_link_hover;
+    color: $gl_violette_link_hover;
   }
   .aside_m_icon {
     left: 15px;
@@ -1032,7 +1053,7 @@ a.menu_link {
 
       &:hover {
         .select2-selection__arrow:before {
-          color: $gl_violete_link_hover;
+          color: $gl_violette_link_hover;
         }
       }
     }
@@ -1059,3 +1080,54 @@ a.menu_link {
     }
   }
 }
+
+.breadcrumbs {
+  @extend %clearfix;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+.breadcrumb_item {
+  @extend %icon_pseudo;
+  float: left;
+  font-size: 12px;
+  margin-bottom: 20px;
+
+  &:after {
+    content: $i-arr_right;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 6px 0 4px;
+    font-size: 14px;
+    color: $gl_main_black;
+  }
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .gl_link {
+    @include transition_all(color .3s);
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    color: $gl_main_black;
+
+    &:hover {
+      color: $gl_violette_link_hover;
+    }
+
+  }
+
+  &:last-child {
+    &:after {
+      display: none;
+    }
+  }
+
+}
+
+
+
+

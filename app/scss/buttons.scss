@@ -15,15 +15,26 @@
     margin-top: 10px;
   }
 
+  &.load_more_btn {
+    text-align: center;
+    display: block;
+    border-radius: 2px;
+    font-size: 13px;
+    padding: 11px;
+    line-height: 16px;
+    font-weight: 500;
+    margin-bottom: 55px;
+  }
+  
 }
 
 .blue_btn {
   @include transition_all(background .3s);
-  background: $gl_violete;
+  background: $gl_violette;
   color: $gl_white;
 
   &:hover {
-    background: $gl_violete_hover;
+    background: $gl_violette_hover;
   }
 
 }
@@ -35,4 +46,17 @@
 .btn_red {
   color: #fff;
   background: #f46b65;
+}
+
+.violette_btn {
+  @include transition_all(background .3s, color .3s);
+  background: $gl_white;
+  color: $gl_main_black;
+  border: 1px solid $gl_violette_link_hover;
+
+  &:hover {
+    color: $gl_white;
+    background: $gl_violette_link_hover;
+  }
+
 }

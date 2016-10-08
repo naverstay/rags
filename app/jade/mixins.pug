@@ -1,11 +1,12 @@
 - var head_menu = ['Новинки','Акции','Оплата','Доставка','О компании']
+- var head_menu_link = ['news.html','share.html','payments.html','delivery.html','about.html']
 - var aside_menu = ['Детская одежда','Детская обувь','Игрушки','Коляски','Детские товары','Мамам','Автокресла']
 - var aside_menu_icon = ['baby-onesie-with-front-pocket-outline','baby-shoes','bear-toy','baby-transport-side-view','baby-diaper-outline','baby-onesie-outline','baby-chair']
     
 - var sub_menu = ['Все категории','Платья ','Комплекты одежды','Верхняя одежда','Нижнее белье','Одежда для сна','Распродажа']
     
 
-mixin dev_head(page_title, index)
+mixin dev_head(page_title, index, news)
     head
         title=page_title
         | 
@@ -29,10 +30,24 @@ mixin dev_head(page_title, index)
         script(src='js/lib/slick.js')
         script(src='js/lib/select2.js')
         script(src='js/main.js')
-        - if (index)
-            script(src='js/index.js')
         | 
         | <!--endbuild-->
+        - if (index)
+            | 
+            | <!--build:js js/index.min.js -->
+            script(src='js/index.js')
+            | 
+            | <!--endbuild-->
+        - if (news)
+            | 
+            | <!--build:js js/news.min.js -->
+            script(src='js/lib/imagesloaded.pkgd.min.js')
+            script(src='js/lib/isotope.pkgd.min.js')
+            script(src='js/lib/packery-mode.pkgd.js')
+            script(src='js/news.js')
+            | 
+            | <!--endbuild-->
+            
 
 mixin loop_while(counter)
     -i=0;
@@ -65,7 +80,7 @@ mixin footer()
                         - if (i == active)
                             span.menu_link.menu_active: span=item
                         - else
-                            a.menu_link(href='#'): span=item
+                            a.menu_link(href=head_menu_link[i]): span=item
                     
             ul.footer_info
                 li
@@ -182,13 +197,13 @@ mixin aside_left()
                     - if (i == active)
                         span.menu_link.menu_active: span=item
                     - else
-                        a.menu_link(href='#'): span=item
-                                
+                        a.menu_link(href=head_menu_link[i]): span=item
+
         ul.auth_menu
             li
                 a.menu_link(href='#'): span Войти
                 
-    .logo_block.header_logo: a.logo(href='#')
+    .logo_block.header_logo: a.logo(href='index.html')
         img(src='images/logo.svg')
 
 mixin aside_submenu(ind, title)
@@ -319,6 +334,16 @@ mixin pop_slider()
         .slide_prev
         .slide_next
         
+mixin breadcrumbs(list)
+    ul.breadcrumbs
+        for item, i in list
+            li.breadcrumb_item
+                - if (i == list.length - 1)
+                    span=item
+                - else
+                    a.gl_link(href='#')=item
+            
+            
 mixin popups()
     .popup_close_btn.popupClose
     #callback_popup.popup.popup_v2

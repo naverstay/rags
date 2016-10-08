@@ -3,9 +3,28 @@
   letter-spacing: 1px;
 }
 
+.page_title {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: $gl_main_black;
+  letter-spacing: 1.5px;
+  
+  @include respond-to-min($resp_s) {
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 32px;
+  }
+}
+
 .subcaption {
   color: $gl_main_black;
   letter-spacing: 1px;
+}
+
+.cool_text {
+  color: $gl_cool_black;
 }
 
 @for $i from 0 through 4 {
@@ -19,3 +38,4 @@
     font-size: 0px + $i;
   }
 }
+

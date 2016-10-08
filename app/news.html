@@ -25,8 +25,11 @@
      
     <!--endbuild-->
      
-    <!--build:js js/index.min.js -->
-    <script src="js/index.js"></script>
+    <!--build:js js/news.min.js -->
+    <script src="js/lib/imagesloaded.pkgd.min.js"></script>
+    <script src="js/lib/isotope.pkgd.min.js"></script>
+    <script src="js/lib/packery-mode.pkgd.js"></script>
+    <script src="js/news.js"></script>
      
     <!--endbuild-->
   </head>
@@ -42,201 +45,160 @@
             </div>
           </div>
         </div>
-        <div class="main_slider mainSlider">
-          <div class="slide"><img src="images/slide_1.jpg"/>
-            <div class="slide_description">
-              <p>В нашем магазине действует акция -30% <span class="mob_hidden"><br> </span>на новую коллекцию. Только до конца апреля.<span class="mob_hidden"><br></span> Ждем ваших заказов</p>
-            </div>
-          </div>
-          <div class="slide"><img src="images/slide_1.jpg"/>
-            <div class="slide_description">
-              <p>В нашем магазине действует акция -30% <span class="mob_hidden"><br> </span>на новую коллекцию. Только до конца апреля.<span class="mob_hidden"><br></span> Ждем ваших заказов</p>
-            </div>
-          </div>
-          <div class="slide"><img src="images/slide_1.jpg"/>
-            <div class="slide_description">
-              <p>В нашем магазине действует акция -30% <span class="mob_hidden"><br> </span>на новую коллекцию. Только до конца апреля.<span class="mob_hidden"><br></span> Ждем ваших заказов</p>
-            </div>
-          </div>
-          <div class="slide"><img src="images/slide_1.jpg"/>
-            <div class="slide_description">
-              <p>В нашем магазине действует акция -30% <span class="mob_hidden"><br> </span>на новую коллекцию. Только до конца апреля.<span class="mob_hidden"><br></span> Ждем ваших заказов</p>
-            </div>
-          </div>
-          <div class="slide_prev mob_hidden"></div>
-          <div class="slide_next mob_hidden"></div>
-        </div>
         <div class="main_content">
           <div class="section_inner">
-            <ul class="share_list">
-              <li>
-                <div class="share_item">
-                  <div class="share_img"><img class="mob_hidden" src="images/sales_2.png"><img class="dt_hidden" src="images/sales_2_mob.png"><a class="share_text" href="#">
-                      <h3 class="share_caption">Бесплатная доставка</h3>
-                      <p>для заказов от 3 000 Р</p></a></div>
-                </div>
+            <ul class="breadcrumbs">
+              <li class="breadcrumb_item"><a class="gl_link" href="#">Главная</a>
               </li>
-              <li>
-                <div class="share_item">
-                  <div class="share_img"><img class="mob_hidden" src="images/sales_1.jpg"><img class="dt_hidden" src="images/sales_1_mob.jpg"><a class="share_text" href="#">
-                      <h3 class="share_caption">весенняя распродажа</h3>
-                      <p>пальто и куртки</p></a></div>
-                </div>
+              <li class="breadcrumb_item"><span>Новости</span>
               </li>
             </ul>
-            <ul class="product_list">
-              <li>
-                <div class="product_item"><a class="product_img" href="#"><img src="images/prod_1.jpg"></a>
-                  <h3 class="product_caption">Детская одежда</h3>
-                  <p class="tablet_hidden">Платья, Верхняя одежда, Пижамы, Аксессуары</p>
+            <h1 class="page_title fw_700">Новости</h1>
+            <ul class="news_list" id="grid">
+              <li class="box x2">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_1.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html"> <span>ПЛАТЬЕ СО СПУЩЕННЫМИ ПЛЕЧАМИ:</span><span class="mob_hidden"> <br>  </span><span>ИНСТРУКЦИЯ ПО ПРИМЕНЕНИЮ</span></a></div>
+                    <p>Ты уже наверняка не первый раз слышишь о том, что платье со спущенными плечами - одна из главных вещей сезона.</p>
+                  </div>
+                  <div class="news_date">5 дней назад</div>
                 </div>
               </li>
-              <li>
-                <div class="product_item"><a class="product_img" href="#"><img src="images/prod_1.jpg"></a>
-                  <h3 class="product_caption">Детская обувь</h3>
-                  <p class="tablet_hidden">Кеды, сапоги, сандали, ботинки</p>
+              <li class="small box">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_2.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ</a></div>
+                  </div>
+                  <div class="news_date">
+                    <div class="product_hit">Акция</div><span>С 12 по 26 апреля</span>
+                  </div>
                 </div>
               </li>
-              <li>
-                <div class="product_item"><a class="product_img" href="#"><img src="images/prod_1.jpg"></a>
-                  <h3 class="product_caption">Игрушки</h3>
-                  <p class="tablet_hidden">Мягкие игрушки, куклы, пупсы, конструкторы, мякиши</p>
+              <li class="small box">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_2.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ</a></div>
+                  </div>
+                  <div class="news_date">С 12 по 26 апреля</div>
                 </div>
               </li>
-              <li>
-                <div class="product_item"><a class="product_img" href="#"><img src="images/prod_1.jpg"></a>
-                  <h3 class="product_caption">мамам</h3>
-                  <p class="tablet_hidden">Личная гигиена, одежда, белье, купальники, книги</p>
+              <li class="small box">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_2.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ</a></div>
+                  </div>
+                  <div class="news_date">С 12 по 26 апреля</div>
                 </div>
               </li>
-            </ul>
-          </div>
-          <div class="prod_container">
-            <div class="section_inner">
-              <div class="prod_info slider_controls">
-                <div class="hit_caption subcaption"><span>Хиты продаж</span><span class="hit_counter">12</span></div>
-                <p>В нашем интернет-магазине представлены только тщательно отобранные модели, исключительные диваны хиты продаж в Москве и по России. Каждая модель дивана из нашего интернет каталога – это воплощение отличного дизайна, легенда мебельной отрасли.</p>
-              </div>
-              <div class="hitSlider hit_slider_holder">
-                <div class="hit_slider">
-                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share">- 30%</div></a>
-                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
-                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span></div>
+              <li class="small box">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_2.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ</a></div>
                   </div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share">- 30%</div></a>
-                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
-                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span></div>
+                  <div class="news_date">С 12 по 26 апреля</div>
+                </div>
+              </li>
+              <li class="small box">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_2.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ</a></div>
                   </div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share">- 30%</div></a>
-                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
-                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span></div>
+                  <div class="news_date">С 12 по 26 апреля</div>
+                </div>
+              </li>
+              <li class="small box">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_2.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ</a></div>
                   </div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share">- 30%</div></a>
-                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
-                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span></div>
-                  </div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share">- 30%</div></a>
-                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
-                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span></div>
-                  </div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share">- 30%</div></a>
-                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
-                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span></div>
-                  </div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share">- 30%</div></a>
-                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
-                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span></div>
-                  </div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share">- 30%</div></a>
-                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
-                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span></div>
-                  </div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share">- 30%</div></a>
-                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
-                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span></div>
-                  </div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share">- 30%</div></a>
-                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
-                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span></div>
-                  </div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share">- 30%</div></a>
-                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
-                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span></div>
-                  </div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/hit_1.jpg"/>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share">- 30%</div></a>
-                    <h3 class="product_caption">Трикотажное платьес рисунком</h3>
-                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span></div>
+                  <div class="news_date">
+                    <div class="product_hit">Акция</div><span>С 12 по 26 апреля</span>
                   </div>
                 </div>
-                <div class="slide_prev"></div>
-                <div class="slide_next"></div>
-              </div>
-            </div>
-          </div>
-          <div class="prod_container">
-            <div class="section_inner">
-              <div class="prod_info slider_controls">
-                <div class="hit_caption subcaption control_mod"><span>Популярные бренды</span><span class="mob_hidden show_all"> <a class="gl_link" href="#">Смотреть все </a></span></div>
-                <p>В нашем интернет-магазине представлены только самые популярные бренды</p>
-              </div>
-              <div class="popSlider hit_slider_holder">
-                <div class="hit_slider slide_middle">
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_1.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_2.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_3.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_4.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_5.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_6.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_1.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_2.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_3.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_4.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_5.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_6.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_1.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_2.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_3.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_4.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_5.png"/></a></div>
-                  <div class="slide"><a class="product_img" href="#"><img src="images/brand_6.png"/></a></div>
+              </li>
+              <li class="small box">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_2.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ</a></div>
+                  </div>
+                  <div class="news_date">С 12 по 26 апреля</div>
                 </div>
-                <div class="slide_prev"></div>
-                <div class="slide_next"></div>
-              </div>
-            </div>
-          </div>
-          <div class="prod_container">
-            <div class="section_inner">
-              <div class="prod_info about_mod">
-                <div class="hit_caption subcaption">Идеально для детей</div>
-                <p>Группа компаний «Детский мир» является крупнейшим розничным оператором торговли  детскими товарами в России и Казахстане. История компании началась в 1957 году с открытия «Центрального Детского мира на Лубянке». Сегодня Группа компаний объединяет сеть магазинов «Детский мир» и розничную сеть ELC (Early Learning Centre - Центр раннего  <br>  развития).</p>
-                <p>Сеть магазинов «Детский мир» занимает лидирующие позиции в России на рынке детских товаров. На 10 марта 2016 года в состав Группы компаний входят 382 магазина «Детский мир» в 148 городах России и Казахстана, 44 магазина ELC.  Торговая площадь магазинов сети «Детский мир» составляет 492 тыс. кв. м., ELC – 6 тыс. кв. м.</p>
-              </div>
-            </div>
+              </li>
+              <li class="small box">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_2.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ</a></div>
+                  </div>
+                  <div class="news_date">С 12 по 26 апреля</div>
+                </div>
+              </li>
+              <li class="small box">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_2.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ</a></div>
+                  </div>
+                  <div class="news_date">С 12 по 26 апреля</div>
+                </div>
+              </li>
+              <li class="small box">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_2.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ</a></div>
+                  </div>
+                  <div class="news_date">С 12 по 26 апреля</div>
+                </div>
+              </li>
+              <li class="small box">
+                <div class="news_block">
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ПЛАТЬЕ СО СПУЩЕННЫМИ ПЛЕЧАМИ: ИНСТРУКЦИЯ ПО ПРИМЕНЕНИЮ</a></div>
+                    <p>Ты уже наверняка не первый раз слышишь о том, что платье со спущенными плечами - одна из главных вещей сезона.</p>
+                  </div>
+                  <div class="news_date">23 февраля 2016</div>
+                </div>
+              </li>
+              <li class="small box">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_2.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ</a></div>
+                  </div>
+                  <div class="news_date">Год назад</div>
+                </div>
+              </li>
+              <li class="small box">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_2.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ</a></div>
+                  </div>
+                  <div class="news_date">Год назад</div>
+                </div>
+              </li>
+              <li class="small box">
+                <div class="news_block to_bottom">
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ПЛАТЬЕ СО СПУЩЕННЫМИ ПЛЕЧАМИ: ИНСТРУКЦИЯ ПО ПРИМЕНЕНИЮ</a></div>
+                    <p>Ты уже наверняка не первый раз слышишь о том, что платье со спущенными плечами - одна из главных вещей сезона.</p>
+                  </div>
+                  <div class="news_date">23 февраля 2016</div>
+                </div>
+              </li>
+              <li class="small box">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_2.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ</a></div>
+                  </div>
+                  <div class="news_date">Год назад</div>
+                </div>
+              </li>
+              <li class="small box">
+                <div class="news_block"><a class="news_img" href="news_1.html"><img src="images/news_2.jpg"></a>
+                  <div class="news_inner">
+                    <div class="news_caption"><a href="news_1.html">ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ</a></div>
+                  </div>
+                  <div class="news_date">Год назад</div>
+                </div>
+              </li>
+            </ul><a class="btn_v1 load_more_btn violette_btn" href="#">Смотреть еще 20</a>
           </div>
         </div>
       </div>

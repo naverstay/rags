@@ -6,7 +6,8 @@ $content-max-w: 1440px;
 $resp_xs: 320px;
 $resp_s: 670px;
 $resp_l: 960px;
-$resp_xl: $content-max-w;
+$resp_xl: 1280px;
+$resp_xxl: $content-max-w;
 
 // colors
 
@@ -26,9 +27,9 @@ $gl_gray_lines: #e6e6e6;
 $gl_gray_additional: #808080;
 $gl_brown: #402d2d;
 $gl_turquoise: #99fffb;
-$gl_violete: #697bff;
-$gl_violete_hover: #5a6eff;
-$gl_violete_link_hover: #5569ff;
+$gl_violette: #697bff;
+$gl_violette_hover: #5a6eff;
+$gl_violette_link_hover: #5569ff;
 $gl_yellow: #fffe97;
 $gl_red: #ff4c6a;
 

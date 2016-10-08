@@ -3,9 +3,9 @@
 @font-face {
   font-family: 'daddys_kid';
   src:
-    url('#{$icomoon-font-path}/daddys_kid.ttf?zgxfcr') format('truetype'),
-    url('#{$icomoon-font-path}/daddys_kid.woff?zgxfcr') format('woff'),
-    url('#{$icomoon-font-path}/daddys_kid.svg?zgxfcr#daddys_kid') format('svg');
+    url('#{$icomoon-font-path}/daddys_kid.ttf?vn4oao') format('truetype'),
+    url('#{$icomoon-font-path}/daddys_kid.woff?vn4oao') format('woff'),
+    url('#{$icomoon-font-path}/daddys_kid.svg?vn4oao#daddys_kid') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -588,6 +588,26 @@
 .i-v {
   &:before {
     content: $i-v;
+  }
+}
+.i-arr_right {
+  &:before {
+    content: $i-arr_right;
+  }
+}
+.i-arr_left {
+  &:before {
+    content: $i-arr_left;
+  }
+}
+.i-sort-desc {
+  &:before {
+    content: $i-sort-desc;
+  }
+}
+.i-sort-asc {
+  &:before {
+    content: $i-sort-asc;
   }
 }
 .i-o {

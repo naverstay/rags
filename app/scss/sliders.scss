@@ -296,7 +296,7 @@
         min-width: 158px;
       }
 
-      @include respond-to-min($resp_xl) {
+      @include respond-to-min($resp_xxl) {
         min-width: 188px;
       }
     }
