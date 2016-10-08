@@ -11,8 +11,7 @@ $(function ($) {
 
     body = $('body');
 
-
-    $('.openMobMenu').on ('click', function () {
+    body.delegate('.openMobMenu', 'click', function () {
         clearTimeout(closeMenuTimer);
 
         if (body.hasClass('menu_opened')) {
@@ -23,10 +22,11 @@ $(function ($) {
 
         body.addClass('icon_close').toggleClass('menu_opened');
         return false;
-    });
 
-    body.delegate('.callback_phone', 'mouseleave', function () {
-        $(this).find('select.select2').data().select2.trigger("close");
+    }).delegate('.openFav', 'click', function () {
+
+        body.toggleClass('fav_opened');
+        return false;
     });
 
     initCallbackPopup();

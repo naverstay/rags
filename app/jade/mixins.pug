@@ -142,7 +142,6 @@ mixin footer()
                 .payments
                     img(src='images/pay_icons.png')
                     
-
 mixin aside_right()
     .aside_right
         ul.user_menu
@@ -157,6 +156,35 @@ mixin aside_right()
                 a.user_m_link.openSuccessPopup(href='#')
                     span.user_m_icon.i-truck-side-view-outline
                     span.user_m_counter 6
+                    
+    .gl_overlay
+    .fav_container
+        .fav_caption
+            span Вам понравилось (999)
+        .fav_close_btn.openFav
+
+        ul.fav_list
+            +loop_while(4)
+                li
+                    .product_item
+                        a.product_img(href='#')
+                            img(src='images/fav_1.jpg')
+                        .prod_rm_btn
+                        h3.product_caption Трикотажное платьес рисунком
+                        .product_price
+                            span.new_price 4069
+                                span.rur 7
+                li
+                    .product_item
+                        a.product_img(href='#')
+                            img(src='images/fav_1.jpg')
+                        .prod_rm_btn
+                        h3.product_caption длинное название Трикотажного  <br>  платья с рисунком
+                        .product_price
+                            span.new_price 2000
+                                span.rur 7
+                            
+        a.btn_v1.fav_btn.light_blue_btn(href='#') Очистить список
         
 mixin aside_left()
     .aside_left

@@ -53,6 +53,7 @@
   display: none !important;
 }
 
+.gl_overlay,
 .ui-widget-overlay {
   z-index: 23 !important;
   position: fixed;
@@ -66,7 +67,14 @@
   .overlay_v2 & {
     background: transparentize(#000, .85);
   }
-  
+}
+
+.gl_overlay {
+  display: none;
+
+  .fav_opened & {
+    display: block;
+  }
 }
 
 .ui-helper-clearfix {

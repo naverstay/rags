@@ -103,11 +103,7 @@
     }
 
     &:after {
-      -webkit-transform: rotate(180deg);
-      -moz-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-      -o-transform: rotate(180deg);
-      transform: rotate(180deg);
+      @include transform_rotate(180);
     }
   }
 
@@ -427,6 +423,109 @@ a.menu_link {
 
   &:hover {
     color: $gl_violette_link_hover;
+  }
+}
+
+.fav_container {
+  @include transition_all(transform .3s);
+  @include transform_translate(100%, 0);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  background: $gl_white;
+  overflow: hidden;
+  z-index: 27;
+  box-shadow: -5px 0 8px rgba(0, 0, 0, .1);
+  width: 100%;
+
+  @include respond-to-min($resp_s) {
+    width: 300px;
+  }
+
+  .fav_opened & {
+    @include transform_translate(0, 0);
+  }
+
+  .fav_list {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+}
+
+.fav_list {
+
+  > li {
+    border-bottom: 1px solid $gl_gray_lines;
+  }
+
+  .product_item {
+    padding-bottom: 15px;
+  }
+  
+  .product_img {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 7px;
+  }
+  
+  .new_price {
+    font-size: 18px;
+  }
+
+  .product_caption {
+    font-size: 10px;
+    line-height: 16px;
+
+    @include respond-to-min($resp_s) {
+      margin-top: 14px;
+    }
+  }
+}
+
+.fav_close_btn {
+  @extend %icon_pseudo;
+  @include transition_all(transform .3s ease);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+
+  &:before {
+    content: $i-cross;
+    color: $gl_main_black;
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+  &:hover {
+    @include transform_rotate(180);
+  }
+}
+
+.fav_caption {
+  position: absolute;
+  right: 0;
+  left: 0;
+  padding: 0 55px 0 20px;
+  top: 0;
+  height: 80px;
+  line-height: 80px;
+  color: $gl_main_black;
+  font-weight: 500;
+  font-size: 16px;
+  border-bottom: 1px solid $gl_gray_lines;
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
   }
 }
 
