@@ -6,7 +6,7 @@
 - var sub_menu = ['Все категории','Платья ','Комплекты одежды','Верхняя одежда','Нижнее белье','Одежда для сна','Распродажа']
     
 
-mixin dev_head(page_title, index, news)
+mixin dev_head(page_title, index, news, search)
     head
         title=page_title
         | 
@@ -45,6 +45,13 @@ mixin dev_head(page_title, index, news)
             script(src='js/lib/isotope.pkgd.min.js')
             script(src='js/lib/packery-mode.pkgd.js')
             script(src='js/news.js')
+            | 
+            | <!--endbuild-->
+        - if (search)
+            | 
+            | <!--build:js js/search.min.js -->
+            script(src='js/lib/nouislider.min.js')
+            script(src='js/search.js')
             | 
             | <!--endbuild-->
             
@@ -371,6 +378,16 @@ mixin breadcrumbs(list)
                 - else
                     a.gl_link(href='#')=item
             
+mixin dropdown_w(caption)
+    .dropdown_w
+        .dropdown_caption=caption
+        block
+        
+        ul.dropdown_controls.form_cell
+            li
+                a.btn_v1.blue_btn.apply_btn.catApply(href='#') Ok
+            li 
+                a.gl_link.catReset.blue_link(href='#') Сбросить
             
 mixin popups()
     .popup_close_btn.popupClose

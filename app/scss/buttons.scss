@@ -12,6 +12,14 @@
     padding: 12px;
     text-align: center;
   }
+
+  &.apply_btn {
+    display: block;
+    font: 500 13px/16px $Rubik;
+    padding: 12px 30px;
+    text-align: center;
+    border-radius: 2px;
+  }
   
   &.order_btn {
     float: left;
@@ -46,6 +54,31 @@
     margin-bottom: 55px;
   }
   
+}
+
+.btn_v2 {
+  height: 50px;
+
+  &.sort_btn {
+    @include transition_all(background .3s, color .3s);
+    display: block;
+    text-transform: uppercase;
+    padding: 15px 12px;
+    font-size: 10px;
+    line-height: 20px;
+    position: relative;
+    color: $gl_white;
+    letter-spacing: 1.2px;
+    
+    &.active {
+      color: $gl_main_black;
+      background: $gl_turquoise;
+    }
+    
+    .sort_icon {
+      margin-left: 5px;
+    }
+  }
 }
 
 .blue_btn {

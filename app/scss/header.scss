@@ -9,9 +9,11 @@
   min-height: 60px;
   background: $gl_white;
   z-index: 1;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
 
   .section_inner {
     @extend %clearfix;
+    @extend %translate3d;
   }
 
   @include respond-to-min($resp_s) {
@@ -21,6 +23,7 @@
     line-height: 100px;
     background: none;
     min-height: 139px;
+    box-shadow: none;
 
     .section_inner {
       padding-left: 30px;
@@ -427,26 +430,27 @@ a.menu_link {
 }
 
 .fav_container {
-  @include transition_all(transform .3s);
+  @include transition_all(transform .3s, box-shadow .3s);
   @include transform_translate(100%, 0);
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
-  padding-top: 80px;
+  padding-top: 60px;
   padding-bottom: 40px;
   background: $gl_white;
   overflow: hidden;
   z-index: 27;
-  box-shadow: -5px 0 8px rgba(0, 0, 0, .1);
   width: 100%;
 
   @include respond-to-min($resp_s) {
     width: 300px;
+    padding-top: 80px;
   }
 
   .fav_opened & {
     @include transform_translate(0, 0);
+    box-shadow: -5px 0 8px rgba(0, 0, 0, .1);
   }
 
   .fav_list {
@@ -490,7 +494,7 @@ a.menu_link {
   @extend %icon_pseudo;
   @include transition_all(transform .3s ease);
   position: absolute;
-  top: 20px;
+  top: 10px;
   right: 20px;
   width: 40px;
   height: 40px;
@@ -507,6 +511,10 @@ a.menu_link {
   &:hover {
     @include transform_rotate(180);
   }
+
+  @include respond-to-min($resp_s) {
+    top: 20px;
+  }
 }
 
 .fav_caption {
@@ -515,8 +523,8 @@ a.menu_link {
   left: 0;
   padding: 0 55px 0 20px;
   top: 0;
-  height: 80px;
-  line-height: 80px;
+  height: 60px;
+  line-height: 60px;
   color: $gl_main_black;
   font-weight: 500;
   font-size: 16px;
@@ -527,6 +535,12 @@ a.menu_link {
     vertical-align: middle;
     line-height: normal;
   }
+
+  @include respond-to-min($resp_s) {
+    height: 80px;
+    line-height: 80px;
+  }
+  
 }
 
 .aside_right {

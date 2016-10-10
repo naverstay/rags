@@ -1,3 +1,21 @@
+.blue_link {
+  @include transition_all(color .3s);
+  color: $gl_violette;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color: $gl_violette_link_hover;
+  }
+}
+
+.caption_v1 {
+  color: $gl_main_black;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
 .title {
   color: $gl_main_black;
   letter-spacing: 1px;

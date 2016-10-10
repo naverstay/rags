@@ -1,7 +1,14 @@
 include mixins.pug
+
+- var gender = ['Любой', 'Девочки','Мальчики']
+- var age = ['Любой', '5','10','15','20','25','30','35','40']
+- var sizes = ['Любой', '5','10','15','20','25','30','35','40']
+- var colors = ['Любой', 'Оранжевый','Красный','Черный','Белый','Синий']
+- var brands = ['Любой', 'Zara','H&M','Okaidi','Puma','Nike','Mothercare','Addidas','Reebok']
+
 doctype html
 html(lang='ru')
-    +dev_head("Daddy's kid Поиск", false, false)
+    +dev_head("Daddy's kid Поиск", false, false, true)
 
     body
         .wrapper
@@ -10,47 +17,188 @@ html(lang='ru')
                 
                 div.main_content
                     .section_inner
-                        +breadcrumbs(['Главная', 'Новости', 'Платье со спущеными плечами'])
+                        +breadcrumbs(['Главная', 'Расширенный поиск'])
                         h1.page_title.fw_700
-                            span Платье со спущенными плечами:
-                            span.mob_hidden <br>  
-                            span инструкция по применению
+                            span Расширенный Поиск
 
-                        .news_container
-                            .article_holder
-                                a.news_img(href='news_1.html')
-                                    img(src='images/news_big.jpg')
-                                    .product_hit Акция
+                        .search_container
+                            form(action='#')
+                                .q_search_block
+                                    input.f_input.input_v3(placeholder='Найти товар')
+                                    button.search_btn.aside_m_icon.i-baby-rattle
+                            
+                                .search_result_info
+                                    span Найден 
+                                    span.fw_500 351 товар
+                                    span , уточните категорию
+                                    
+                                ul.search_filters
+                                    li
+                                        label.filter_check
+                                            input.inp_hidden(type='checkbox')
+                                            span.check_btn
+                                                span.check_icon.i-baby-wrapped-in-swaddle
+                                                span.check_text Верхняя одежда (23)
+                                    li
+                                        label.filter_check
+                                            input.inp_hidden(type='checkbox')
+                                            span.check_btn
+                                                span.check_icon.i-baby-wrapped-in-swaddle
+                                                span.check_text Верхняя одежда (23)
+                                    li
+                                        label.filter_check
+                                            input.inp_hidden(type='checkbox')
+                                            span.check_btn
+                                                span.check_text платья (121)
+                                    li
+                                        label.filter_check
+                                            input.inp_hidden(type='checkbox')
+                                            span.check_btn
+                                                span.check_icon.i-baby-wrapped-in-swaddle
+                                                span.check_text Верхняя одежда (23)
+                                            
+                                ul.search_categories
+                                    li
+                                        .dropdown_holder.catParameter
+                                            .dropdown_btn.dropdownBtn
+                                                .dropdown_reset.catReset
+                                                .dropdown_caption Пол
+                                                .dropdown_val: span.catVal=gender[0]
+                                            +dropdown_w('Пол')
+                                                ul.cat_list.catList(data-default=gender[0])
+                                                    for item, i in gender
+                                                        - if (i > 0)
+                                                            li
+                                                                label.check_emul.check_v1
+                                                                    input.inp_hidden(type='checkbox')
+                                                                    span.check_text=item
+
+                                    li
+                                        .dropdown_holder.catParameter.active
+                                            .dropdown_btn.dropdownBtn
+                                                .dropdown_reset.catReset
+                                                .dropdown_caption ВОзраст
+                                                .dropdown_val: span.catVal=age[0]
+                                            +dropdown_w('ВОзраст')
+                                                ul.cat_list.catList(data-default=age[0])
+                                                    for item, i in age
+                                                        - if (i > 0)
+                                                            li
+                                                                label.check_emul.check_v1
+                                                                    input.inp_hidden(type='checkbox')
+                                                                    span.check_text=item
+
+                                    li
+                                        .dropdown_holder.catParameter.active
+                                            .dropdown_btn.dropdownBtn
+                                                .dropdown_reset.catReset
+                                                .dropdown_caption Бренд
+                                                .dropdown_val: span.catVal=brands[0]
+                                            +dropdown_w('Бренд')
+                                                ul.cat_list.catList(data-default=brands[0])
+                                                    for item, i in brands
+                                                        - if (i > 0)
+                                                            li
+                                                                label.check_emul.check_v1
+                                                                    input.inp_hidden(type='checkbox')
+                                                                    span.check_text=item
+
+                                    li
+                                        .dropdown_holder.catParameter
+                                            .dropdown_btn.dropdownBtn
+                                                .dropdown_reset.catReset
+                                                .dropdown_caption Размер
+                                                .dropdown_val: span.catVal=sizes[0]
+                                            +dropdown_w('Размер')
+                                                ul.cat_list.catList(data-default=sizes[0])
+                                                    for item, i in sizes
+                                                        - if (i > 0)
+                                                            li
+                                                                label.check_emul.check_v1
+                                                                    input.inp_hidden(type='checkbox')
+                                                                    span.check_text=item
+
+                                    li
+                                        .dropdown_holder.catParameter
+                                            .dropdown_btn.dropdownBtn
+                                                .dropdown_reset.catReset
+                                                .dropdown_caption Цена
+                                                .dropdown_val: span.catVal От 0 до 14 000 Р
+                                            .dropdown_w
+                                                .dropdown_caption 
+                                                    span Цена 
+                                                    span.rur ₽
+                                                .cat_list.catList(data-default='Любая')
+                                                    ul.price_toddler_vals
+                                                        li
+                                                            .input_w: input#filter_price_min.f_input.input_v4
+                                                        li
+                                                            .input_w: input#filter_price_max.f_input.input_v4
+                                                    
+                                                    .toddler_v1.price_toddler_holder
+                                                        #price_toddler.price_toddler
+
+                                                ul.dropdown_controls.form_cell
+                                                    li
+                                                        a.btn_v1.blue_btn.apply_btn.catApply(href='#') Ok
+                                                    li
+                                                        a.gl_link.catReset.blue_link(href='#') Сбросить
+
+                                    li
+                                        .dropdown_holder.catParameter.dropdown_w_right
+                                            .dropdown_btn.dropdownBtn
+                                                .dropdown_reset.catReset
+                                                .dropdown_caption Цвет
+                                                .dropdown_val: span.catVal=colors[0]
+                                            +dropdown_w('Цвет')
+                                                ul.cat_list.catList(data-default=colors[0])
+                                                    for item, i in colors
+                                                        - if (i > 0)
+                                                            li
+                                                                label.check_emul.check_v1
+                                                                    input.inp_hidden(type='checkbox')
+                                                                    span.check_text=item
+
+                                ul.search_sort
+                                    li
+                                        label.check_v2.check_emul
+                                            input.inp_hidden(type='checkbox')
+                                            span.check_text в наличии
+                                    li
+                                        span.fz_12 Сортировать по:
                                         
-                                p.cool_text Действует с 12 по 15 апреля
+                                    li
+                                        a.btn_v2.sort_btn.active(href='#')
+                                            span цене
+                                            span.i-sort-desc.sort_icon
+
+                                    li
+                                        a.btn_v2.sort_btn(href='#') скидке
+                                        
+                                    li
+                                        a.btn_v2.sort_btn(href='#') популярности
+                                        
                                     
-                                .article_content
-                                    p.cool_text.fz_18 Ты уже наверняка не первый раз слышишь о том, что платье со спущенными плечами - одна из главных вещей сезона. Мы осуществляем доставку по Москве и Московской области, подъем на грузовом лифте осуществляется бесплатно. Также, в случае необходимости, вы можете забрать свой заказ в пункте самовывоза. Доставка в регионы осуществляется транспортными компаниями, подробные условия всегда можно уточнить у наших менеджеров. 
-                                    h3 Получение товара
                                     
-                                    p Отнеситесь ответственно к получению товара, если хотите быть уверены в том, что он будет доставлен в сохранности. Не поручайте его детям или сторонним людям, чтобы избежать случайного повреждения при подъеме. 
                                     
-                                    h4 При получении товара:
-                                    
-                                    ul
-                                        li ширина проемов входной и межкомнатных дверей в помещении должна составлять не менее 75 х 190 см;
-                                        li для обеспечения возможности беспрепятственного заноса мебели свободная ширина прохода внутри помещения должна быть не менее 105 см;
-                                        li грузовой транспорт должен быть обеспечен беспрепятственным въездом на охраняемую территорию, а также к месту выгрузки не далее чем 15м до подъезда;
-     
-                            .aside_col.loaded
-                                ul.aside_news
+                                .search_result_info
+                                    p.cool_text Показано 3 товара
+                                            
+                                ul.q_search_results
                                     +loop_while(3)
                                         li
-                                            .news_block
-                                                a.news_img(href='news_1.html')
-                                                    img(src='images/news_1.jpg')
-                                                    .product_hit Акция
-                                                .news_inner
-                                                    .news_caption: a(href='news_1.html') ВЕЩЬ СЕЗОНА: КОРСЕТ МАДОННЫ
-                                                .news_date Год назад
-                                                
-                               
-
+                                            .product_item
+                                                a.product_img(href='#')
+                                                    img(src='images/search_rslt_1.jpg')
+                                                    .product_hit Хит продаж
+                                                    .product_share - 30%
+                                                h3.product_caption Трикотажное платье  <br> с рисунком
+                                                .product_price
+                                                    span.old_price 8449
+                                                        span.rur 7
+                                                    span.new_price 4069
+                                                        span.rur 7
+                                    
             +footer()
             
         +aside_left()

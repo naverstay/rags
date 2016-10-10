@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'daddys_kid';
   src:
-    url('fonts/daddys_kid.ttf?vn4oao') format('truetype'),
-    url('fonts/daddys_kid.woff?vn4oao') format('woff'),
-    url('fonts/daddys_kid.svg?vn4oao#daddys_kid') format('svg');
+    url('fonts/daddys_kid.ttf?1gzn6m') format('truetype'),
+    url('fonts/daddys_kid.woff?1gzn6m') format('woff'),
+    url('fonts/daddys_kid.svg?1gzn6m#daddys_kid') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -334,6 +334,9 @@
 }
 .i-two-pieces-of-a-puzzle:before {
   content: "\e968";
+}
+.i-checkmark:before {
+  content: "\e977";
 }
 .i-chevron-down:before {
   content: "\e96c";
