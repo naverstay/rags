@@ -1,0 +1,109 @@
+.cat_holder {
+  background: $gl_gray_light;
+  border-top: 1px solid #d8dbdb;
+  padding: 35px 0 1px;
+  margin: -4px 0 -40px;
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.cat_caption {
+  color: $gl_main_black;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .9px;
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.cat_row {
+  @extend %clearfix;
+  padding: 0 0 28px;
+  margin-bottom: 40px;
+  margin-left: -10px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -30px;
+    left: -30px;
+    border-bottom: 1px solid #d8dbdb;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include respond-to-min($resp_s) {
+    margin-right: -1%;
+  }
+
+  @include respond-to-min($resp_l) {
+    margin-right: 0;
+  }
+
+  @include respond-to-min($resp_xl) {
+    margin-right: -4%;
+  }
+
+  @include respond-to-min($resp_xxl) {
+    margin-right: -2%;
+  }
+}
+
+.cat_unit {
+  float: left;
+  text-decoration: none;
+}
+
+.cat_cell {
+  float: left;
+  margin-top: 30px;
+  padding-left: 10px;
+  width: 50%;
+
+  @include respond-to-min($resp_s) {
+    width: 33%;
+  }
+
+  @include respond-to-min($resp_l) {
+    width: 25%;
+  }
+
+  @include respond-to-min($resp_xl) {
+    width: 16%;
+  }
+
+  @include respond-to-min($resp_xxl) {
+    width: 14%;
+  }
+
+}
+
+.cat_img {
+  margin-bottom: 15px;
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    line-height: 1;
+  }
+
+}
+
+.cat_item_name {
+  color: $gl_main_black;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 1.2px;
+}
+
+
+

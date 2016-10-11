@@ -129,16 +129,18 @@ body {
     }
   }
 
-  &:hover {
-    box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
+  .q_search_results & {
+    &:hover {
+      box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
 
-    .product_share_holder,
-    .product_hit {
-      z-index: 2;
-    }
+      .product_share_holder,
+      .product_hit {
+        z-index: 2;
+      }
 
-    .prod_hover {
-      display: block;
+      .prod_hover {
+        display: block;
+      }
     }
   }
 }
@@ -664,8 +666,56 @@ body {
       }
     }
   }
-}
 
+  &.tab_v3 {
+    @extend %clearfix;
+    position: relative;
+    margin-left: -50px;
+    margin-bottom: 70px;
+    padding: 10px 0 25px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: -30px;
+      left: -30px;
+      height: 1px;
+      background: $gl_gray_lines;
+    }
+
+    > li {
+      float: left;
+      padding-left: 50px;
+
+      &:before {
+        display: none;
+      }
+
+      &.ui-state-active {
+        .tab_link {
+          cursor: default;
+          color: $gl_main_black;
+          border-bottom-color: transparent;
+        }
+      }
+    }
+
+    .tab_link {
+      @include transition_all(color .3s, border .3s);
+      font-size: 18px;
+      text-decoration: none;
+      cursor: pointer;
+      color: $gl_violette;
+      border-bottom: 1px dashed $gl_violette;
+
+      &:hover {
+        color: $gl_violette_link_hover;
+        border-color: $gl_violette_link_hover;
+      }
+    }
+  }
+}
 
 .gl_link {
   text-decoration: underline;

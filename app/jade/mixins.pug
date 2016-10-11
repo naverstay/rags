@@ -49,6 +49,8 @@ mixin dev_head(page_title, index, news, search)
             | 
             | <!--endbuild-->
         - if (search)
+            link(href='//cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css' rel="stylesheet")
+            script(src='//cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js')
             | 
             | <!--build:js js/search.min.js -->
             script(src='js/lib/nouislider.min.js')
@@ -458,18 +460,26 @@ mixin popups()
             .prod_review 
                 .prod_review_photos
                     h3 Топ и брючки тонкой вязки
-                    .prod_review_img.product_img
-                        img(src='images/preview_main_1.jpg')
-                        .product_hit Хит продаж
-                    ul.prod_review_list
+                    .fotorama(data-thumbwidth=60, data-thumbheight=60, data-height=340, data-nav="thumbs")
+                        .prod_review_img.product_img(data-thumb='images/preview_small_1.jpg')
+                            img(src='images/preview_main_1.jpg')
+                            .product_hit Хит продаж
+                        .prod_review_img.product_img(data-thumb='images/preview_small_2.jpg')
+                            img(src='images/preview_main_1.jpg')
+                            .product_hit Хит продаж
+                        .prod_review_img.product_img(data-thumb='images/preview_small_3.jpg')
+                            img(src='images/preview_main_1.jpg')
+                            .product_hit Хит продаж
+                                
+                    //ul.prod_review_list.fotorama
                         li
-                            .product_img
+                            a.product_img( data-nav="thumbs" href='images/preview_main_1.jpg')
                                 img(src='images/preview_small_1.jpg')
                         li
-                            .product_img
+                            a.product_img( data-nav="thumbs" href='images/preview_main_1.jpg')
                                 img(src='images/preview_small_2.jpg')
                         li
-                            .product_img
+                            a.product_img( data-nav="thumbs" href='images/preview_main_1.jpg')
                                 img(src='images/preview_small_3.jpg')
             
             .prod_review_info

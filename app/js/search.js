@@ -91,7 +91,6 @@ function initToddler() {
     price_toddler[0].noUiSlider.on('update', function (values, handle) {
 
         if (!manual_update) {
-            console.log('noui', manual_update);
             filter_price_min.val(parseInt(values[0]));
             filter_price_max.val(parseInt(values[1]));
         }
