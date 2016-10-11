@@ -1,12 +1,13 @@
 .search_container {
 
   @include respond-to-min($resp_s) {
-    margin-top: -15px;
+    margin-top: -20px;
   }
 }
 
 .search_result_info {
   margin: 30px 0 35px;
+  line-height: 1.5;
 }
 
 .search_filters {
@@ -292,11 +293,11 @@
     background: $gl_white;
   }
 
-  .product_share {
+  .product_share_holder {
     right: -10px;
   }
 
-  .product_share,
+  .product_share_holder,
   .product_hit {
     top: 12px;
   }
@@ -361,3 +362,17 @@
   }
 
 }
+
+.catalog_description {
+  border-top: 1px solid #eaeaea;
+  padding-top: 38px;
+  
+  p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #666;
+  }
+}
+
+
+

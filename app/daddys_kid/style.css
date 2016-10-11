@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'daddys_kid';
   src:
-    url('fonts/daddys_kid.ttf?1gzn6m') format('truetype'),
-    url('fonts/daddys_kid.woff?1gzn6m') format('woff'),
-    url('fonts/daddys_kid.svg?1gzn6m#daddys_kid') format('svg');
+    url('fonts/daddys_kid.ttf?gtmf19') format('truetype'),
+    url('fonts/daddys_kid.woff?gtmf19') format('woff'),
+    url('fonts/daddys_kid.svg?gtmf19#daddys_kid') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -370,6 +370,12 @@
 }
 .i-arr_left:before {
   content: "\e976";
+}
+.i-star-outlined:before {
+  content: "\e978";
+}
+.i-star:before {
+  content: "\e979";
 }
 .i-sort-desc:before {
   content: "\e973";

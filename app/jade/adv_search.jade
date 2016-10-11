@@ -131,9 +131,9 @@ html(lang='ru')
                                                 .cat_list.catList(data-default='Любая')
                                                     ul.price_toddler_vals
                                                         li
-                                                            .input_w: input#filter_price_min.f_input.input_v4
+                                                            .input_w: input#filter_price_min.f_input.input_v4(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'prefix' : 'от ', 'suffix': ' Р' ")
                                                         li
-                                                            .input_w: input#filter_price_max.f_input.input_v4
+                                                            .input_w: input#filter_price_max.f_input.input_v4(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'prefix' : 'до ', 'suffix': ' Р' ")
                                                     
                                                     .toddler_v1.price_toddler_holder
                                                         #price_toddler.price_toddler
@@ -185,20 +185,12 @@ html(lang='ru')
                                     p.cool_text Показано 3 товара
                                             
                                 ul.q_search_results
-                                    +loop_while(3)
+                                    +loop_while(2)
                                         li
-                                            .product_item
-                                                a.product_img(href='#')
-                                                    img(src='images/search_rslt_1.jpg')
-                                                    .product_hit Хит продаж
-                                                    .product_share - 30%
-                                                h3.product_caption Трикотажное платье  <br> с рисунком
-                                                .product_price
-                                                    span.old_price 8449
-                                                        span.rur 7
-                                                    span.new_price 4069
-                                                        span.rur 7
-                                    
+                                            +product_item(true)
+                                        li
+                                            +product_item(false)
+                                            
             +footer()
             
         +aside_left()

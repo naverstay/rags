@@ -37,13 +37,24 @@
   }
 
   &.input_v4 {
-    text-align: center;
+    text-align: center !important;
     height: 35px;
     border-radius: 2px;
     padding: 10px;
     font: 14px/15px $Rubik;
     color: $gl_main_black;
     background: $gl_gray_lines;
+  }
+
+  &.input_v5 {
+    height: 40px;
+    padding: 10px 0;
+    color: $gl_white;
+    text-transform: uppercase;
+    font: 500 12px/20px $Rubik;
+    letter-spacing: 1.2px;
+    //border-bottom: 1px solid $gl_gray_lines;
+    border-bottom: 1px solid #55586b;
   }
 }
 
@@ -91,6 +102,68 @@
   .inp_hidden:checked + .check_btn {
     background: $gl_inp_gray;
   }
+}
+
+.option_switch {
+  display: block;
+
+  .check_text {
+    @include transition_all(background .3s, box-shadow .3s);
+    width: 40px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    text-align: center;
+    min-height: 35px;
+    padding: 5px;
+    line-height: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .15);
+    font-weight: 500;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: $gl_main_black;
+
+    span {
+      padding-top: 3px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    img {
+      border-radius: 100%;
+      display: block;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &:hover {
+    .check_text {
+      background: $gl_turquoise;
+    }
+  }
+
+  &.round {
+    .check_text {
+      height: 40px;
+      border-radius: 100%;
+    }
+  }
+
+  .inp_hidden:checked + .check_text {
+    box-shadow: none;
+    background: $gl_turquoise;
+  }
+
+  .inp_hidden:disabled + .check_text {
+    box-shadow: none;
+    cursor: default;
+    background: $gl_white;
+    opacity: .3;
+    pointer-events: none;
+  }
+
 }
 
 .check_emul {

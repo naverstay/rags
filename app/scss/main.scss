@@ -117,6 +117,7 @@ body {
 .product_item {
   position: relative;
   text-align: center;
+  background: $gl_white;
 
   p {
     margin-top: 10px;
@@ -127,6 +128,83 @@ body {
       display: none;
     }
   }
+
+  &:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
+
+    .product_share_holder,
+    .product_hit {
+      z-index: 2;
+    }
+
+    .prod_hover {
+      display: block;
+    }
+  }
+}
+
+.prod_hover {
+  display: none;
+}
+
+.hover_img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  background: inherit;
+}
+
+.product_q_review {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  margin-left: -80px;
+  width: 160px;
+  bottom: 20px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 9px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.product_item_overview {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  right: 0;
+  left: 0;
+  background: inherit;
+  font-size: 12px;
+  padding-bottom: 14px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
+}
+
+.prod_colors {
+  text-align: center;
+  margin-bottom: 12px;
+
+  > li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 1px 0;
+  }
+}
+
+.prod_sizes {
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $gl_main_black;
 }
 
 .prod_rm_btn {
@@ -161,10 +239,13 @@ body {
 .product_img {
   display: block;
   position: relative;
+  background: inherit;
+  text-align: center;
 
   img {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    max-width: 100%;  
   }
 }
 
@@ -201,15 +282,52 @@ body {
   }
 }
 
-.product_share {
+.product_share_holder {
   position: absolute;
   right: -3px;
   top: 18px;
+}
+
+.prod_fav {
+  @extend %icon_pseudo;
+  @include transition_all(background .3s, color .3s);
+  float: left;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  position: relative;
+  background: $gl_gray_light;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 3px;
+
+  &:before {
+    color: $gl_main_black;
+    line-height: 25px;
+    font-size: 18px;
+    content: $i-star-outlined;
+  }
+
+  &:hover {
+    background: $gl_turquoise;
+  }
+
+  &.favorite {
+    &:before {
+      content: $i-star;
+    }
+  }
+}
+
+.product_share {
+  position: relative;
   padding: 8px;
   background: $gl_red;
   font-weight: 500;
   color: $gl_white;
   font-size: 12px;
+  float: right;
+  margin-left: 15px;
 
   &:before {
     content: '';
@@ -221,7 +339,6 @@ body {
     border-top: 10px solid $gl_red_dark;
     border-right: 10px solid transparent;
   }
-
 }
 
 .product_price {

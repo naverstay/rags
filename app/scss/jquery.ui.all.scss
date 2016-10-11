@@ -18,7 +18,8 @@
   position: absolute;
   display: none;
   outline: 0;
-
+  max-width: 98%;
+  
   .no_animation & {
     display: none !important;
   }
@@ -130,6 +131,14 @@
     height: 20px;
     border-radius: 2px 2px 0 0;
     background: #fff;
+  }
+
+  .dialog_g_size_2 & {
+    height: 20px;
+    border-radius: 2px 2px 0 0;
+    margin-bottom: -20px;
+    position: relative;
+    z-index: 1;
   }
 
   .title_center_mod & {

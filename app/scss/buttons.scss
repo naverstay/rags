@@ -21,6 +21,15 @@
     border-radius: 2px;
   }
   
+  &.cart_btn {
+    display: block;
+    cursor: pointer;
+    border-radius: 2px;
+    font: 500 13px/16px $Rubik;
+    padding: 12px;
+    text-align: center;
+  }
+  
   &.order_btn {
     float: left;
     //width: 100%;
@@ -109,6 +118,17 @@
 
   &:hover {
     color: $gl_white;
+    background: $gl_violette_link_hover;
+  }
+}
+
+.violette_btn_transp {
+  @include transition_all(background .3s, color .3s);
+  background: none;
+  color: $gl_white;
+  border: 1px solid $gl_violette_link_hover;
+
+  &:hover {
     background: $gl_violette_link_hover;
   }
 }

@@ -27,6 +27,15 @@ $(function ($) {
 
         body.toggleClass('fav_opened');
         return false;
+        
+    }).delegate('.toggleOneClick', 'click', function () {
+
+        $('.oneClickForm').toggle();
+        return false;
+        
+    }).delegate('.favBtn', 'click', function () {
+        $(this).toggleClass('favorite');
+        return false;
     });
 
     initCallbackPopup();

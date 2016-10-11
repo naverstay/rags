@@ -1,5 +1,6 @@
-- var head_menu = ['Новинки','Акции','Оплата','Доставка','О компании']
-- var head_menu_link = ['news.html','share.html','payments.html','delivery.html','about.html']
+//- var head_menu = ['Новинки','Акции','Оплата','Доставка','О компании']
+- var head_menu = ['Каталог','Новинки','Акции','Доставка и оплата','О компании']
+- var head_menu_link = ['catalog.html','news.html','payments.html','delivery.html','about.html']
 - var aside_menu = ['Детская одежда','Детская обувь','Игрушки','Коляски','Детские товары','Мамам','Автокресла']
 - var aside_menu_icon = ['baby-onesie-with-front-pocket-outline','baby-shoes','bear-toy','baby-transport-side-view','baby-diaper-outline','baby-onesie-outline','baby-chair']
     
@@ -51,6 +52,7 @@ mixin dev_head(page_title, index, news, search)
             | 
             | <!--build:js js/search.min.js -->
             script(src='js/lib/nouislider.min.js')
+            script(src='js/lib/jquery.inputmask.bundle.js')
             script(src='js/search.js')
             | 
             | <!--endbuild-->
@@ -62,6 +64,42 @@ mixin loop_while(counter)
         -i++;
         block
 
+mixin product_item(old_price)
+    .product_item
+        a.product_img(href='#')
+            img(src='images/dress_1.jpg')
+            .hover_img.prod_hover
+                img(src='images/hover_1.jpg')
+            .product_hit Хит продаж
+            .product_share_holder
+                span.prod_hover.prod_fav.favBtn
+                .product_share - 30%
+            .product_q_review.violette_btn.prod_hover.openReview.mob_hidden Быстрый просмотр
+        h3.product_caption Трикотажное платье  <br> с рисунком
+        .product_price
+            - if (old_price)
+                span.old_price 8449
+                    span.rur 7
+            span.new_price 4069
+                span.rur 7
+        
+        .product_item_overview.prod_hover
+            p Цвета и размеры в наличии
+            ul.prod_colors
+                li
+                    .prod_color
+                        img(src='images/color_1.png')
+                li
+                    .prod_color
+                        img(src='images/color_2.png')
+                li
+                    .prod_color
+                        img(src='images/color_3.png')
+                li
+                    .prod_color
+                        img(src='images/color_4.png')
+            .prod_sizes xs, s, m, xxl, xxxl
+        
 mixin header(active)
     div.header
         a.mob_menu_btn.openMobMenu(href='#')
@@ -321,7 +359,7 @@ mixin hit_slider()
                     a.product_img(href='#')
                         img(src='images/hit_1.jpg')
                         .product_hit Хит продаж
-                        .product_share - 30%
+                        .product_share_holder: .product_share - 30%
                     h3.product_caption Трикотажное платьес рисунком
                     .product_price
                         span.old_price 8449
@@ -332,7 +370,7 @@ mixin hit_slider()
                     a.product_img(href='#')
                         img(src='images/hit_1.jpg')
                         .product_hit Хит продаж
-                        .product_share - 30%
+                        .product_share_holder: .product_share - 30%
                     h3.product_caption Трикотажное платьес рисунком
                     .product_price
                         span.new_price 4069
@@ -407,7 +445,7 @@ mixin popups()
                         a.product_img(href='#')
                             img(src='images/search_rslt_1.jpg')
                             .product_hit Хит продаж
-                            .product_share - 30%
+                            .product_share_holder: .product_share - 30%
                         h3.product_caption Трикотажное платье  <br> с рисунком
                         .product_price
                             span.old_price 8449
@@ -415,6 +453,110 @@ mixin popups()
                             span.new_price 4069
                                 span.rur 7
                     
+    #review_popup.popup.popup_v5
+        .popup_inner
+            .prod_review 
+                .prod_review_photos
+                    h3 Топ и брючки тонкой вязки
+                    .prod_review_img.product_img
+                        img(src='images/preview_main_1.jpg')
+                        .product_hit Хит продаж
+                    ul.prod_review_list
+                        li
+                            .product_img
+                                img(src='images/preview_small_1.jpg')
+                        li
+                            .product_img
+                                img(src='images/preview_small_2.jpg')
+                        li
+                            .product_img
+                                img(src='images/preview_small_3.jpg')
+            
+            .prod_review_info
+                .product_share_holder: .product_share - 30%
+                .prod_review_cart
+                    .product_price
+                        span.new_price 4069
+                            span.rur 7
+                        span.old_price 8449
+                            span.rur 7
+                            
+                    .prod_review_controls_w
+                        ul.prod_review_controls
+                            li
+                                a.btn_v1.blue_btn.cart_btn(href='#') В корзину
+                            li
+                                a.btn_v1.violette_btn_transp.cart_btn.toggleOneClick(href='#') Купить в 1 клик
+                            li
+                                a.prod_fav.favBtn(href='#')
+                                
+                        .prod_review_1_click.oneClickForm
+                            form(action='#')
+                                .form_cell
+                                    input.f_input.input_v5(placeholder='Имя')
+                                .form_cell
+                                    input.f_input.input_v5(placeholder='телефон')
+                                    
+                                ul.dropdown_controls
+                                    li
+                                        a.btn_v1.blue_btn.apply_btn(href='#') Купить
+                                    li
+                                        a.gl_link.white_link.toggleOneClick(href='#') Отменить
+                            
+                            
+                .prod_review_options
+                    dl.prod_options 
+                        dt Цвет: 
+                        dd Белый в синюю полоску
+                        
+                    ul.prod_options_switch
+                        li
+                            label.option_switch.round
+                                input.inp_hidden(type='radio' name='prod_color')
+                                span.check_text
+                                    img(src='images/color_1_big.png')
+                                    
+                        li
+                            label.option_switch.round
+                                input.inp_hidden(type='radio' name='prod_color')
+                                span.check_text
+                                    img(src='images/color_2_big.png')
+                                
+                    dl.prod_options 
+                        dt Размер: 
+                        dd &nbsp;
+                        
+                    ul.prod_options_switch
+                        li
+                            label.option_switch
+                                input.inp_hidden(type='radio' name='prod_size')
+                                span.check_text: span xs
+                        li
+                            label.option_switch
+                                input.inp_hidden(type='radio' name='prod_size')
+                                span.check_text: span s
+                        li
+                            label.option_switch
+                                input.inp_hidden(type='radio' name='prod_size' disabled)
+                                span.check_text: span m
+                        li
+                            label.option_switch
+                                input.inp_hidden(type='radio' name='prod_size')
+                                span.check_text: span l
+                        li
+                            label.option_switch
+                                input.inp_hidden(type='radio' name='prod_size')
+                                span.check_text: span xl
+                        li
+                            label.option_switch
+                                input.inp_hidden(type='radio' name='prod_size' disabled)
+                                span.check_text: span xxl
+
+                    p Мужские джинсы PlanB, выполненные из плотного денима на основе хлопка. Традиционный силуэт, прямой крой и средняя посадка. 
+                
+                    .footer_info_control
+                        a.gl_link(href='#') На страницу товара
+
     #callback_popup.popup.popup_v2
         .popup_inner
             ul#callback_switcher.tab_holder.tab_v1
