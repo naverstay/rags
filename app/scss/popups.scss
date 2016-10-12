@@ -350,14 +350,100 @@
 
 .prod_review_info {
   @extend %global_flex_block_column_nowrap_space_between_stretch;
-  float: right;
-  width: 50%;
   position: relative;
   background: $gl_gray_light;
 
+  .popup & {
+    float: right;
+    width: 50%;
+  }
+  
   .product_share_holder {
     top: 35px;
     right: -10px;
+  }
+}
+
+.prod_rating_list {
+  @extend %clearfix;
+  color: $gl_main_black;
+  font-size: 12px;
+  line-height: 20px;
+  margin-left: -11px;
+  margin-bottom: 23px;
+
+  li {
+    float: left;
+    padding-left: 11px;
+  }
+}
+
+.prod_rating {
+  @extend %icon_pseudo;
+  @include transition_all(color .3s);
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  color: $gl_red;
+  font-size: 18px;
+
+  &:before {
+    content: $i-star-outlined;
+  }
+
+  &.active {
+    &:before {
+      content: $i-star;
+    }
+  }
+}
+
+.prod_footer_info {
+  @extend %clearfix;
+  position: relative;
+  margin: 15px 0 -20px;
+  padding-top: 15px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 1px;
+    background: $gl_gray_lines;
+    right: -40px;
+    left: -40px;
+  }
+}
+
+.prod_f_inf {
+  float: left;
+  font-size: 12px;
+  padding-right: 5px;
+  margin-top: 10px;
+  min-width: 170px;
+  color: $gl_main_black;
+}
+
+.prod_f_icon {
+  @extend %icon_pseudo;
+  margin-right: 10px;
+
+  &.in_stock {
+    @extend .i-checkmark;
+
+    color: #39b54a;
+  }
+
+  &.expected {
+    @extend .i-clock;
+
+    color: #e5c205;
+  }
+
+  &.not_available {
+    @extend .i-cross;
+
+    color: $gl_red;
   }
 }
 
@@ -433,6 +519,7 @@
   @include flex(1 0 auto);
   position: relative;
   padding: 28px 32px 50px;
+  overflow: hidden;
 
   .footer_info_control {
     padding: 0 32px 22px;
@@ -444,7 +531,6 @@
     padding-top: 3px;
     font-size: 12px;
   }
-
 }
 
 .prod_options {

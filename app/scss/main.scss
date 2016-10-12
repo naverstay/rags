@@ -715,6 +715,48 @@ body {
       }
     }
   }
+
+  &.tab_v4 {
+    @extend %clearfix;
+
+    > li {
+      float: left;
+
+      &:before {
+        display: none;
+      }
+
+      &.ui-state-active {
+        .tab_link {
+          cursor: default;
+          background: $gl_inp_gray;
+          color: $gl_main_black;
+          border-bottom-color: transparent;
+        }
+      }
+    }
+
+    .tab_link {
+      @include transition_all(color .3s, border .3s);
+      display: block;
+      text-decoration: none;
+      cursor: pointer;
+      height: 40px;
+      padding: 10px 19px;
+      color: $gl_main_black;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 20px;
+      background: none;
+      text-transform: uppercase;
+      border-radius: 4px 4px 0 0;
+      letter-spacing: 1px;
+
+      &:hover {
+        color: $gl_violette_link_hover;
+      }
+    }
+  }
 }
 
 .gl_link {

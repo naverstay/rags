@@ -7,7 +7,7 @@
 - var sub_menu = ['Все категории','Платья ','Комплекты одежды','Верхняя одежда','Нижнее белье','Одежда для сна','Распродажа']
     
 
-mixin dev_head(page_title, index, news, search)
+mixin dev_head(page_title, index, news, search, product)
     head
         title=page_title
         | 
@@ -68,7 +68,7 @@ mixin loop_while(counter)
 
 mixin product_item(old_price)
     .product_item
-        a.product_img(href='#')
+        a.product_img(href='product.html')
             img(src='images/dress_1.jpg')
             .hover_img.prod_hover
                 img(src='images/hover_1.jpg')
@@ -214,7 +214,7 @@ mixin aside_right()
             +loop_while(4)
                 li
                     .product_item
-                        a.product_img(href='#')
+                        a.product_img(href='product.html')
                             img(src='images/fav_1.jpg')
                         .prod_rm_btn
                         h3.product_caption Трикотажное платьес рисунком
@@ -223,7 +223,7 @@ mixin aside_right()
                                 span.rur 7
                 li
                     .product_item
-                        a.product_img(href='#')
+                        a.product_img(href='product.html')
                             img(src='images/fav_1.jpg')
                         .prod_rm_btn
                         h3.product_caption длинное название Трикотажного  <br>  платья с рисунком
@@ -358,7 +358,7 @@ mixin hit_slider()
         .hit_slider
             +loop_while(6)
                 .slide
-                    a.product_img(href='#')
+                    a.product_img(href='product.html')
                         img(src='images/hit_1.jpg')
                         .product_hit Хит продаж
                         .product_share_holder: .product_share - 30%
@@ -369,7 +369,7 @@ mixin hit_slider()
                         span.new_price 4069
                             span.rur 7
                 .slide
-                    a.product_img(href='#')
+                    a.product_img(href='product.html')
                         img(src='images/hit_1.jpg')
                         .product_hit Хит продаж
                         .product_share_holder: .product_share - 30%
@@ -386,26 +386,24 @@ mixin pop_slider()
         .hit_slider.slide_middle
             +loop_while(3)
                 .slide
-                    a.product_img(href='#')
+                    a.product_img(href='product.html')
                         img(src='images/brand_1.png')
                 .slide
-                    a.product_img(href='#')
+                    a.product_img(href='product.html')
                         img(src='images/brand_2.png')
                 .slide
-                    a.product_img(href='#')
+                    a.product_img(href='product.html')
                         img(src='images/brand_3.png')
                 .slide
-                    a.product_img(href='#')
+                    a.product_img(href='product.html')
                         img(src='images/brand_4.png')
                 .slide
-                    a.product_img(href='#')
+                    a.product_img(href='product.html')
                         img(src='images/brand_5.png')
                 .slide
-                    a.product_img(href='#')
+                    a.product_img(href='product.html')
                         img(src='images/brand_6.png')
-                        
-                
-                            
+    
         .slide_prev
         .slide_next
         
@@ -416,7 +414,7 @@ mixin breadcrumbs(list)
                 - if (i == list.length - 1)
                     span=item
                 - else
-                    a.gl_link(href='#')=item
+                    a.gl_link(href= item == 'Главная' ? 'index.html' : (item == 'Каталог' ? 'catalog.html' : 'products.html'))=item
             
 mixin dropdown_w(caption)
     .dropdown_w
@@ -429,6 +427,115 @@ mixin dropdown_w(caption)
             li 
                 a.gl_link.catReset.blue_link(href='#') Сбросить
             
+mixin prod_review_info(product_page)
+    .prod_review_info
+        .product_share_holder: .product_share - 30%
+        .prod_review_cart
+            .product_price
+                span.new_price 4069
+                    span.rur 7
+                span.old_price 8449
+                    span.rur 7
+
+            .prod_review_controls_w
+                ul.prod_review_controls
+                    li
+                        a.btn_v1.blue_btn.cart_btn(href='#') В корзину
+                    li
+                        a.btn_v1.violette_btn_transp.cart_btn.toggleOneClick(href='#') Купить в 1 клик
+                    li
+                        a.prod_fav.favBtn(href='#')
+
+                .prod_review_1_click.oneClickForm
+                    form(action='#')
+                        .form_cell
+                            input.f_input.input_v5(placeholder='Имя')
+                        .form_cell
+                            input.f_input.input_v5(placeholder='телефон')
+
+                        ul.dropdown_controls
+                            li
+                                a.btn_v1.blue_btn.apply_btn(href='#') Купить
+                            li
+                                a.gl_link.white_link.toggleOneClick(href='#') Отменить
+            
+        .prod_review_options
+            - if (product_page)
+                ul.prod_rating_list
+                    +loop_while(3)
+                        li
+                            span.prod_rating.active
+                    +loop_while(2)
+                        li
+                            span.prod_rating
+                    li (5)
+                
+            dl.prod_options
+                dt Цвет: 
+                dd Белый в синюю полоску
+
+            ul.prod_options_switch
+                li
+                    label.option_switch.round
+                        input.inp_hidden(type='radio' name='prod_color')
+                        span.check_text
+                            img(src='images/color_1_big.png')
+
+                li
+                    label.option_switch.round
+                        input.inp_hidden(type='radio' name='prod_color')
+                        span.check_text
+                            img(src='images/color_2_big.png')
+
+            dl.prod_options
+                dt Размер: 
+                dd &nbsp;
+
+            ul.prod_options_switch
+                li
+                    label.option_switch
+                        input.inp_hidden(type='radio' name='prod_size')
+                        span.check_text: span xs
+                li
+                    label.option_switch
+                        input.inp_hidden(type='radio' name='prod_size')
+                        span.check_text: span s
+                li
+                    label.option_switch
+                        input.inp_hidden(type='radio' name='prod_size' disabled)
+                        span.check_text: span m
+                li
+                    label.option_switch
+                        input.inp_hidden(type='radio' name='prod_size')
+                        span.check_text: span l
+                li
+                    label.option_switch
+                        input.inp_hidden(type='radio' name='prod_size')
+                        span.check_text: span xl
+                li
+                    label.option_switch
+                        input.inp_hidden(type='radio' name='prod_size' disabled)
+                        span.check_text: span xxl
+                        
+            - if (product_page)
+                dl.prod_options
+                    dt Артикул: 
+                    dd 0350205001
+                
+                .prod_footer_info
+                    .prod_f_inf
+                        span.prod_f_icon.in_stock
+                        span Товар в наличии
+                    .prod_f_inf.felivery
+                        span.prod_f_icon.i-truck-side-view-outline
+                        span Срок доставки 1-2 дня
+                
+            - if (!product_page)
+                p Мужские джинсы PlanB, выполненные из плотного денима на основе хлопка. Традиционный силуэт, прямой крой и средняя посадка. 
+                
+                .footer_info_control
+                    a.gl_link(href='#') На страницу товара
+                
 mixin popups()
     .popup_close_btn.popupClose
         
@@ -444,7 +551,7 @@ mixin popups()
             +loop_while(7)
                 li
                     .product_item
-                        a.product_img(href='#')
+                        a.product_img(href='product.html')
                             img(src='images/search_rslt_1.jpg')
                             .product_hit Хит продаж
                             .product_share_holder: .product_share - 30%
@@ -460,7 +567,7 @@ mixin popups()
             .prod_review 
                 .prod_review_photos
                     h3 Топ и брючки тонкой вязки
-                    .fotorama(data-thumbwidth=60, data-thumbheight=60, data-height=340, data-nav="thumbs")
+                    .fotorama(data-thumbwidth=60, data-thumbheight=60, data-height=340, data-nav="thumbs", data-thumbmargin=3)
                         .prod_review_img.product_img(data-thumb='images/preview_small_1.jpg')
                             img(src='images/preview_main_1.jpg')
                             .product_hit Хит продаж
@@ -482,90 +589,7 @@ mixin popups()
                             a.product_img( data-nav="thumbs" href='images/preview_main_1.jpg')
                                 img(src='images/preview_small_3.jpg')
             
-            .prod_review_info
-                .product_share_holder: .product_share - 30%
-                .prod_review_cart
-                    .product_price
-                        span.new_price 4069
-                            span.rur 7
-                        span.old_price 8449
-                            span.rur 7
-                            
-                    .prod_review_controls_w
-                        ul.prod_review_controls
-                            li
-                                a.btn_v1.blue_btn.cart_btn(href='#') В корзину
-                            li
-                                a.btn_v1.violette_btn_transp.cart_btn.toggleOneClick(href='#') Купить в 1 клик
-                            li
-                                a.prod_fav.favBtn(href='#')
-                                
-                        .prod_review_1_click.oneClickForm
-                            form(action='#')
-                                .form_cell
-                                    input.f_input.input_v5(placeholder='Имя')
-                                .form_cell
-                                    input.f_input.input_v5(placeholder='телефон')
-                                    
-                                ul.dropdown_controls
-                                    li
-                                        a.btn_v1.blue_btn.apply_btn(href='#') Купить
-                                    li
-                                        a.gl_link.white_link.toggleOneClick(href='#') Отменить
-                            
-                            
-                .prod_review_options
-                    dl.prod_options 
-                        dt Цвет: 
-                        dd Белый в синюю полоску
-                        
-                    ul.prod_options_switch
-                        li
-                            label.option_switch.round
-                                input.inp_hidden(type='radio' name='prod_color')
-                                span.check_text
-                                    img(src='images/color_1_big.png')
-                                    
-                        li
-                            label.option_switch.round
-                                input.inp_hidden(type='radio' name='prod_color')
-                                span.check_text
-                                    img(src='images/color_2_big.png')
-                                
-                    dl.prod_options 
-                        dt Размер: 
-                        dd &nbsp;
-                        
-                    ul.prod_options_switch
-                        li
-                            label.option_switch
-                                input.inp_hidden(type='radio' name='prod_size')
-                                span.check_text: span xs
-                        li
-                            label.option_switch
-                                input.inp_hidden(type='radio' name='prod_size')
-                                span.check_text: span s
-                        li
-                            label.option_switch
-                                input.inp_hidden(type='radio' name='prod_size' disabled)
-                                span.check_text: span m
-                        li
-                            label.option_switch
-                                input.inp_hidden(type='radio' name='prod_size')
-                                span.check_text: span l
-                        li
-                            label.option_switch
-                                input.inp_hidden(type='radio' name='prod_size')
-                                span.check_text: span xl
-                        li
-                            label.option_switch
-                                input.inp_hidden(type='radio' name='prod_size' disabled)
-                                span.check_text: span xxl
-
-                    p Мужские джинсы PlanB, выполненные из плотного денима на основе хлопка. Традиционный силуэт, прямой крой и средняя посадка. 
-                
-                    .footer_info_control
-                        a.gl_link(href='#') На страницу товара
+            +prod_review_info()
 
     #callback_popup.popup.popup_v2
         .popup_inner

@@ -50,18 +50,16 @@ function initToddler() {
     var filter_price_min = $('#filter_price_min');
     var filter_price_max = $('#filter_price_max');
 
+    if (!price_toddler.length) return;
+    
     filter_price_min.on('change', function (e) {
         var new_val = parseInt((this.value).replace(/\D*/g, '') || 0), old_val = parseInt(price_toddler[0].noUiSlider.get()[0]);
-
-        console.log(new_val, e.type);
 
         if (new_val != old_val) {
             price_toddler[0].noUiSlider.set([new_val, null]);
         }
 
         if (e.type.toLowerCase() == 'keyup') manual_update = true;
-
-        console.log(manual_update);
 
     });
 
@@ -74,7 +72,6 @@ function initToddler() {
 
         if (e.type.toLowerCase() == 'keyup') manual_update = true;
 
-        console.log(manual_update);
     });
 
     noUiSlider.create(price_toddler[0], {

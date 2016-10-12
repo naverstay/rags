@@ -105,5 +105,78 @@
   letter-spacing: 1.2px;
 }
 
+.product_block {
+  @extend %clearfix;
 
+  + .product_block {
+    margin-bottom: 30px;
 
+    @include respond-to-min($resp_s) {
+      margin-bottom: 75px;
+    }
+  }
+}
+
+.product_feature_tabs {
+  margin-bottom: 30px;
+  padding: 15px 0;
+  background: $gl_inp_gray;
+
+  p {
+    color: #666;
+    line-height: 1.5;
+
+    + p {
+      margin-top: 20px;
+    }
+  }
+
+  @include respond-to-min($resp_s) {
+    padding: 35px 0;
+    margin-bottom: 50px;
+  }
+}
+
+.prod_additional {
+  position: relative;
+
+  + .prod_additional {
+    padding-top: 50px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 1px;
+      background: $gl_gray_lines;
+    }
+  }
+}
+
+.product_photos {
+
+  .product_img img {
+    width: 100%;
+  }
+
+  @include respond-to-min($resp_s) {
+    float: left;
+    width: 60%;
+    padding-right: 30px;
+  }
+}
+
+.product_cart {
+
+  .prod_review_info {
+
+  }
+
+  @include respond-to-min($resp_s) {
+    float: right;
+    width: 40%;
+  }
+
+}
