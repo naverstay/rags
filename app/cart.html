@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>Daddy's kid Раздел с товарами</title>
+    <title>Daddy's kid Корзина</title>
      
     <!-- saved from url=(0014)about:internet -->
     <meta charset="utf-8"/>
@@ -24,13 +24,10 @@
     <script src="js/main.js"></script>
      
     <!--endbuild-->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"/>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
      
-    <!--build:js js/search.min.js -->
-    <script src="js/lib/nouislider.min.js"></script>
+    <!--build:js js/cart.min.js -->
     <script src="js/lib/jquery.inputmask.bundle.js"></script>
-    <script src="js/search.js"></script>
+    <script src="js/cart.js"></script>
      
     <!--endbuild-->
   </head>
@@ -51,586 +48,196 @@
             <ul class="breadcrumbs">
               <li class="breadcrumb_item"><a class="gl_link" href="index.html">Главная</a>
               </li>
-              <li class="breadcrumb_item"><a class="gl_link" href="catalog.html">Каталог</a>
-              </li>
-              <li class="breadcrumb_item"><span>Детская одежда</span>
+              <li class="breadcrumb_item"><span>Корзина</span>
               </li>
             </ul>
-            <h1 class="page_title fw_700"><span>Детская одежда</span></h1>
-            <div class="search_container">
-              <div class="search_result_info">
-                <p>У нас вы найдете большой выбор практичной непродуваемой и водонепроницаемой деткой одежды для вашего  <br>  малыша, в которой удобно играть.</p>
-              </div>
-              <ul class="search_filters">
-                <li>
-                  <label class="filter_check">
-                    <input class="inp_hidden" type="checkbox"><span class="check_btn"><span class="check_icon i-baby-wrapped-in-swaddle"></span><span class="check_text">Верхняя одежда (23)</span></span>
-                  </label>
-                </li>
-                <li>
-                  <label class="filter_check">
-                    <input class="inp_hidden" type="checkbox"><span class="check_btn"><span class="check_icon i-baby-wrapped-in-swaddle"></span><span class="check_text">Верхняя одежда (23)</span></span>
-                  </label>
-                </li>
-                <li>
-                  <label class="filter_check">
-                    <input class="inp_hidden" type="checkbox"><span class="check_btn"><span class="check_text">платья (121)</span></span>
-                  </label>
-                </li>
-                <li>
-                  <label class="filter_check">
-                    <input class="inp_hidden" type="checkbox"><span class="check_btn"><span class="check_icon i-baby-wrapped-in-swaddle"></span><span class="check_text">Верхняя одежда (23)</span></span>
-                  </label>
-                </li>
-              </ul>
-              <ul class="search_categories">
-                <li>
-                  <div class="dropdown_holder catParameter">
-                    <div class="dropdown_btn dropdownBtn">
-                      <div class="dropdown_reset catReset"></div>
-                      <div class="dropdown_caption">Пол</div>
-                      <div class="dropdown_val"><span class="catVal">Любой</span></div>
-                    </div>
-                    <div class="dropdown_w">
-                      <div class="dropdown_caption">Пол</div>
-                      <ul class="cat_list catList" data-default="Любой">
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">Девочки</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">Мальчики</span>
-                          </label>
-                        </li>
-                      </ul>
-                      <ul class="dropdown_controls form_cell">
-                        <li><a class="btn_v1 blue_btn apply_btn catApply" href="#">Ok</a></li>
-                        <li> <a class="gl_link catReset blue_link" href="#">Сбросить</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="dropdown_holder catParameter active">
-                    <div class="dropdown_btn dropdownBtn">
-                      <div class="dropdown_reset catReset"></div>
-                      <div class="dropdown_caption">ВОзраст</div>
-                      <div class="dropdown_val"><span class="catVal">Любой</span></div>
-                    </div>
-                    <div class="dropdown_w">
-                      <div class="dropdown_caption">ВОзраст</div>
-                      <ul class="cat_list catList" data-default="Любой">
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">5</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">10</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">15</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">20</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">25</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">30</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">35</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">40</span>
-                          </label>
-                        </li>
-                      </ul>
-                      <ul class="dropdown_controls form_cell">
-                        <li><a class="btn_v1 blue_btn apply_btn catApply" href="#">Ok</a></li>
-                        <li> <a class="gl_link catReset blue_link" href="#">Сбросить</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="dropdown_holder catParameter active">
-                    <div class="dropdown_btn dropdownBtn">
-                      <div class="dropdown_reset catReset"></div>
-                      <div class="dropdown_caption">Бренд</div>
-                      <div class="dropdown_val"><span class="catVal">Любой</span></div>
-                    </div>
-                    <div class="dropdown_w">
-                      <div class="dropdown_caption">Бренд</div>
-                      <ul class="cat_list catList" data-default="Любой">
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">Zara</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">H&amp;M</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">Okaidi</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">Puma</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">Nike</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">Mothercare</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">Addidas</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">Reebok</span>
-                          </label>
-                        </li>
-                      </ul>
-                      <ul class="dropdown_controls form_cell">
-                        <li><a class="btn_v1 blue_btn apply_btn catApply" href="#">Ok</a></li>
-                        <li> <a class="gl_link catReset blue_link" href="#">Сбросить</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="dropdown_holder catParameter">
-                    <div class="dropdown_btn dropdownBtn">
-                      <div class="dropdown_reset catReset"></div>
-                      <div class="dropdown_caption">Размер</div>
-                      <div class="dropdown_val"><span class="catVal">Любой</span></div>
-                    </div>
-                    <div class="dropdown_w">
-                      <div class="dropdown_caption">Размер</div>
-                      <ul class="cat_list catList" data-default="Любой">
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">5</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">10</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">15</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">20</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">25</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">30</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">35</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">40</span>
-                          </label>
-                        </li>
-                      </ul>
-                      <ul class="dropdown_controls form_cell">
-                        <li><a class="btn_v1 blue_btn apply_btn catApply" href="#">Ok</a></li>
-                        <li> <a class="gl_link catReset blue_link" href="#">Сбросить</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="dropdown_holder catParameter">
-                    <div class="dropdown_btn dropdownBtn">
-                      <div class="dropdown_reset catReset"></div>
-                      <div class="dropdown_caption">Цена</div>
-                      <div class="dropdown_val"><span class="catVal">От 0 до 14 000 Р</span></div>
-                    </div>
-                    <div class="dropdown_w">
-                      <div class="dropdown_caption"> <span>Цена </span><span class="rur">7</span></div>
-                      <div class="cat_list catList" data-default="Любая">
-                        <ul class="price_toddler_vals">
-                          <li>
-                            <div class="input_w">
-                              <input class="f_input input_v4" id="filter_price_min" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'prefix' : 'от ', 'suffix': ' Р' ">
+            <h1 class="page_title fw_700"><span>Корзина</span></h1>
+            <div class="cart_block">
+              <div class="cart_col">
+                <div class="cart_unit cartUnit">
+                  <div class="cart_unit_info">
+                    <div class="cart_unit_img"><a class="product_img" href="product.html"><img src="images/cart_2.jpg">
+                        <div class="product_hit">Хит продаж</div></a></div>
+                    <div class="prod_info">
+                      <div class="prod_info_caption">трикотажное платье  <br>  с рисунком</div>
+                      <div class="product_price">
+                        <div class="product_share_holder">
+                          <div class="product_share">- 30%</div>
+                        </div><span class="new_price">7000<span class="rur">7</span></span><span class="old_price">1000<span class="rur">7</span></span>
+                      </div>
+                      <div class="cart_unit_options_edit">
+                        <dl class="prod_options">
+                          <dt>Цвет: </dt>
+                          <dd> 
+                            <div class="select_box_v2">
+                              <select class="select2">
+                                <option>Черный в горошек</option>
+                                <option>Белый в горошек</option>
+                                <option>Зеленый в горошек</option>
+                              </select>
                             </div>
-                          </li>
-                          <li>
-                            <div class="input_w">
-                              <input class="f_input input_v4" id="filter_price_max" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'prefix' : 'до ', 'suffix': ' Р' ">
+                          </dd>
+                          <dt>Размер: </dt>
+                          <dd>
+                            <div class="select_box_v2">
+                              <select class="select2">
+                                <option>S</option>
+                                <option>L</option>
+                                <option>XL</option>
+                                <option>XXl</option>
+                              </select>
                             </div>
-                          </li>
+                          </dd>
+                        </dl>
+                        <ul class="dropdown_controls">
+                          <li><a class="btn_v1 blue_btn apply_btn" href="#">Сохранить</a></li>
+                          <li><a class="gl_link black_link fw_500 cartUnitChange" href="#">Отменить</a></li>
                         </ul>
-                        <div class="toddler_v1 price_toddler_holder">
-                          <div class="price_toddler" id="price_toddler"></div>
+                      </div>
+                      <div class="cart_unit_options">
+                        <dl class="prod_options">
+                          <dt>Цвет: </dt>
+                          <dd>Черный в горошек</dd>
+                          <dt>Размер: </dt>
+                          <dd>L</dd>
+                        </dl>
+                        <p> <a class="gl_link fz_13 cool_text fw_500 cartUnitChange" href="#">Изменить детали</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="cart_unit_controls">
+                    <li><span class="cart_control">Сумма:</span></li>
+                    <li class="cart_unit_quantity">
+                      <div class="cart_quantity_control val_cell">
+                        <input class="val f_input input_v1" value="1" data-inputmask="'alias': 'numeric'"/>
+                        <div class="val_btn minus disabled">-</div>
+                        <div class="val_btn plus">+</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="cart_unit_price"> <span>1200 </span><span class="rur">7</span></div>
+                    </li>
+                    <li class="cart_unit_rm"><a class="gl_link" href="#">Удалить</a></li>
+                  </ul>
+                </div>
+                <div class="cart_unit cartUnit">
+                  <div class="cart_unit_info">
+                    <div class="cart_unit_img"><a class="product_img" href="product.html"><img src="images/cart_3.jpg"></a></div>
+                    <div class="prod_info">
+                      <div class="prod_info_caption">Подгузники Goo’n</div>
+                      <div class="product_price"><span class="new_price">1200<span class="rur">7</span></span></div>
+                      <div class="cart_unit_options_edit">
+                        <dl class="prod_options">
+                          <dt>Размер: </dt>
+                          <dd>
+                            <div class="select_box_v2">
+                              <select class="select2">
+                                <option>S</option>
+                                <option>L</option>
+                                <option>XL</option>
+                                <option>XXl</option>
+                              </select>
+                            </div>
+                          </dd>
+                        </dl>
+                        <ul class="dropdown_controls">
+                          <li><a class="btn_v1 blue_btn apply_btn" href="#">Сохранить</a></li>
+                          <li><a class="gl_link black_link fw_500 cartUnitChange" href="#">Отменить</a></li>
+                        </ul>
+                      </div>
+                      <div class="cart_unit_options">
+                        <dl class="prod_options">
+                          <dt>Размер: </dt>
+                          <dd>XL</dd>
+                        </dl>
+                        <p> <a class="gl_link fz_13 cool_text fw_500 cartUnitChange" href="#">Изменить детали</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="cart_unit_controls">
+                    <li><span class="cart_control">Сумма:</span></li>
+                    <li class="cart_unit_quantity">
+                      <div class="cart_quantity_control val_cell">
+                        <input class="val f_input input_v1" value="1" data-inputmask="'alias': 'numeric'"/>
+                        <div class="val_btn minus disabled">-</div>
+                        <div class="val_btn plus">+</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="cart_unit_price"> <span>1200 </span><span class="rur">7</span></div>
+                    </li>
+                    <li class="cart_unit_rm"><a class="gl_link" href="#">Удалить</a></li>
+                  </ul>
+                </div>
+                <div class="cart_unit checkout_block">
+                  <form action="#">
+                    <div class="cart_unit_info">
+                      <div class="checkout_caption">Выберите способ доставки <br> и заполните поля</div>
+                      <div class="form_row">
+                        <div class="form_cell">
+                          <label class="check_v3 check_emul">
+                            <input class="inp_hidden" type="radio" name="checkout_delivery"><span class="check_text"><span class="check_icon i-car-baby-toy-outline"></span><span>Курьером</span></span>
+                          </label>
+                        </div>
+                        <div class="form_cell">
+                          <label class="check_v3 check_emul">
+                            <input class="inp_hidden" type="radio" name="checkout_delivery"><span class="check_text"><span class="check_icon i-skate-with-handle-side-view"></span><span>Самовывоз</span></span>
+                          </label>
                         </div>
                       </div>
-                      <ul class="dropdown_controls form_cell">
-                        <li><a class="btn_v1 blue_btn apply_btn catApply" href="#">Ok</a></li>
-                        <li><a class="gl_link catReset blue_link" href="#">Сбросить</a></li>
-                      </ul>
+                      <div class="form_cell">
+                        <input class="f_input input_v6" placeholder="Имя" value="Мирослав">
+                      </div>
+                      <div class="form_cell">
+                        <input class="f_input input_v2" placeholder="Фамилия" value="Бошич">
+                      </div>
+                      <div class="form_cell">
+                        <input class="f_input input_v6" placeholder="Email" required>
+                      </div>
+                      <div class="form_cell">
+                        <input class="f_input input_v2" placeholder="Телефон" data-inputmask="'mask': '[+7] (999)-999-99-99'">
+                      </div>
+                      <div class="form_cell">
+                        <input class="f_input input_v2" placeholder="Адрес" required>
+                      </div>
+                      <div class="delivery_options">
+                        <div class="checkout_caption">Выберите способ оплаты</div>
+                        <div class="form_row">
+                          <div class="form_cell">
+                            <label class="check_v3 check_emul">
+                              <input class="inp_hidden" type="radio" name="checkout_payment"><span class="check_text"><span class="check_icon i-truck-side-view-outline"></span><span>Наличными</span></span>
+                            </label>
+                          </div>
+                          <div class="form_cell">
+                            <label class="check_v3 check_emul">
+                              <input class="inp_hidden" type="radio" name="checkout_payment"><span class="check_text"><span class="check_icon i-skate-with-handle-side-view"></span><span>Картой <br> курьеру</span></span>
+                            </label>
+                          </div>
+                          <div class="form_cell">
+                            <label class="check_v3 check_emul">
+                              <input class="inp_hidden" type="radio" name="checkout_payment"><span class="check_text"><span class="check_icon i-car-baby-toy-outline"></span><span>Картой <br> онлайн</span></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="dropdown_holder catParameter dropdown_w_right">
-                    <div class="dropdown_btn dropdownBtn">
-                      <div class="dropdown_reset catReset"></div>
-                      <div class="dropdown_caption">Цвет</div>
-                      <div class="dropdown_val"><span class="catVal">Любой</span></div>
-                    </div>
-                    <div class="dropdown_w">
-                      <div class="dropdown_caption">Цвет</div>
-                      <ul class="cat_list catList" data-default="Любой">
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">Оранжевый</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">Красный</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">Черный</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">Белый</span>
-                          </label>
-                        </li>
-                        <li>
-                          <label class="check_emul check_v1">
-                            <input class="inp_hidden" type="checkbox"><span class="check_text">Синий</span>
-                          </label>
-                        </li>
-                      </ul>
-                      <ul class="dropdown_controls form_cell">
-                        <li><a class="btn_v1 blue_btn apply_btn catApply" href="#">Ok</a></li>
-                        <li> <a class="gl_link catReset blue_link" href="#">Сбросить</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <ul class="search_sort">
-                <li>
-                  <label class="check_v2 check_emul">
-                    <input class="inp_hidden" type="checkbox"><span class="check_text">в наличии</span>
-                  </label>
-                </li>
-                <li><span class="fz_12">Сортировать по:</span></li>
-                <li><a class="btn_v2 sort_btn active" href="#"><span>цене</span><span class="i-sort-desc sort_icon"></span></a></li>
-                <li><a class="btn_v2 sort_btn" href="#">скидке</a></li>
-                <li><a class="btn_v2 sort_btn" href="#">популярности</a></li>
-              </ul>
-              <div class="search_result_info">
-                <p class="cool_text">Показано 3 товара</p>
+                    <button class="btn_v3 blue_btn order_confirm_btn">Подтверждаю заказ</button>
+                  </form>
+                </div>
               </div>
-              <ul class="q_search_results">
-                <li>
-                  <div class="product_item"><a class="product_img" href="product.html"><img src="images/dress_1.jpg"/>
-                      <div class="hover_img prod_hover"><img src="images/hover_1.jpg"/></div>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share_holder"><span class="prod_hover prod_fav favBtn"></span>
-                        <div class="product_share">- 30%</div>
-                      </div>
-                      <div class="product_q_review violette_btn prod_hover openReview mob_hidden">Быстрый просмотр</div></a>
-                    <h3 class="product_caption">Трикотажное платье  <br> с рисунком</h3>
-                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span>
-                    </div>
-                    <div class="product_item_overview prod_hover">
-                      <p>Цвета и размеры в наличии</p>
-                      <ul class="prod_colors">
-                        <li>
-                          <div class="prod_color"><img src="images/color_1.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_2.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_3.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_4.png"/></div>
-                        </li>
-                      </ul>
-                      <div class="prod_sizes">xs, s, m, xxl, xxxl</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="product_item"><a class="product_img" href="product.html"><img src="images/dress_1.jpg"/>
-                      <div class="hover_img prod_hover"><img src="images/hover_1.jpg"/></div>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share_holder"><span class="prod_hover prod_fav favBtn"></span>
-                        <div class="product_share">- 30%</div>
-                      </div>
-                      <div class="product_q_review violette_btn prod_hover openReview mob_hidden">Быстрый просмотр</div></a>
-                    <h3 class="product_caption">Трикотажное платье  <br> с рисунком</h3>
-                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span>
-                    </div>
-                    <div class="product_item_overview prod_hover">
-                      <p>Цвета и размеры в наличии</p>
-                      <ul class="prod_colors">
-                        <li>
-                          <div class="prod_color"><img src="images/color_1.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_2.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_3.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_4.png"/></div>
-                        </li>
-                      </ul>
-                      <div class="prod_sizes">xs, s, m, xxl, xxxl</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="product_item"><a class="product_img" href="product.html"><img src="images/dress_1.jpg"/>
-                      <div class="hover_img prod_hover"><img src="images/hover_1.jpg"/></div>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share_holder"><span class="prod_hover prod_fav favBtn"></span>
-                        <div class="product_share">- 30%</div>
-                      </div>
-                      <div class="product_q_review violette_btn prod_hover openReview mob_hidden">Быстрый просмотр</div></a>
-                    <h3 class="product_caption">Трикотажное платье  <br> с рисунком</h3>
-                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span>
-                    </div>
-                    <div class="product_item_overview prod_hover">
-                      <p>Цвета и размеры в наличии</p>
-                      <ul class="prod_colors">
-                        <li>
-                          <div class="prod_color"><img src="images/color_1.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_2.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_3.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_4.png"/></div>
-                        </li>
-                      </ul>
-                      <div class="prod_sizes">xs, s, m, xxl, xxxl</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="product_item"><a class="product_img" href="product.html"><img src="images/dress_1.jpg"/>
-                      <div class="hover_img prod_hover"><img src="images/hover_1.jpg"/></div>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share_holder"><span class="prod_hover prod_fav favBtn"></span>
-                        <div class="product_share">- 30%</div>
-                      </div>
-                      <div class="product_q_review violette_btn prod_hover openReview mob_hidden">Быстрый просмотр</div></a>
-                    <h3 class="product_caption">Трикотажное платье  <br> с рисунком</h3>
-                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span>
-                    </div>
-                    <div class="product_item_overview prod_hover">
-                      <p>Цвета и размеры в наличии</p>
-                      <ul class="prod_colors">
-                        <li>
-                          <div class="prod_color"><img src="images/color_1.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_2.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_3.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_4.png"/></div>
-                        </li>
-                      </ul>
-                      <div class="prod_sizes">xs, s, m, xxl, xxxl</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="product_item"><a class="product_img" href="product.html"><img src="images/dress_1.jpg"/>
-                      <div class="hover_img prod_hover"><img src="images/hover_1.jpg"/></div>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share_holder"><span class="prod_hover prod_fav favBtn"></span>
-                        <div class="product_share">- 30%</div>
-                      </div>
-                      <div class="product_q_review violette_btn prod_hover openReview mob_hidden">Быстрый просмотр</div></a>
-                    <h3 class="product_caption">Трикотажное платье  <br> с рисунком</h3>
-                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span>
-                    </div>
-                    <div class="product_item_overview prod_hover">
-                      <p>Цвета и размеры в наличии</p>
-                      <ul class="prod_colors">
-                        <li>
-                          <div class="prod_color"><img src="images/color_1.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_2.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_3.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_4.png"/></div>
-                        </li>
-                      </ul>
-                      <div class="prod_sizes">xs, s, m, xxl, xxxl</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="product_item"><a class="product_img" href="product.html"><img src="images/dress_1.jpg"/>
-                      <div class="hover_img prod_hover"><img src="images/hover_1.jpg"/></div>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share_holder"><span class="prod_hover prod_fav favBtn"></span>
-                        <div class="product_share">- 30%</div>
-                      </div>
-                      <div class="product_q_review violette_btn prod_hover openReview mob_hidden">Быстрый просмотр</div></a>
-                    <h3 class="product_caption">Трикотажное платье  <br> с рисунком</h3>
-                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span>
-                    </div>
-                    <div class="product_item_overview prod_hover">
-                      <p>Цвета и размеры в наличии</p>
-                      <ul class="prod_colors">
-                        <li>
-                          <div class="prod_color"><img src="images/color_1.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_2.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_3.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_4.png"/></div>
-                        </li>
-                      </ul>
-                      <div class="prod_sizes">xs, s, m, xxl, xxxl</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="product_item"><a class="product_img" href="product.html"><img src="images/dress_1.jpg"/>
-                      <div class="hover_img prod_hover"><img src="images/hover_1.jpg"/></div>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share_holder"><span class="prod_hover prod_fav favBtn"></span>
-                        <div class="product_share">- 30%</div>
-                      </div>
-                      <div class="product_q_review violette_btn prod_hover openReview mob_hidden">Быстрый просмотр</div></a>
-                    <h3 class="product_caption">Трикотажное платье  <br> с рисунком</h3>
-                    <div class="product_price"><span class="old_price">8449<span class="rur">7</span></span><span class="new_price">4069<span class="rur">7</span></span>
-                    </div>
-                    <div class="product_item_overview prod_hover">
-                      <p>Цвета и размеры в наличии</p>
-                      <ul class="prod_colors">
-                        <li>
-                          <div class="prod_color"><img src="images/color_1.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_2.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_3.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_4.png"/></div>
-                        </li>
-                      </ul>
-                      <div class="prod_sizes">xs, s, m, xxl, xxxl</div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="product_item"><a class="product_img" href="product.html"><img src="images/dress_1.jpg"/>
-                      <div class="hover_img prod_hover"><img src="images/hover_1.jpg"/></div>
-                      <div class="product_hit">Хит продаж</div>
-                      <div class="product_share_holder"><span class="prod_hover prod_fav favBtn"></span>
-                        <div class="product_share">- 30%</div>
-                      </div>
-                      <div class="product_q_review violette_btn prod_hover openReview mob_hidden">Быстрый просмотр</div></a>
-                    <h3 class="product_caption">Трикотажное платье  <br> с рисунком</h3>
-                    <div class="product_price"><span class="new_price">4069<span class="rur">7</span></span>
-                    </div>
-                    <div class="product_item_overview prod_hover">
-                      <p>Цвета и размеры в наличии</p>
-                      <ul class="prod_colors">
-                        <li>
-                          <div class="prod_color"><img src="images/color_1.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_2.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_3.png"/></div>
-                        </li>
-                        <li>
-                          <div class="prod_color"><img src="images/color_4.png"/></div>
-                        </li>
-                      </ul>
-                      <div class="prod_sizes">xs, s, m, xxl, xxxl</div>
-                    </div>
-                  </div>
-                </li>
-              </ul><a class="btn_v1 load_more_btn violette_btn" href="#">Смотреть еще 20</a>
-            </div>
-            <div class="catalog_description">
-              <p>Пуфы и кресла не редко играют в тандеме с диванами. Благодаря этому создается гармоничное единство стиля. Но кресло или пуфик также способны стать полноценными интерьерными единицами, не нуждающимися в сопровождении. Кресло – отличное место для чтения, чаепития и отдыха. А компактные пуфики заметно преобразят интерьер.</p>
-              <p>Этот небольшой, но полезный предмет поможет в хранении мелких вещей – некоторые модели располагают небольшим отсеком под сиденьем. Пуф станет незаменимым элементом при составлении комплекта модульного дивана. Эту мебель можно недорого купить в нашем интернет-магазине с доставкой по Москве и Московской области.</p>
+              <div class="cart_total_block">
+                <dl class="cart_total"> 
+                  <dt>Итого:</dt>
+                  <dd class="total_price"> <span>78 700 </span><span class="rur">7</span></dd>
+                  <dt>12 товаров на сумму:</dt>
+                  <dd><span>78 000</span><span class="rur"> ₽</span></dd>
+                  <dt>Стоимость доставки:</dt>
+                  <dd><span>700</span><span class="rur"> ₽</span></dd>
+                  <dt>Ваша экономия: </dt>
+                  <dd> <span>1200</span><span class="rur"> ₽</span></dd>
+                </dl>
+                <p> <a class="gl_link fw_500 fz_13 cool_text" href="delivery.html">Доставка и оплата</a></p>
+              </div>
             </div>
           </div>
         </div>

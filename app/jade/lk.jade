@@ -34,7 +34,7 @@ html(lang='ru')
                                                     input.f_input.input_v2(placeholder='Email' required)
                                                     
                                                 .form_cell
-                                                    input.f_input.input_v2(placeholder='Телефон')
+                                                    input.f_input.input_v2(placeholder='Телефон' data-inputmask="'mask': '[+7] (999)-999-99-99'")
                                                     
                                                 .form_cell
                                                     input.f_input.input_v2(placeholder='Адрес')
@@ -92,7 +92,7 @@ html(lang='ru')
                                                             span.prod_f_icon.in_stock
                                                             span Доставлен
                                                 .order_cell.col_4
-                                                    span.cell_val.fw_500 Повторить заказ
+                                                    span.cell_val.fw_500: a.black_link(href='#') Повторить заказ
                                         
                                             +order_info(1)
                                             
@@ -108,7 +108,7 @@ html(lang='ru')
                                                             span.prod_f_icon.expected
                                                             span В процессе
                                                 .order_cell.col_4
-                                                    span.cell_val.fw_500 Повторить заказ
+                                                    span.cell_val.fw_500: a.black_link(href='#') Повторить заказ
                                         
                                             +order_info(2)
                                             
@@ -124,10 +124,9 @@ html(lang='ru')
                                                             span.prod_f_icon.canceled
                                                             span Отменен
                                                 .order_cell.col_4
-                                                    span.cell_val.fw_500 Повторить заказ
+                                                    span.cell_val.fw_500: a.black_link(href='#') Повторить заказ
                                         
                                             +order_info(3)
-                                                
      
             +footer()
             

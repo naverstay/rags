@@ -20,6 +20,17 @@
   }
 }
 
+.black_link {
+  @include transition_all(color .3s);
+  color: $gl_main_black;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color: $gl_cool_black;
+  }
+}
+
 .caption_v1 {
   color: $gl_main_black;
   font-weight: 700;

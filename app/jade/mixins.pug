@@ -7,7 +7,7 @@
 - var sub_menu = ['Все категории','Платья ','Комплекты одежды','Верхняя одежда','Нижнее белье','Одежда для сна','Распродажа']
     
 
-mixin dev_head(page_title, index, news, search, product, lk)
+mixin dev_head(page_title, index, news, search, product, lk, cart)
     head
         title=page_title
         | 
@@ -62,6 +62,13 @@ mixin dev_head(page_title, index, news, search, product, lk)
             | 
             | <!--build:js js/lk.min.js -->
             script(src='js/lk.js')
+            | 
+            | <!--endbuild-->
+        - if (cart)
+            | 
+            | <!--build:js js/cart.min.js -->
+            script(src='js/lib/jquery.inputmask.bundle.js')
+            script(src='js/cart.js')
             | 
             | <!--endbuild-->
             
@@ -206,7 +213,7 @@ mixin aside_right()
                     span.user_m_icon.i-toy-ball
                     span.user_m_counter 23
             li
-                a.user_m_link.openSuccessPopup(href='#')
+                a.user_m_link.openSuccessPopup.cartLink(href='#')
                     span.user_m_icon.i-truck-side-view-outline
                     span.user_m_counter 6
                     
@@ -223,7 +230,7 @@ mixin aside_right()
                         a.product_img(href='product.html')
                             img(src='images/fav_1.jpg')
                         .prod_rm_btn
-                        h3.product_caption Трикотажное платьес рисунком
+                        h3.product_caption Трикотажное платье с рисунком
                         .product_price
                             span.new_price 4069
                                 span.rur 7
@@ -368,7 +375,7 @@ mixin hit_slider()
                         img(src='images/hit_1.jpg')
                         .product_hit Хит продаж
                         .product_share_holder: .product_share - 30%
-                    h3.product_caption Трикотажное платьес рисунком
+                    h3.product_caption Трикотажное платье с рисунком
                     .product_price
                         span.old_price 8449
                             span.rur 7
@@ -379,7 +386,7 @@ mixin hit_slider()
                         img(src='images/hit_1.jpg')
                         .product_hit Хит продаж
                         .product_share_holder: .product_share - 30%
-                    h3.product_caption Трикотажное платьес рисунком
+                    h3.product_caption Трикотажное платье с рисунком
                     .product_price
                         span.new_price 4069
                             span.rur 7
@@ -433,6 +440,23 @@ mixin dropdown_w(caption)
             li 
                 a.gl_link.catReset.blue_link(href='#') Сбросить
             
+mixin cart_unit_controls()
+    ul.cart_unit_controls
+        li
+            span.cart_control Сумма:
+        li.cart_unit_quantity
+            .cart_quantity_control.val_cell
+                input.val.f_input.input_v1(value=1 data-inputmask="'alias': 'numeric'")
+                .val_btn.minus.disabled -
+                .val_btn.plus +
+        li
+            .cart_unit_price 
+                span 1200 
+                span.rur 7
+                
+        li.cart_unit_rm
+            a.gl_link(href='#') Удалить
+
 mixin prod_review_info(product_page)
     .prod_review_info
         .product_share_holder: .product_share - 30%
@@ -446,7 +470,7 @@ mixin prod_review_info(product_page)
             .prod_review_controls_w
                 ul.prod_review_controls
                     li
-                        a.btn_v1.blue_btn.cart_btn(href='#') В корзину
+                        a.btn_v1.blue_btn.cart_btn.addToCart(href='#') В корзину
                     li
                         a.btn_v1.violette_btn_transp.cart_btn.toggleOneClick(href='#') Купить в 1 клик
                     li
@@ -457,7 +481,7 @@ mixin prod_review_info(product_page)
                         .form_cell
                             input.f_input.input_v5(placeholder='Имя')
                         .form_cell
-                            input.f_input.input_v5(placeholder='телефон')
+                            input.f_input.input_v5(placeholder='телефон' data-inputmask="'mask': '[+7] (999)-999-99-99'")
 
                         ul.dropdown_controls
                             li
@@ -540,27 +564,35 @@ mixin prod_review_info(product_page)
                 p Мужские джинсы PlanB, выполненные из плотного денима на основе хлопка. Традиционный силуэт, прямой крой и средняя посадка. 
                 
                 .footer_info_control
-                    a.gl_link(href='#') На страницу товара
+                    a.gl_link(href='product.html') На страницу товара
                 
 mixin order_info(count)
-    +loop_while(count)
-        .orderExpandRow(style='display:none;')
+    .orderExpandRow(style='display:none;')
+        +loop_while(count)
             .order_row.collapsed
                 .order_cell.col_1_w
                     .order_product
-                        .order_img
+                        a.order_img(href='product.html')
                             img(src='images/cart_1.jpg')
                         .order_cell
                             .cell_val
-                                .order_name Трикотажное платье с рисунком
+                                a.order_name(href='product.html') Трикотажное платье с рисунком
                             
                 .order_cell.col_2_w
                     .cell_val.fw_500 10 шт
-                .order_cell.col_3_w.fz_18
+                .order_cell.col_3_w
                     .cell_val
                         span 40 069 
-                        span.rur ₽
-
+                        span.rur 7
+                    
+        .order_row.collapsed
+            .order_cell.col_1_w &nbsp;
+            .order_cell.col_2_w
+                .cell_val.fw_500 ИТОГО
+            .order_cell.col_3_w 
+                .cell_val
+                    span 120 069 
+                    span.rur 7
 
 mixin popups()
     .popup_close_btn.popupClose
@@ -603,18 +635,7 @@ mixin popups()
                         .prod_review_img.product_img(data-thumb='images/preview_small_3.jpg')
                             img(src='images/preview_main_1.jpg')
                             .product_hit Хит продаж
-                                
-                    //ul.prod_review_list.fotorama
-                        li
-                            a.product_img( data-nav="thumbs" href='images/preview_main_1.jpg')
-                                img(src='images/preview_small_1.jpg')
-                        li
-                            a.product_img( data-nav="thumbs" href='images/preview_main_1.jpg')
-                                img(src='images/preview_small_2.jpg')
-                        li
-                            a.product_img( data-nav="thumbs" href='images/preview_main_1.jpg')
-                                img(src='images/preview_small_3.jpg')
-            
+
             +prod_review_info()
 
     #callback_popup.popup.popup_v2
@@ -631,7 +652,7 @@ mixin popups()
                                 input.f_input.input_v2(placeholder='Имя')
                                 
                             .form_cell
-                                input.f_input.input_v2(placeholder='Телефон')
+                                input.f_input.input_v2(placeholder='Телефон' data-inputmask="'mask': '[+7] (999)-999-99-99'")
                                 
                             .form_cell
                                 button.btn_v1.blue_btn.order_btn Отправить заявку
@@ -643,7 +664,7 @@ mixin popups()
                                 input.f_input.input_v2(placeholder='Имя')
                                 
                             .form_cell
-                                input.f_input.input_v2(placeholder='Телефон')
+                                input.f_input.input_v2(placeholder='Телефон' data-inputmask="'mask': '[+7] (999)-999-99-99'")
                                 
                             .form_cell
                                 textarea.f_input.input_v2(placeholder='Вопрос')
@@ -717,4 +738,41 @@ mixin popups()
                                 a.about_link(href='#')
                                     span.i-g
                         
-                                
+    #add2cart_popup.popup.popup_v5
+        .popup_cart_title
+            .popup_cart_caption.fz_18 Товар добавлен в корзину
+            p 
+                span Всего: 4 товар (ов) на сумму 1 401 069
+                span.rur 7
+        
+        .popup_cart_body
+            p С этим товаром покупают:
+            
+            ul.cart_items
+                    li
+                        .product_item
+                            a.product_img(href='product.html')
+                                img(src='images/fav_1.jpg')
+                            h3.product_caption Трикотажное платье с рисунком
+                            .product_price
+                                span.new_price 200
+                                    span.rur 7
+                                    
+                    li
+                        .product_item
+                            a.product_img(href='product.html')
+                                img(src='images/fav_1.jpg')
+                            h3.product_caption длинное название длинное название длинное название
+                            .product_price
+                                span.new_price 200
+                                    span.rur 7
+                                    
+                    li
+                        .product_item
+                            a.product_img(href='product.html')
+                                img(src='images/fav_1.jpg')
+                            h3.product_caption ФУтболка
+                            .product_price
+                                span.new_price 200
+                                    span.rur 7
+                                    

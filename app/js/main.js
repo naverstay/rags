@@ -5,6 +5,7 @@ var body, html, doc, wnd,
     fail_popup,
     success_popup,
     quick_search_popup,
+    add2cart_popup,
     recovery_popup;
 
 $(function ($) {
@@ -50,6 +51,8 @@ $(function ($) {
 
     initSuccessPopup();
 
+    initAddToCartPopup();
+
     initQuickSearchPopup();
     
     initTabs();
@@ -61,6 +64,12 @@ $(function ($) {
     all_dialog_close();
   
 });
+
+function initMask() {
+    $("input").filter(function (i, el) {
+        return $(el).attr('data-inputmask') != void 0;
+    }).inputmask();
+}
 
 function initInputFillChecker() {
     $('input').on('change keyup blur', function () {
@@ -97,6 +106,44 @@ function initQuickSearchPopup() {
 
         quick_search_popup.dialog('open');
 
+        return false;
+    });
+
+}
+
+function initAddToCartPopup() {
+
+    add2cart_popup = $('#add2cart_popup').dialog({
+        autoOpen: false,
+        modal: false,
+        closeOnEscape: true,
+        closeText: '',
+        dialogClass: 'no_close_on_dt dialog_close_butt_mod_1 dialog_g_size_3 mob_dialog_fixed',
+        //appendTo: '.wrapper',
+        width: 430,
+        draggable: true,
+        collision: "fit",
+        position: {
+            my: "right-5 top+15",
+            at: "right bottom",
+            of: $('.cartLink')
+        },
+        open: function (event, ui) {
+            //body.addClass('modal_opened overlay_v2');
+        },
+        close: function (event, ui) {
+            //body.removeClass('modal_opened overlay_v2');
+        }
+    });
+
+    $('.addToCart').on ('click', function () {
+
+        add2cart_popup.dialog('open');
+        
+        setTimeout(function () {
+            add2cart_popup.dialog('close');
+        }, 3000);
+        
         return false;
     });
 

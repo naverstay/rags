@@ -385,6 +385,9 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: $gl_main_black;
+  //max-height: 2.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   @include respond-to-min($resp_s) {
     margin-top: 18px;

@@ -27,8 +27,11 @@
 
   .col_3_w {
     width: 15.2%;
+    
+    @include respond-to-min($resp_s) {
+      font-size: 18px;
+    }
   }
-
 }
 
 .order_expand_btn {
@@ -93,6 +96,14 @@
     background: $gl_white;
   }
 
+  @include respond-to-max($resp_s) {
+    font-size: 10px;
+    
+    .prod_f_inf {
+      font-size: 10px;
+    }
+  }
+  
   @include respond-to-min($resp_s) {
     line-height: 50px;
     padding-right: 55px;

@@ -97,12 +97,6 @@ function initToddler() {
     });
 }
 
-function initMask() {
-    $("input").filter(function (i, el) {
-        return $(el).attr('data-inputmask') != void 0;
-    }).inputmask();
-}
-
 function formatNum(num) {
     return num.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, " ");
 }
