@@ -70,9 +70,24 @@
   
 }
 
+.form_cell_aside_tool {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  padding-left: 30px;
+  line-height: 40px;
+  white-space: nowrap;
+}
+
 .form_cell {
   @extend %clearfix;
+  position: relative;
 
+  .cabinet_form_col & {
+    margin-bottom: 20px;
+  }
+  
   .popup_inner & {
     margin-bottom: 20px;
 
@@ -419,9 +434,12 @@
   float: left;
   font-size: 12px;
   padding-right: 5px;
-  margin-top: 10px;
   min-width: 170px;
   color: $gl_main_black;
+
+  .prod_footer_info & {
+    margin-top: 10px;
+  }
 }
 
 .prod_f_icon {
@@ -440,7 +458,7 @@
     color: #e5c205;
   }
 
-  &.not_available {
+  &.canceled {
     @extend .i-cross;
 
     color: $gl_red;

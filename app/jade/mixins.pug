@@ -1,13 +1,13 @@
 //- var head_menu = ['Новинки','Акции','Оплата','Доставка','О компании']
 - var head_menu = ['Каталог','Новинки','Акции','Доставка и оплата','О компании']
-- var head_menu_link = ['catalog.html','news.html','payments.html','delivery.html','about.html']
+- var head_menu_link = ['catalog.html','news.html','lk.html','delivery.html','cart.html']
 - var aside_menu = ['Детская одежда','Детская обувь','Игрушки','Коляски','Детские товары','Мамам','Автокресла']
 - var aside_menu_icon = ['baby-onesie-with-front-pocket-outline','baby-shoes','bear-toy','baby-transport-side-view','baby-diaper-outline','baby-onesie-outline','baby-chair']
     
 - var sub_menu = ['Все категории','Платья ','Комплекты одежды','Верхняя одежда','Нижнее белье','Одежда для сна','Распродажа']
     
 
-mixin dev_head(page_title, index, news, search, product)
+mixin dev_head(page_title, index, news, search, product, lk)
     head
         title=page_title
         | 
@@ -56,6 +56,12 @@ mixin dev_head(page_title, index, news, search, product)
             script(src='js/lib/nouislider.min.js')
             script(src='js/lib/jquery.inputmask.bundle.js')
             script(src='js/search.js')
+            | 
+            | <!--endbuild-->
+        - if (lk)
+            | 
+            | <!--build:js js/lk.min.js -->
+            script(src='js/lk.js')
             | 
             | <!--endbuild-->
             
@@ -536,6 +542,26 @@ mixin prod_review_info(product_page)
                 .footer_info_control
                     a.gl_link(href='#') На страницу товара
                 
+mixin order_info(count)
+    +loop_while(count)
+        .orderExpandRow(style='display:none;')
+            .order_row.collapsed
+                .order_cell.col_1_w
+                    .order_product
+                        .order_img
+                            img(src='images/cart_1.jpg')
+                        .order_cell
+                            .cell_val
+                                .order_name Трикотажное платье с рисунком
+                            
+                .order_cell.col_2_w
+                    .cell_val.fw_500 10 шт
+                .order_cell.col_3_w.fz_18
+                    .cell_val
+                        span 40 069 
+                        span.rur ₽
+
+
 mixin popups()
     .popup_close_btn.popupClose
         

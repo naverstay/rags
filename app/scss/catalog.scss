@@ -180,3 +180,26 @@
   }
 
 }
+
+.cabinet_block {
+
+  @include respond-to-min($resp_s) {
+    margin-top: -14px;
+  }
+}
+
+.cabinet_form_col {
+  max-width: 320px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+
+  .caption_v1 {
+    letter-spacing: .9px;
+    margin-bottom: 5px;
+  }
+
+  @include respond-to-min($resp_s) {
+    margin-bottom: 55px;
+  }
+}
+

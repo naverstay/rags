@@ -1,5 +1,9 @@
 //************  buttons
 
+%btn_1 {
+  
+}
+
 .btn_v1 {
   height: 40px;
 
@@ -9,14 +13,14 @@
     right: 0;
     left: 0;
     font: 500 13px/16px $Rubik;
-    padding: 12px;
     text-align: center;
+    padding: 12px;
   }
 
   &.apply_btn {
     display: block;
-    font: 500 13px/16px $Rubik;
     padding: 12px 30px;
+    font: 500 13px/16px $Rubik;
     text-align: center;
     border-radius: 2px;
   }
@@ -26,8 +30,8 @@
     cursor: pointer;
     border-radius: 2px;
     font: 500 13px/16px $Rubik;
-    padding: 12px;
     text-align: center;
+    padding: 12px;
   }
   
   &.order_btn {
@@ -37,8 +41,8 @@
     cursor: pointer;
     border-radius: 2px;
     font: 500 13px/16px $Rubik;
-    padding: 12px 44px;
     text-align: center;
+    padding: 12px 44px;
     margin-top: 10px;
 
     &.mod_2 {
@@ -50,16 +54,20 @@
       padding: 12px 36px;
       margin-bottom: 35px;
     }
+    
+    &.mod_4 {
+      min-width: 200px;
+      margin-top: 20px;
+      margin-bottom: 23px;
+    }
   }
 
   &.load_more_btn {
     text-align: center;
     display: block;
     border-radius: 2px;
-    font-size: 13px;
     padding: 11px;
-    line-height: 16px;
-    font-weight: 500;
+    font: 500 13px/16px $Rubik;
     margin-bottom: 55px;
   }
   

@@ -38,6 +38,8 @@ $(function ($) {
         return false;
     });
 
+    initInputFillChecker();
+    
     initCallbackPopup();
 
     initAuthPopup();
@@ -59,6 +61,16 @@ $(function ($) {
     all_dialog_close();
   
 });
+
+function initInputFillChecker() {
+    $('input').on('change keyup blur', function () {
+        var inp = $(this);
+        
+        if ('text' == inp[0].type && 'required' == inp.attr('required')) {
+            inp.toggleClass('empty', inp.val() == 0);
+        }
+    });
+}
 
 function initQuickSearchPopup() {
 
@@ -261,7 +273,6 @@ function initAsideSubmenu() {
 }
 
 function initTabs() {
-
 
     $('.tabBlock').each(function (ind) {
         var tab = $(this);

@@ -671,17 +671,20 @@ body {
     @extend %clearfix;
     position: relative;
     margin-left: -50px;
-    margin-bottom: 70px;
     padding: 10px 0 25px;
 
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: -30px;
-      left: -30px;
-      height: 1px;
-      background: $gl_gray_lines;
+    .article_content.delivery_mod & {
+      margin-bottom: 70px;
+      
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: -30px;
+        left: -30px;
+        height: 1px;
+        background: $gl_gray_lines;
+      }
     }
 
     > li {
