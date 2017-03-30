@@ -22,7 +22,8 @@ var runSequence = require('run-sequence');
 gulp.task('browserSync', function () {
     browserSync({
         server: {
-            baseDir: 'app'
+            baseDir: 'app',
+            port: 3030
         }
     })
 })

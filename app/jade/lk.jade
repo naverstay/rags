@@ -1,4 +1,4 @@
-include mixins.pug
+include mixins
 doctype html
 html(lang='ru')
     +dev_head("Daddy's kid Кабинет", false, false, false, false, true)
@@ -13,7 +13,7 @@ html(lang='ru')
                         +breadcrumbs(['Главная', 'Личный кабинет'])
                         h1.page_title.fw_700
                             span Личный кабинет
-                            
+
                         .cabinet_block
                             ul#cabinet_switcher.tab_holder.tab_v3
                                 li.tab_cell: a.tab_link(href='#cabinet_tab_1'): span Личные данные
